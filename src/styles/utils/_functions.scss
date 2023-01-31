@@ -1,0 +1,45 @@
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+  @return $string;
+}
+
+// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front.
+// Useful for making responsive utilities.
+//
+//    >> breakpoint-infix(xs)
+//    ""  (Returns a blank string)
+//    >> breakpoint-infix(sm)
+//    "-sm"
+@function breakpoint-infix($name) {
+  @return if($name == xs, '', '-#{$name}');
+}
+
+// Returns a blank string if no attribute, otherwise returns the name with a dash in front.
+//
+//    >> infix(null)
+//    "" (Returns a blank string)
+//    >> infix(top)
+//    "-top"
+@function infix($name) {
+  @return if($name == null, '', '-#{$name}');
+}
+
+// Returns a blank string if no attribute, otherwise returns the name with a dash at the end.
+//
+//    >> suffix(null)
+//    "" (Returns a blank string)
+//    >> suffix(top)
+//    "top-"
+@function suffix($name) {
+  @return if($name == null, '', '#{$name}-');
+}

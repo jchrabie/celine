@@ -1,0 +1,30 @@
+@use '../../../../styles/utils/breakpoint';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  height: initial;
+  align-items: center;
+
+  @include breakpoint.breakpoint(lg) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .flex-1 {
+    flex: 100%;
+    text-align: center;
+    margin-top: var(--spacer-4);
+  }
+
+  .logo {
+    height: 200px;
+    width: 200px;
+  }
+  .webster {
+    width: 140px;
+  }
+}

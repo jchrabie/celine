@@ -1,0 +1,49 @@
+@use '../../../../styles/utils/breakpoint';
+
+nav {
+  display: grid;
+  grid-gap: var(--spacer-5);
+  grid-template-columns: auto 1fr;
+  padding: var(--spacer-2) var(--spacer-5);
+  margin: 0;
+  align-items: center;
+
+  @include breakpoint.breakpoint(lg) {
+    margin: 0 var(--spacer-5);
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .nav-list {
+    justify-self: flex-end;
+    gap: var(--spacer-5);
+    grid-template-columns: repeat(5, 150px);
+    margin: 0;
+
+    a {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: var(--spacer-3);
+        right: var(--spacer-3);
+        height: 2px;
+        background: var(--primary-light30-color);
+      }
+
+      &:hover, &.active {
+        font-weight: 700;
+        text-decoration: none;
+
+        &:after {
+          height: 4px;
+        }
+      }
+    }
+  }
+}
