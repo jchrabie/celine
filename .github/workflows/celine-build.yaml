@@ -39,7 +39,6 @@ jobs:
         run: |
           npm ci
           npm run build:ssr
-          npm run serve:ssr
 
 # Please do not touch the following action
       - name: Store deployment content

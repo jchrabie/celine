@@ -10,7 +10,8 @@
     "dev:ssr": "ng run celine-naturo:serve-ssr",
     "serve:ssr": "node dist/celine-naturo/server/main.js",
     "build:ssr": "ng build && ng run celine-naturo:server",
-    "prerender": "ng run celine-naturo:prerender"
+    "prerender": "ng run celine-naturo:prerender",
+    "build:prod": "ng build && ng run celine-naturo:server:production"
   },
   "private": true,
   "dependencies": {
