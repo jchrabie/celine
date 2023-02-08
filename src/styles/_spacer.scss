@@ -1,0 +1,14 @@
+@use "sass:math";
+
+/// Définie les variables d'espacement (margin, padding, ...)
+///
+/// @param $spacer-width taille de l'espacement (en rem)
+@mixin spacer($spacer-width: 1) {
+  --spacer-0: 0;
+  --spacer-1: #{math.div($spacer-width, 4)}rem;
+  --spacer-2: #{math.div($spacer-width, 2)}rem;
+  --spacer-3: #{$spacer-width}rem;
+  --spacer-4: #{$spacer-width * 1.5}rem;
+  --spacer-5: #{$spacer-width * 3}rem;
+  --spacer-6: #{$spacer-width * 8}rem;
+}

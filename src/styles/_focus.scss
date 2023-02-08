@@ -1,0 +1,16 @@
+
+// Unstyle the caret on `<select>`s in IE10+.
+&::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+// Remove select outline from select box in FF
+&:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #495057;
+}
+
+&:focus {
+  @apply outline;
+}

@@ -1,0 +1,16 @@
+h2:not(.custom-header) {
+  @apply font-bold text-2xl mb-12 pl-12 pl-10 leading-10 py-10;
+
+  @screen md {
+    @apply text-3xl pl-40;
+  }
+}
+
+
+h3 {
+  @apply font-bold text-primary text-xl;
+
+  small {
+    @apply font-normal;
+  }
+}

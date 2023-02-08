@@ -1,18 +1,18 @@
-<nav>
+<nav class="shadow z-50 w-full">
   <a routerLink="/" aria-label="Retour à la page d'accueil">
-    <mat-icon svgIcon="logo" class="logo"></mat-icon>
+    <img src="assets/img/logo.png" alt="Céline CHRABIE Naturopathe" class="w-10 md:w-14 lg:w-18">
   </a>
 
-  <ul class="d-none d-lg-grid list-unstyled nav-list">
+  <ul class="hidden lg:grid list-none nav-list">
     <li *ngFor="let link of links">
       <a [routerLink]="[link.type]" routerLinkActive="active" class="text-dark">{{link.name}}</a>
     </li>
   </ul>
 
-  <button class="d-block d-lg-none justify-self-end"
-          mat-icon-button
-          [matMenuTriggerFor]="menu"
-          aria-label="Menu">
+  <button class="block lg:hidden justify-self-end"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Menu">
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">

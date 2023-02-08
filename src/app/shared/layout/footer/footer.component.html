@@ -1,48 +1,45 @@
-<footer class="footer p-5">
-  <div class="flex items-center">
-    <mat-icon svgIcon="logo" class="logo"></mat-icon>
-    <div>
-    </div>
+<footer>
+  <div>
+    <img src="assets/img/logo.png" alt="Céline CHRABIE Naturopathe">
+    <p class="mt-4">
+      <a href="tel:0610830253">06 10 83 02 53</a>
+    </p>
+      <address>
+        2 Rue du Berry - 44130 Blain
+      </address>
   </div>
 
-  <ul class="list-unstyled list-horizontal">
-    <li class="nav__item">
-      <h2 class="nav__title">Site</h2>
-
-      <ul class="list-unstyled">
-        <li *ngFor="let link of links" class="my-2">
+  <ul>
+    <li>
+      <h3>Site</h3>
+      <ul class="horizontal">
+        <li *ngFor="let link of links">
           <a [routerLink]="[link.type]" class="text-dark">{{link.name}}</a>
         </li>
       </ul>
     </li>
 
-    <li class="nav__item">
-      <h2 class="nav__title">Legal</h2>
-
-      <ul class="list-unstyled">
+    <li>
+      <h3>Legal</h3>
+      <ul class="horizontal">
         <li>
-          <a routerLink="/mention-legales" class="text-dark">Mentions légales</a>
+          <a routerLink="/mention-legales">Mentions légales</a>
+        </li>
+        <li>
+          <a routerLink="/accessibilite">Accessibilité</a>
         </li>
       </ul>
     </li>
 
-    <li class="nav__item nav__item--extra">
-      <h2>Contact</h2>
-      <address>
-        Céline CHRABIE <br>
-        06 10 83 02 53 <br>
-        2 Rue du Berry - 44130 Blain
-      </address>
-    </li>
   </ul>
 
-  <div class="flex-1">
+  <div class="col-span-2 flex justify-between pt-5 gap-32 m-auto items-center border-t border-gray-300">
     <p>
-      &copy; 2021 Céline Naturopathie. Tout droits réservés.
+      &copy; 2023 Céline Naturopathie. Tout droits réservés.
     </p>
     <p>Site réalisé par
-      <a href="https://webster-dev.fr" class="text-bold text-accent" target="_blank" aria-label="Aller sur le site de webster">
-        <mat-icon svgIcon="webster" class="webster"></mat-icon>
+      <a href="https://webster-dev.fr" class="text-bold text-accent" target="_blank" aria-label="Aller sur le site de webster" class="inline-block">
+        <mat-icon svgIcon="webster" class="w-full"></mat-icon>
         <span class="sr-only">Webster</span>
       </a>
     </p>

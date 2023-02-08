@@ -1,0 +1,8 @@
+.sprintful-inline-widget:not(:empty) {
+  min-width: 320px;
+  height: 1080px;
+
+  @screen md {
+    height: 700px;
+  }
+}

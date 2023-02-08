@@ -1,0 +1,7 @@
+button, .button {
+  @apply rounded-lg bg-primary text-white px-4 py-2 shadow h-10;
+
+  &.big {
+    @apply text-lg h-12;
+  }
+}

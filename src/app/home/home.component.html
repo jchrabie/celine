@@ -1,36 +1,112 @@
-<section>
+<section class="white-section">
+  <article class="grid gap-5 md:grid-cols-2 md:mt-4 mt-6">
+    <img src="assets/img/celine.jpg" alt="Céline CHRABIE" class="m-5 rounded-full w-1/2 justify-self-center">
+
+    <div class="p-5 lg:m-5 w-full">
+      <h2 class="custom-header">Qui suis-je?</h2>
+      <p class="text-justify">
+        Hi there 👋 My name is Céline CHRABIE, I'm the maker of Happy Hues. One of my favorite things to do is launch
+        fun, useful and sometimes silly side-projects that I think should exist outside my head :)
+      </p>
+      <p class="text-justify">
+        My goal with Happy Hues was to try to remove the issue where you know you like a color palette, but you're
+        unsure about how to apply it to your design or illustration. I built this site to not only give you color
+        inspiration, but also give you an example as to how and where you could use the color
+      </p>
+      <div class="d-flex justify-content-center">
+      </div>
+    </div>
+  </article>
+</section>
+<section class="light-section bg-primary-light">
   <article>
-    <h1 class="text-3xl font-bold underline">
-      <img src="assets/img/logo.png" alt="Céline CHRABIE Naturopathe" class="logo">
-    </h1>
-    <p class="">
-      Le site est en cours de création, mais ne vous inquiétez pas, vous pouvez toujours me joindre
-    </p>
-    <div class="wrapper">
-      <div class="flex items-center mb-3">
-        <mat-icon class="mr-2 text-primary">phone_iphone</mat-icon>
-        <a href="tel:+33610830253"
-           class="text-with-hover text-bold text-primary">
-          06 10 83 02 53</a>
-      </div>
-      <div class="flex items-center mb-3">
-        <mat-icon class="mr-2 text-primary">mail_outline</mat-icon>
-        <a href="mailto:celinechrabie@outlook.com"
-           class="text-with-hover text-bold text-primary">
-          celinechrabie@outlook.com</a>
-      </div>
-      <div class="flex items-center mb-3">
-        <mat-icon class="mr-2 text-primary" svgIcon="pin"></mat-icon>
-        <address class="mb-0"> 2 Rue du Berry - 44130 Blain</address>
-      </div>
-      <div class="flex items-center mb-3">
-        <mat-icon class="mr-2" svgIcon="instagram"></mat-icon>
-        <a href="https://www.instagram.com/celine_naturopathie_44/" target="_blank" class="text-with-hover text-bold text-primary">@celine_naturopathie_44</a>
-      </div>
-      <div class="flex items-center">
-        <mat-icon class="mr-2" svgIcon="facebook"></mat-icon>
-        <a href="https://www.facebook.com/celinenaturopathie.naturopathie" target="_blank" class="text-with-hover text-bold text-primary">@Céline Naturopathie</a>
-      </div>
+    <div class="lg:mx-5 px-5 py-4 lg:py-0 sticky">
+      <h2 class="custom-header">Mes prestations</h2>
+      <p>Vous avez envie de prendre soin de vous, de prendre en charge votre santé et votre bien-être ou de
+        (re)devenir acteur de votre santé ?
+        <br>
+        Alors, il se pourrait bien que vous soyez au bon endroit !
+        <br>
+        J’espère que cet espace vous apportera de l’aide, de la joie et de petits moments de bonheur</p>
+    </div>
+    <div class="grid gap-10 justify-center py-4 lg:py-0">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon svgIcon="naturo"></mat-icon>
+          </div>
+          <mat-card-title>Naturopathie</mat-card-title>
+          <mat-card-subtitle>Soin du corps et de l'esprit</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+             src="https://st.depositphotos.com/1005573/3844/i/600/depositphotos_38443251-stock-photo-naturopathic-medicine.jpg"
+             alt="">
+        <mat-card-content class="p-5">
+          <p>
+            La naturopathie est une médecine non conventionnelle qui intervient idéalement en prévention. </p>
+          <p>
+            Reconnue par l’OMS comme la troisième médecine traditionnelle après les médecines traditionnelles chinoise
+            et ayurvédique, elle permet grâce à des moyens naturels de préserver ou d’optimiser son capital santé, de
+            gagner en qualité de vie.
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="p-5">
+          <a class="button" routerLink="/rendez-vous" fragment="naturo">Je prend rendez vous</a>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon svgIcon="reflexo"></mat-icon>
+          </div>
+          <mat-card-title>Reflexologie</mat-card-title>
+          <mat-card-subtitle>Soins plantaires</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+             src="https://www.lesjardinsdumassage.com/wp-content/uploads/2016/08/reflexologie-plantaire.jpeg"
+             alt="">
+        <mat-card-content class="p-5">
+          <p>
+            La réflexologie est un massage des pieds d'origine chinoise.
+          </p>
+          <p>
+            Selon une médecine chinoise anscestrale, chaque zone réflexe correspondrait à un organe, une glande ou une
+            partie du corps qui se projetterait sur la plantedes pieds.
+          </p>
+          <p>
+            Un toucher spécifique localise les tensions et les débloquent. Incroyablement détendant, cette
+            technique active la circulation sanguine au niveau des pieds, effaçant les contraintes de la journée.
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="p-5">
+          <a class="button" routerLink="/rendez-vous" fragment="reflexo">Je prend rendez vous</a>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon svgIcon="irido"></mat-icon>
+          </div>
+          <mat-card-title>Iridologie</mat-card-title>
+          <mat-card-subtitle>Diagnostique par l'iris</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+             src="https://lh4.googleusercontent.com/gRVnf9GpPun61jn9rMgeyM41HWPWDj67V_AfrrsaAmVKfKwON7sJ6H-oKYOg4vzRS-t1MOmmyTh9eioS_X2_1PGTx1F9jPzyB3x6oIYMl70XoaY_ugi2_TC_y6o4TfVjSuiFlNm5"
+             alt="">
+        <mat-card-content class="p-5">
+          <p>
+            L'iridologie est une technique utilisée par certains médecins, homéopathes ainsi qu'en médecine
+            non-conventionnelle et particulièrement par les naturopathes.
+          </p>
+          <p>
+            Son l'objectif est d'étudier la partie colorée
+            de l'œil, l'iris, pour apprécier l'état de santé global d'une personne.
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="p-5">
+          <a class="button" routerLink="/rendez-vous" fragment="decouverte">Je prend rendez vous</a>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </article>
 </section>

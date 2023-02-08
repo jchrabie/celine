@@ -9,6 +9,27 @@ const routes: Routes = [
     redirectTo: '',
   },
   {
+    path: 'consultation',
+    loadChildren: () =>
+      import('./consultation/consultation.module').then(
+        (consultation) => consultation.ConsultationModule
+      ),
+  },
+  {
+    path: 'rendez-vous',
+    loadChildren: () =>
+      import('./rendez-vous/rendez-vous.module').then(
+        (rendezVous) => rendezVous.RendezVousModule
+      ),
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then(
+        (contact) => contact.ContactModule
+      ),
+  },
+  {
     path: '',
     component: HomeComponent,
   },
@@ -17,8 +38,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      useHash: true,
-      scrollPositionRestoration: 'enabled',
+      useHash: false,
+      scrollPositionRestoration: 'disabled',
+      anchorScrolling: 'enabled',
     }),
   ],
   exports: [RouterModule],

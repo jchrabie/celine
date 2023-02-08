@@ -1,3 +1,4 @@
+import {CommonModule} from "@angular/common";
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './layout/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +12,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { LayoutService } from './services/layout.service';
 import { AbstractLayoutComponent } from './layout/abstract-layout.component';
 import { TagService } from './services/tag.service';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { TagService } from './services/tag.service';
   ],
   imports: [
     BrowserAnimationsModule,
+    CommonModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,

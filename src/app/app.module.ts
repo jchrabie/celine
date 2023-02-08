@@ -17,14 +17,13 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
     RouterModule,
-    SharedModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' })
+    SharedModule
   ],
   exports: [RouterModule],
   bootstrap: [AppComponent],

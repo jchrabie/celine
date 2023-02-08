@@ -1,17 +1,19 @@
-@use '../styles/utils/breakpoint';
+@use 'src/styles/breakpoint';
 
 main {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  position: fixed;
+  position: relative;
+  overflow: hidden auto;
 
   .vert {
-    position: absolute;
+    position: fixed;
     width: 300px;
     height: 300px;
     top: -75px;
     left: -100px;
+    z-index: -1;
+    opacity: 0.7;
 
     @include breakpoint.breakpoint(md) {
       width: 500px;
@@ -22,13 +24,14 @@ main {
   }
 
   .jaune {
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     width: 300px;
     height: 300px;
     bottom: -100px;
     right: -100px;
     z-index: -1;
+    opacity: 0.7;
 
     @include breakpoint.breakpoint(md) {
       width: 500px;
