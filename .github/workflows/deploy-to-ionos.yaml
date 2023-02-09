@@ -110,6 +110,14 @@ jobs:
           action: update-status
           status: ${{ job.status }}
 
+      - name: Build Node assets
+        env:
+          CI: true
+          SITE_URL: ${{ steps.project.outputs.site-url }}
+        run: |
+          npm ci
+          npm run build
+
   notify-deployment-finished:
     needs: deploy-to-ionos
     if: ${{ github.event_name == 'workflow_dispatch' && always() }}
