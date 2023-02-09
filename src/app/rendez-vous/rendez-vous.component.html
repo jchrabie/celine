@@ -1,4 +1,4 @@
-<section>
+<section class="mt-10">
   <h2>Prendre rendez-vous</h2>
   <article>
     <header>
@@ -6,13 +6,13 @@
         <h3>Appel découverte <small>- 15 minutes</small></h3>
         <p>Gratuit</p>
       </div>
-      <button (click)="decouverteCalendar = true">Je prend rendez-vous</button>
+      <button (click)="decouverteToggle = !decouverteToggle">{{decouverteToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
     </header>
     <p>
       FACULTATIF : cet appel vous permet d'en savoir plus sur ce que la naturopathie peut vous apporter et le déroulé
       d'un accompagnement. Il ne vous engage pas à réserver une séance par la suite. Il ne constitue pas une consultation.
     </p>
-    <app-calendar *ngIf="decouverteCalendar" (openChanged)="decouverteCalendar = $event"></app-calendar>
+    <app-calendar *ngIf="decouverteToggle" (openChanged)="decouverteToggle = $event"></app-calendar>
   </article>
   <article id="naturo">
     <header>
@@ -20,7 +20,7 @@
         <h3>Scéance naturopatique <small>- 1h30</small></h3>
         <p>70€</p>
       </div>
-      <button (click)="naturoCalendar = true">Je prend rendez-vous</button>
+      <button (click)="naturoToggle = !naturoToggle">{{naturoToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
     </header>
     <p>
       La naturopathie est une médecine non conventionnelle qui intervient idéalement en prévention. </p>
@@ -30,8 +30,8 @@
       gagner en qualité de vie.
     </p>
     <app-calendar
-      *ngIf="naturoCalendar"
-      (openChanged)="naturoCalendar = $event"
+      *ngIf="naturoToggle"
+      (openChanged)="naturoToggle = $event"
       calendarPath="naturopathie-reflexologie">
     </app-calendar>
   </article>
@@ -41,7 +41,7 @@
         <h3>Réflexologie plantaire <small>- 1h</small></h3>
         <p>70€</p>
       </div>
-      <button (click)="reflexoCalendar = true">Je prend rendez-vous</button>
+      <button (click)="reflexoToggle = !reflexoToggle">{{reflexoToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
     </header>
     <p>
       La réflexologie est un massage des pieds d'origine chinoise.
@@ -54,6 +54,6 @@
       Un toucher spécifique localise les tensions et les débloquent. Incroyablement détendant, cette
       technique active la circulation sanguine au niveau des pieds, effaçant les contraintes de la journée.
     </p>
-    <app-calendar *ngIf="reflexoCalendar" (openChanged)="reflexoCalendar = $event" calendarPath="naturopathie-reflexologie"></app-calendar>
+    <app-calendar *ngIf="reflexoToggle" (openChanged)="reflexoToggle = $event" calendarPath="naturopathie-reflexologie"></app-calendar>
   </article>
 </section>

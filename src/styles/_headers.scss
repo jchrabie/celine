@@ -1,8 +1,56 @@
 h2:not(.custom-header) {
-  @apply font-bold text-2xl mb-12 pl-12 pl-10 leading-10 py-10;
+  @apply
+  font-bold
+  text-2xl
+  leading-10
+  my-10
+  relative
+  inline-block
+  bg-no-repeat
+  py-4
+  px-8
+  bg-cover
+  rounded-xl
+  text-white
+  mx-20;
+  background-image: url(/assets/svg/title.svg);
+
+  small {
+    @apply
+      block
+      text-white
+      absolute
+      -bottom-6
+      bg-no-repeat
+      py-1
+      px-2
+      bg-cover
+      -rotate-6
+      text-base
+      rounded-lg
+      left-1/2
+      -translate-x-1/2
+      whitespace-nowrap;
+
+    background-image: url(/assets/svg/subtitle.svg);
+
+  }
 
   @screen md {
-    @apply text-3xl pl-40;
+    @apply text-3xl ml-40;
+  }
+
+  &:before, &:after {
+    @apply h-8 w-8 block absolute;
+
+  }
+
+  &:before {
+    @apply content-before -top-6 -left-8;
+  }
+
+  &:after {
+    @apply content-after -bottom-6 -right-8;
   }
 }
 

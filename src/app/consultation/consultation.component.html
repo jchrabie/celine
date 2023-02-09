@@ -1,33 +1,40 @@
-<section class="white-section">
-  <h2>Déroulement d'une consultation</h2>
+<section class="white-section pt-10">
+  <h2>Déroulement d'une consultation <small>En naturopathie</small></h2>
 
-  <div class="px-10 grid gap-x-12 gap-y-10 grid-rows-[auto_auto_auto] lg:grid-cols-3 lg:grid-rows-1 justify-center align-center">
-    <div class="px-10">
-      <p class="font-bold text-center text-slate-500 text-4xl">1</p>
-      <h3 class="font-bold text-center text-secondary text-2xl">Etat des lieux</h3>
-      <p class="font-bold text-center">de votre situation individuelle dans sa globalité</p>
+  <div class="deroulement">
+    <div class="deroulement-step">
+      <p class="deroulement-step-number">1</p>
+      <h3 class="deroulement-step-title">Etat des lieux</h3>
+      <p class="deroulement-step-description">de votre situation individuelle dans sa globalité</p>
     </div>
-    <div class="px-10">
-      <p class="font-bold text-center text-slate-500 text-4xl">2</p>
-      <h3 class="font-bold text-center text-secondary text-2xl">Conseil personnalisé</h3>
-      <p class="font-bold text-center">retranscrits en détails dans une fiche récapitulative : alimentation, micronutrition, etc …</p>
+    <div class="deroulement-step">
+      <p class="deroulement-step-number">2</p>
+      <h3 class="deroulement-step-title">Conseil personnalisé</h3>
+      <p class="deroulement-step-description">retranscrits en détails dans une fiche récapitulative : alimentation,
+        micronutrition, etc …</p>
     </div>
-    <div class="px-10">
-      <p class="font-bold text-center text-slate-500 text-4xl">3</p>
-      <h3 class="font-bold text-center text-secondary text-2xl">Fiches complémentaires</h3>
-      <p class="font-bold text-center">En fonction de vos besoins : liste de courses type, recettes, listes d’aliments, techniques de respiration, illustrations, etc …</p>
+    <div class="deroulement-step">
+      <p class="deroulement-step-number">3</p>
+      <h3 class="deroulement-step-title">Fiches complémentaires</h3>
+      <p class="deroulement-step-description">En fonction de vos besoins : liste de courses type, recettes, listes d’aliments,
+        techniques de respiration, illustrations, etc …</p>
     </div>
-    </div>
+  </div>
 </section>
 <section class="light-section">
-  <h2>Pour qui ?</h2>
+  <h2>Pour qui ? <small>Pour quoi ?</small></h2>
   <ul class="px-20 list-disc flex flex-col gap-12">
-    <li><p class="font-bold">Pour toutes celles et tous ceux qui souhaitent se sentir mieux dans leur corps et retrouver un équilibre.</p></li>
-    <li><p class="font-bold">Thématiques abordées : Thyroïde, syndrome des ovaires polykystiques (SOPK), règles douloureuses, syndrome prémenstruel, infections à répétition, mycoses, vaginoses, fibromes, ménopause, troubles digestifs, …</p></li>
-    <li><p>Si vous avez un doute, vous pouvez d’abord <span class="font-bold">réserver un appel découverte gratuit</span> afin de poser toutes vos questions et décider ensuite si vous souhaitez ou non entamer une démarche en naturopathie. Je vous réponds avec honnêteté !</p></li>
+    <li><p class="font-bold">Pour toutes celles et tous ceux qui souhaitent se sentir mieux dans leur corps et retrouver
+      un équilibre.</p></li>
+    <li><p class="font-bold">Thématiques abordées : Thyroïde, syndrome des ovaires polykystiques (SOPK), règles
+      douloureuses, syndrome prémenstruel, infections à répétition, mycoses, vaginoses, fibromes, ménopause, troubles
+      digestifs, …</p></li>
+    <li><p>Si vous avez un doute, vous pouvez d’abord <span
+      class="font-bold">réserver un appel découverte gratuit</span> afin de poser toutes vos questions et décider
+      ensuite si vous souhaitez ou non entamer une démarche en naturopathie. Je vous réponds avec honnêteté !</p></li>
   </ul>
 </section>
 <div class="flex justify-center mt-10">
   <a class="button big" [routerLink]="['/rendez-vous']" fragment="naturo">
-    Je prend rendez-vous</a>
+    Je prend rendez-vous !</a>
 </div>

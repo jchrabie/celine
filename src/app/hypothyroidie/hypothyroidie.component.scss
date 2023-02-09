@@ -1,0 +1,19 @@
+ul, ol, p, h3, h4 {
+  @apply mx-auto py-4 w-4/5;
+
+  li {
+    @apply ml-6 my-2;
+  }
+}
+
+h4 {
+  @apply font-bold;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ol {
+  @apply list-decimal;
+}

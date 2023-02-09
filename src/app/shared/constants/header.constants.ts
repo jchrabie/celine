@@ -39,15 +39,6 @@ export const headers: Header[] = [
     enabled: true,
   },
   {
-    type: 'e-book',
-    title: 'E-book',
-    name: 'E-book',
-    imagePath: 'https://www.celine-naturopathe.fr/assets/e-book.jpg',
-    description: 'E-book',
-    canonical: 'https://www.celine-naturopathe.fr/e-book',
-    enabled: true,
-  },
-  {
     type: 'rendez-vous',
     title: 'Prendre rendez-vous',
     name: 'Rendez-vous',

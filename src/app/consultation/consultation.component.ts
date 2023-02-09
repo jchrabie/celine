@@ -4,6 +4,7 @@ import { LayoutService } from '../shared/services/layout.service';
 
 @Component({
   templateUrl: './consultation.component.html',
+  styleUrls: ['./consultation.component.scss'],
 })
 export class ConsultationComponent extends AbstractLayoutComponent implements AfterViewInit {
   constructor(protected override layoutService: LayoutService) {

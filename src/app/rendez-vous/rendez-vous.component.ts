@@ -9,9 +9,9 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./rendez-vous.component.scss'],
 })
 export class RendezVousComponent extends AbstractLayoutComponent implements AfterViewInit {
-  reflexoCalendar = false;
-  naturoCalendar = false;
-  decouverteCalendar = false;
+  reflexoToggle = false;
+  naturoToggle = false;
+  decouverteToggle = false;
 
   constructor(
     protected override layoutService: LayoutService,

@@ -1,40 +1,22 @@
 @use 'src/styles/breakpoint';
 
 nav {
-  display: grid;
-  grid-gap: var(--spacer-5);
-  grid-template-columns: minmax(40px, auto) 1fr;
-  padding: var(--spacer-2) var(--spacer-4);
-  margin: 0;
-  align-items: center;
-  background-color: white;
+  @apply grid gap-8 m-0 py-4 items-center bg-white shadow z-50 w-full px-6;
+  grid-template-columns: minmax(40px, auto) auto 1fr;
+
+  @screen md {
+    @apply gap-16 px-10;
+  }
 
   .nav-list {
-    justify-self: flex-end;
-    gap: var(--spacer-4);
-    grid-template-columns: repeat(6, auto);
-    margin: 0;
+    @apply justify-self-end gap-6 m-0;
+    grid-template-columns: repeat(5, minmax(120px, auto));
 
     a {
-      position: relative;
-
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: var(--spacer-3);
-        right: var(--spacer-3);
-        height: 2px;
-        background: var(--primary-light30-color);
-      }
+      @apply flex justify-center gap-6;
 
       &:hover, &.active {
-        font-weight: 700;
-        text-decoration: none;
-
-        &:after {
-          height: 4px;
-        }
+        @apply font-bold no-underline;
       }
     }
   }

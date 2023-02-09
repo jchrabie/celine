@@ -6,12 +6,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#4a8c72',
+        primary: '#44816b',
         'primary-light': '#d5f3e8',
-        secondary: '#e0b24d'
-      }
+        'primary-dark': '#3a6e5a',
+        secondary: '#deb891',
+        'secondary-light': '#f4e8d8'
+      },
+      content: {
+        'after': 'url(/assets/svg/after.svg)',
+        'before': 'url(/assets/svg/before.svg)',
+      },
     },
   },
   plugins: [],
-  important: true,
 }

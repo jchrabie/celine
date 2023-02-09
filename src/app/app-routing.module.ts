@@ -12,14 +12,15 @@ const routes: Routes = [
     path: 'consultation',
     loadChildren: () =>
       import('./consultation/consultation.module').then(
-        (consultation) => consultation.ConsultationModule
+        (c) => c.ConsultationModule
       ),
   },
+  { path: 'hypothyroidie', loadChildren: () => import('./hypothyroidie/hypothyroidie.module').then(h => h.HypothyroidieModule) },
   {
     path: 'rendez-vous',
     loadChildren: () =>
       import('./rendez-vous/rendez-vous.module').then(
-        (rendezVous) => rendezVous.RendezVousModule
+        (rv) => rv.RendezVousModule
       ),
   },
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
+  { path: 'hashimoto', loadChildren: () => import('./hashimoto/hashimoto.module').then(m => m.HashimotoModule) },
 ];
 
 @NgModule({
