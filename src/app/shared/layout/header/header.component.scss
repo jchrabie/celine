@@ -5,17 +5,18 @@ nav {
   grid-template-columns: minmax(40px, auto) auto 1fr;
 
   @screen md {
-    @apply gap-16 px-10;
+    @apply gap-10 px-10;
   }
 
   .nav-list {
-    @apply justify-self-end gap-6 m-0;
-    grid-template-columns: repeat(5, minmax(120px, auto));
+    @apply justify-self-end gap-4 m-0;
+    grid-template-columns: repeat(6, minmax(120px, auto));
 
     a {
       @apply flex justify-center gap-6;
 
-      &:hover, &.active {
+      &:hover,
+      &.active {
         @apply font-bold no-underline;
       }
     }

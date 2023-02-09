@@ -8,7 +8,7 @@ export const headers: Header[] = [
     imagePath: 'https://www.celine-naturopathe.fr/assets/logo.jpg',
     description: `Vous avez envie de prendre soin de vous, de prendre en charge votre santé et votre bien-être ou de (re)devenir acteur de votre santé ? Alors, il se pourrait bien que vous soyez au bon endroit !`,
     canonical: 'https://www.celine-naturopathe.fr',
-    enabled: false,
+    enabled: true,
   },
   {
     type: 'consultation',

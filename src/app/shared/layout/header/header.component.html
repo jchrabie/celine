@@ -2,22 +2,20 @@
   <a routerLink="/" aria-label="Retour à la page d'accueil">
     <img src="assets/img/logo.png" alt="Céline CHRABIE Naturopathe" class="w-10 md:w-14 lg:w-18">
   </a>
-  <a href="https://google.com" class="button" target="_blank">E-books</a>
+  <a href="https://google.com" class="button whitespace-nowrap" target="_blank">E-books</a>
 
   <ul class="hidden lg:grid list-none nav-list">
     <li *ngFor="let link of links">
-      <a [routerLink]="[link.type]" routerLinkActive="active" class="text-dark">{{link.name}}</a>
+      <a [routerLink]="[link.type]" routerLinkActive="active">{{link.name}}</a>
     </li>
   </ul>
 
-  <button class="block lg:hidden justify-self-end rounded-full p-2 h-10"
-      [matMenuTriggerFor]="menu"
-      aria-label="Menu">
+  <button class="block lg:hidden justify-self-end rounded-full p-2 h-10" [matMenuTriggerFor]="menu" aria-label="Menu">
     <mat-icon class="text-white">menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
     <button *ngFor="let link of links" mat-menu-item routerLinkActive="active">
-      <a [routerLink]="[link.type]"  class="text-dark">{{link.name}}</a>
+      <a [routerLink]="[link.type]">{{link.name}}</a>
     </button>
   </mat-menu>
 </nav>

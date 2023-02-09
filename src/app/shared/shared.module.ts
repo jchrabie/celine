@@ -12,7 +12,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { LayoutService } from './services/layout.service';
 import { AbstractLayoutComponent } from './layout/abstract-layout.component';
 import { TagService } from './services/tag.service';
-import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [

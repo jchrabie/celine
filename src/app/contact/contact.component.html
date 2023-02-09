@@ -1,18 +1,16 @@
-<section class="mt-10">
-  <h2>Me contacter</h2>
+<section class="mt-10 lg:grid grid-cols-2 grid-rows-[auto_1fr]">
+  <h2 class="col-span-2 w-fit">Me contacter</h2>
   <article>
     <img src="assets/img/logo.png" alt="Céline CHRABIE Naturopathe" class="logo">
     <div class="wrapper">
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">phone_iphone</mat-icon>
-        <a href="tel:+33610830253"
-           class="text-with-hover text-bold text-primary">
+        <a href="tel:+33610830253" class="text-with-hover text-bold text-primary">
           06 10 83 02 53</a>
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">mail_outline</mat-icon>
-        <a href="mailto:celinechrabie@outlook.com"
-           class="text-with-hover text-bold text-primary">
+        <a href="mailto:celinechrabie@outlook.com" class="text-with-hover text-bold text-primary">
           celinechrabie@outlook.com</a>
       </div>
       <div class="flex items-center mb-3">
@@ -21,12 +19,64 @@
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2" svgIcon="instagram"></mat-icon>
-        <a href="https://www.instagram.com/celine_naturopathie_44/" target="_blank" class="text-with-hover text-bold text-primary">@celine_naturopathie_44</a>
+        <a href="https://www.instagram.com/celine_naturopathie_44/" target="_blank"
+          class="text-with-hover text-bold text-primary">@celine_naturopathie_44</a>
       </div>
       <div class="flex items-center">
         <mat-icon class="mr-2" svgIcon="facebook"></mat-icon>
-        <a href="https://www.facebook.com/celinenaturopathie.naturopathie" target="_blank" class="text-with-hover text-bold text-primary">@Céline Naturopathie</a>
+        <a href="https://www.facebook.com/celinenaturopathie.naturopathie" target="_blank"
+          class="text-with-hover text-bold text-primary">@Céline Naturopathie</a>
       </div>
     </div>
+  </article>
+  <article>
+    <p>Les champs avec un * sont obligatoires</p>
+    <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)">
+      <div class="form-group">
+        <label for="email">Votre adresse e-mail *</label>
+        <input type="email" id="email" aria-describedby="email-error" formControlName="email" required>
+        <p *ngIf="formData.controls['email'].hasError('email')" class="text-red-500 text-sm" id="email-error">
+          Le format est incorrect
+        </p>
+        <p *ngIf="formData.controls['email'].hasError('required') && formData.controls['email'].dirty"
+          class="text-red-500 text-sm" id="email-error">
+          Le champs est requis
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="phone">Votre numéro de téléphone</label>
+        <input type="phone" id="phone" aria-describedby="phone-error" formControlName="phone">
+      </div>
+      <div class="form-group">
+        <label for="fullName">Votre nom et prénom *</label>
+        <input type="text" class="form-control" id="fullName" formControlName="fullName" required
+          aria-describedby="fullName-error">
+        <p *ngIf="formData.controls['fullName'].hasError('required') && formData.controls['fullName'].dirty"
+          class="text-red-500 text-sm" id="fullName-error">
+          Le champs est
+          requis
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="comment">Votre message *</label>
+        <textarea formControlName="comment" id="comment" required aria-describedby="comment-error"></textarea>
+        <p *ngIf="formData.controls['comment'].hasError('required') && formData.controls['comment'].dirty"
+          class="text-red-500 text-sm" id="comment-error">
+          Le champs est requis
+        </p>
+      </div>
+      <div class="flex items-start ">
+        <input id="checked-checkbox" type="checkbox" formControlName="concent">
+        <label for="checked-checkbox" class="ml-2 text-sm !font-normal">
+          En cochant cette case, j'accepte que mes données soient utilisées pour me recontacter dans le cadre de ma
+          demande. Aucun autre traitement ne sera effectué avec mes informations. Pour lire notre politique de
+          traitement des données, se référer aux mentions légales.
+        </label>
+
+      </div>
+      <button class="bg-primary cursor-pointer disabled:cursor-not-allowed disabled:bg-primary-light" type="submit"
+        [disabled]="!formData.valid">Envoyer le
+        formulaire</button>
+    </form>
   </article>
 </section>
