@@ -25,7 +25,7 @@ export class ContactComponent extends AbstractLayoutComponent {
   onSubmit(value: any) {
     this.contact.postMessage(value)
       .subscribe(response => {
-        console.log(response)
+        this.formData.reset()
       }, error => {
         console.warn(error.responseText)
         console.log({ error })

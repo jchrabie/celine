@@ -8,6 +8,24 @@
 @import "styles/spacer";
 @import "styles/theme";
 
+* {
+  scrollbar-width: thin;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #507164;
+}
 
 html, body {
   height: 100%;
@@ -23,4 +41,7 @@ body {
 
 * {
   @apply text-gray-700 tracking-wide;
+}
+.mat-expansion-panel {
+  @apply shadow;
 }

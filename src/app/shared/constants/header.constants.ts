@@ -56,6 +56,15 @@ export const headers: Header[] = [
     canonical: 'https://www.celine-naturopathe.fr/contact',
     enabled: true,
   },
+  {
+    type: 'e-book',
+    title: 'E-book',
+    name: 'E-book',
+    imagePath: 'https://www.celine-naturopathe.fr/assets/e-book.jpg',
+    description: 'E-book naturopathie',
+    canonical: 'https://www.celine-naturopathe.fr/e-book',
+    enabled: false,
+  },
 ];
 
 export function getHeaderByType(type: string): Header {

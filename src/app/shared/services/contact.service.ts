@@ -6,7 +6,7 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class ContactService {
-  private api = 'https://mailthis.to/celine-naturo'
+  private api = 'https://mailthis.to/joel.chrabie@gmail.com'
   constructor(private http: HttpClient) { }
 
   postMessage(input: any) {

@@ -7,10 +7,12 @@ import { existsSync } from 'fs';
 import { join } from 'path';
 
 import { AppServerModule } from './src/main.server';
+const compression = require('compression')
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
+  server.use(compression())
   const distFolder = join(process.cwd(), 'dist/celine-naturo/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 

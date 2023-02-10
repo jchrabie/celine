@@ -1,0 +1,80 @@
+<section class="grid w-11/12 mx-auto lg:grid-cols-2 lg:grid-rows-1 grid-rows-[auto_auto] my-10 gap-10 items-start pb-0">
+  <article class="grid gap-4 md:grid-cols-[auto_1fr] lg:sticky top-10">
+    <ul class="flex gap-4 md:flex-col overflow-auto md:max-h-96 px-4 order-2 md:order-none">
+      <li
+        *ngFor="let image of images; trackBy: trackById"
+      >
+        <button class="p-0 w-16 h-16 rounded ring-secondary"
+                [class.ring-4]="selectedImage === image"
+                (click)="selectedImage = image"
+        >
+          <img [src]="'/assets/e-book/' + image.thumb" loading="lazy" [alt]="image.alt" class="w-full h-full">
+        </button>
+      </li>
+    </ul>
+    <input
+      type="image"
+      [src]="'/assets/e-book/' + selectedImage.path"
+      [alt]="selectedImage.alt"
+      loading="lazy"
+      class="w-full h-fit rounded-lg max-w-[30rem] mx-auto"/>
+  </article>
+  <article class="flex flex-col gap-y-4 sticky top-10">
+    <p class="text-sm"><strong>Type : </strong> Ebook </p>
+    <h3>La Naturopathie au service de la maladie d'Hashimoto et de l'hypothyroïdie</h3>
+    <p class="font-bold">Gratuit</p>
+    <ul>
+      <li class="ml-2 flex items-center">
+        <mat-icon class="text-secondary">check</mat-icon>
+        Conseil santé
+      </li>
+      <li class="ml-2 flex items-center">
+        <mat-icon class="text-secondary">check</mat-icon>
+        Conseil alimentation
+      </li>
+      <li class="ml-2 flex items-center">
+        <mat-icon class="text-secondary">check</mat-icon>
+        Conseil hygienne de vie
+      </li>
+      <li class="ml-2 flex items-center">
+        <mat-icon class="text-secondary">check</mat-icon>
+        Plantes
+      </li>
+    </ul>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <p class="font-bold text-lg flex items-center">
+              <mat-icon class="mr-2 text-primary">settings</mat-icon>Infos supplémentaires
+            </p>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <p>Suis ta comptabilité et l'évolution de ton chiffre d'affaires avec ce livre de recettes à imprimer chez toi. Avec et Sans TVA.</p>
+          <header>
+            <h1>Présentation du carnet</h1>
+          </header>
+          <div>Ce carnet te permettra de faire ta comptabilité en micro-entreprise et de suivre l'évolution de ton chiffre d'affaires.<br><br>En effet<span>&nbsp;</span><strong>le livre de recettes est obligatoire</strong><span>&nbsp;</span>et il doit être tenu via :</div>
+          <ul>
+            <li>un logiciel dédié</li>
+            <li>une solution papier</li>
+          </ul>
+          <div>Ce carnet te permettra de répondre à cette obligation comptable.<br><br>Voici ce que tu trouveras dans ces pages :&nbsp;</div>
+          <ul>
+            <li>1 fiche info entreprise</li>
+            <li>Des&nbsp;pages pour suivre tes encaissements</li>
+            <li>2 pages bilans (mensuel, trimestriel et annuel)</li>
+            <li>3 pages de graphiques à remplir et colorier</li>
+            <li>Des&nbsp;pages pour suivre tes dépenses</li>
+            <li>4 pages infos (seuils 2023, cotisations, liens utiles..)</li>
+            <li>une rubrique notes et une to do list une surprise gourmande …</li>
+          </ul>
+          <br>
+          <ul></ul>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <a href="assets/e-book/e-book_thyroide.pdf" class="button inline-block w-fit" target="_blank">Télécharger l'e-book</a>
+  </article>
+</section>

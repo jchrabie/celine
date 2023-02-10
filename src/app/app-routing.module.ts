@@ -35,6 +35,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   { path: 'hashimoto', loadChildren: () => import('./hashimoto/hashimoto.module').then(m => m.HashimotoModule) },
+  { path: 'e-book', loadChildren: () => import('./e-book/e-book.module').then(m => m.EBookModule) },
 ];
 
 @NgModule({
