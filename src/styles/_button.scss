@@ -1,5 +1,5 @@
 button, .button {
-  @apply rounded-lg bg-primary text-white px-4 py-2 shadow h-10 font-bold tracking-wide;
+  @apply rounded-lg bg-primary text-white px-4 py-2 shadow min-h-[2rem] font-bold tracking-wide;
 
   &.big {
     @apply text-lg h-12;

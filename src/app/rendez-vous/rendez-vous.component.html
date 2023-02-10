@@ -6,11 +6,15 @@
         <h3>Appel découverte <small>- 15 minutes</small></h3>
         <p>Gratuit</p>
       </div>
-      <button (click)="decouverteToggle = !decouverteToggle">{{decouverteToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
+      <div>
+        <button
+          (click)="decouverteToggle = !decouverteToggle">{{decouverteToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
+      </div>
     </header>
     <p>
       FACULTATIF : cet appel vous permet d'en savoir plus sur ce que la naturopathie peut vous apporter et le déroulé
-      d'un accompagnement. Il ne vous engage pas à réserver une séance par la suite. Il ne constitue pas une consultation.
+      d'un accompagnement. Il ne vous engage pas à réserver une séance par la suite. Il ne constitue pas une
+      consultation.
     </p>
     <app-calendar *ngIf="decouverteToggle" (openChanged)="decouverteToggle = $event"></app-calendar>
   </article>
@@ -20,7 +24,10 @@
         <h3>Scéance naturopatique <small>- 1h30</small></h3>
         <p>70€</p>
       </div>
-      <button (click)="naturoToggle = !naturoToggle">{{naturoToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
+      <div>
+        <button
+          (click)="naturoToggle = !naturoToggle">{{naturoToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
+      </div>
     </header>
     <p>
       La naturopathie est une médecine non conventionnelle qui intervient idéalement en prévention. </p>
@@ -41,7 +48,10 @@
         <h3>Réflexologie plantaire <small>- 1h</small></h3>
         <p>70€</p>
       </div>
-      <button (click)="reflexoToggle = !reflexoToggle">{{reflexoToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
+      <div>
+        <button
+          (click)="reflexoToggle = !reflexoToggle">{{reflexoToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
+      </div>
     </header>
     <p>
       La réflexologie est un massage des pieds d'origine chinoise.
@@ -54,6 +64,7 @@
       Un toucher spécifique localise les tensions et les débloquent. Incroyablement détendant, cette
       technique active la circulation sanguine au niveau des pieds, effaçant les contraintes de la journée.
     </p>
-    <app-calendar *ngIf="reflexoToggle" (openChanged)="reflexoToggle = $event" calendarPath="naturopathie-reflexologie"></app-calendar>
+    <app-calendar *ngIf="reflexoToggle" (openChanged)="reflexoToggle = $event"
+                  calendarPath="naturopathie-reflexologie"></app-calendar>
   </article>
 </section>
