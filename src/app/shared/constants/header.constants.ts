@@ -66,12 +66,12 @@ export const headers: Header[] = [
     enabled: false,
   },
   {
-    type: 'mention-legale',
+    type: 'mentions-legales',
     title: 'Mentions légales',
     name: 'Mentions légales',
-    imagePath: 'https://www.celine-naturopathe.fr/assets/mention-legale.jpg',
+    imagePath: 'https://www.celine-naturopathe.fr/assets/mentions-legales.jpg',
     description: 'Mentions légales naturopathie',
-    canonical: 'https://www.celine-naturopathe.fr/mention-legale',
+    canonical: 'https://www.celine-naturopathe.fr/mentions-legales',
     enabled: false,
   },
   {

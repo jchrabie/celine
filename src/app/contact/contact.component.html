@@ -11,8 +11,8 @@
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">mail_outline</mat-icon>
-        <a href="mailto:celinechrabie@outlook.com" class="text-with-hover text-bold text-primary">
-          celinechrabie@outlook.com</a>
+        <a href="mailto:chrabieceline@outlook.fr" class="text-with-hover text-bold text-primary">
+          chrabieceline@outlook.fr</a>
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary" svgIcon="pin"></mat-icon>
@@ -74,7 +74,12 @@
           traitement des données, se référer aux mentions légales.
         </label>
       </div>
-      <re-captcha formControlName="recaptcha" (resolved)="resolved($event)" siteKey="6LcVc3UkAAAAAM-StmGjfnuVX9JPLhiQqhMpj6yB"></re-captcha>
+      <re-captcha
+        formControlName="recaptcha"
+        siteKey="6LcolXYkAAAAAPb52Bxl9xTNvYpS5jQqRnKOODK4"
+        (resolved)="resolved(true)"
+        (errored)="resolved(false)"
+      ></re-captcha>
       <button class="bg-primary cursor-pointer disabled:cursor-not-allowed disabled:bg-primary-light" type="submit"
         [disabled]="!formData.valid">Envoyer le
         formulaire</button>

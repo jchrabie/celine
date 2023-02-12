@@ -37,6 +37,7 @@ const routes: Routes = [
   { path: 'hashimoto', loadChildren: () => import('./hashimoto/hashimoto.module').then(m => m.HashimotoModule) },
   { path: 'e-book', loadChildren: () => import('./e-book/e-book.module').then(m => m.EBookModule) },
   { path: 'politique-de-confidentialite', loadChildren: () => import('./politique-de-confidentialite/politique-de-confidentialite.module').then(m => m.PolitiqueDeConfidentialiteModule) },
+  { path: 'mentions-legales', loadChildren: () => import('./mentions-legales/mentions-legales.module').then(m => m.MentionsLegalesModule) },
 ];
 
 @NgModule({

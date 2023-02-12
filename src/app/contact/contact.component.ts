@@ -41,7 +41,7 @@ export class ContactComponent extends AbstractLayoutComponent {
       })
   }
 
-  resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response: ${captchaResponse}`);
+  resolved(captchaResponse: boolean) {
+    this.formData.controls['recaptcha'].setValue(captchaResponse);
   }
 }
