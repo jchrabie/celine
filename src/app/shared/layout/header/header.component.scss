@@ -1,7 +1,7 @@
 @use 'src/styles/breakpoint';
 
 nav {
-  @apply grid gap-8 m-0 py-4 items-center bg-white shadow z-50 w-full px-6 h-20;
+  @apply grid gap-8 m-0 py-4 items-center bg-white shadow z-50 w-full px-6;
   grid-template-columns: minmax(40px, auto) auto 1fr;
 
   @screen md {

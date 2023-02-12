@@ -83,6 +83,15 @@ export const headers: Header[] = [
     canonical: 'https://www.celine-naturopathe.fr/politique-de-confidentialite',
     enabled: false,
   },
+  {
+    type: 'accessibilite',
+    title: 'Accessibilité',
+    name: 'Accessibilité',
+    imagePath: 'https://www.celine-naturopathe.fr/assets/accessibilite.jpg',
+    description: 'Accessibilité naturopathie',
+    canonical: 'https://www.celine-naturopathe.fr/accessibilite',
+    enabled: false,
+  },
 ];
 
 export function getHeaderByType(type: string): Header {

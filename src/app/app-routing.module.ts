@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import {AccessibiliteComponent} from "./accessibilite/accessibilite.component";
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'e-book', loadChildren: () => import('./e-book/e-book.module').then(m => m.EBookModule) },
   { path: 'politique-de-confidentialite', loadChildren: () => import('./politique-de-confidentialite/politique-de-confidentialite.module').then(m => m.PolitiqueDeConfidentialiteModule) },
   { path: 'mentions-legales', loadChildren: () => import('./mentions-legales/mentions-legales.module').then(m => m.MentionsLegalesModule) },
+  { path: 'accessibilite', component: AccessibiliteComponent },
 ];
 
 @NgModule({

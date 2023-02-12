@@ -3,7 +3,7 @@ h2:not(.custom-header) {
   font-bold
   text-2xl
   leading-10
-  my-10
+  m-10
   relative
   inline-block
   bg-no-repeat
@@ -11,26 +11,25 @@ h2:not(.custom-header) {
   px-8
   bg-cover
   rounded-xl
-  text-white
-  mx-0;
+  text-white;
   background-image: url(/assets/svg/title.svg);
 
   small {
     @apply
-      block
-      text-white
-      absolute
-      -bottom-6
-      bg-no-repeat
-      py-1
-      px-2
-      bg-cover
-      -rotate-3
-      text-base
-      rounded-lg
-      left-1/2
-      -translate-x-1/2
-      whitespace-nowrap;
+    block
+    text-white
+    absolute
+    -bottom-6
+    bg-no-repeat
+    py-1
+    px-2
+    bg-cover
+    -rotate-3
+    text-base
+    rounded-lg
+    left-1/2
+    -translate-x-1/2
+    whitespace-nowrap;
 
     background-image: url(/assets/svg/subtitle.svg);
 
