@@ -12,7 +12,7 @@
   </div>
 
   <ul>
-    <li>
+    <li *ngIf="links.length">
       <h3>Site</h3>
       <ul class="horizontal">
         <li *ngFor="let link of links">
@@ -28,7 +28,7 @@
           <a routerLink="/mention-legales">Mentions légales</a>
         </li>
         <li>
-          <a routerLink="/accessibilite">Accessibilité</a>
+          <a routerLink="/politique-de-confidentialite">Politique de confidentialité</a>
         </li>
       </ul>
     </li>

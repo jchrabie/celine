@@ -1,5 +1,6 @@
 <section class="mt-10 lg:grid grid-cols-2 grid-rows-[auto_1fr]">
   <h2 class="col-span-2 w-fit">Me contacter</h2>
+  <p class="col-span-2 w-fit mx-auto">Le site est en cours de création, en attendant, vous pouvez me joindre : </p>
   <article>
     <img src="assets/img/logo.png" alt="Céline CHRABIE Naturopathe" class="logo">
     <div class="wrapper">
@@ -39,7 +40,7 @@
           Le format est incorrect
         </p>
         <p *ngIf="formData.controls['email'].hasError('required') && formData.controls['email'].dirty"
-          class="text-red-500 text-sm" id="email-error">
+          class="text-red-500 text-sm" id="email-errors">
           Le champs est requis
         </p>
       </div>
@@ -66,14 +67,14 @@
         </p>
       </div>
       <div class="flex items-start ">
-        <input id="checked-checkbox" type="checkbox" formControlName="concent">
+        <input id="checked-checkbox" type="checkbox" formControlName="consent">
         <label for="checked-checkbox" class="ml-2 text-sm !font-normal">
           En cochant cette case, j'accepte que mes données soient utilisées pour me recontacter dans le cadre de ma
           demande. Aucun autre traitement ne sera effectué avec mes informations. Pour lire notre politique de
           traitement des données, se référer aux mentions légales.
         </label>
-
       </div>
+      <re-captcha formControlName="recaptcha" (resolved)="resolved($event)" siteKey="6LcVc3UkAAAAAM-StmGjfnuVX9JPLhiQqhMpj6yB"></re-captcha>
       <button class="bg-primary cursor-pointer disabled:cursor-not-allowed disabled:bg-primary-light" type="submit"
         [disabled]="!formData.valid">Envoyer le
         formulaire</button>

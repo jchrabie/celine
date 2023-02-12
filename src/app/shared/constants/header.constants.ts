@@ -8,7 +8,7 @@ export const headers: Header[] = [
     imagePath: 'https://www.celine-naturopathe.fr/assets/logo.jpg',
     description: `Vous avez envie de prendre soin de vous, de prendre en charge votre santé et votre bien-être ou de (re)devenir acteur de votre santé ? Alors, il se pourrait bien que vous soyez au bon endroit !`,
     canonical: 'https://www.celine-naturopathe.fr',
-    enabled: true,
+    enabled: false,
   },
   {
     type: 'consultation',
@@ -18,7 +18,7 @@ export const headers: Header[] = [
     description:
       "Consultation",
     canonical: 'https://www.celine-naturopathe.fr/consultation',
-    enabled: true,
+    enabled: false,
   },
   {
     type: 'hypothyroidie',
@@ -27,7 +27,7 @@ export const headers: Header[] = [
     imagePath: 'https://www.celine-naturopathe.fr/assets/hypo.jpg',
     description: 'Hypothyroïdie',
     canonical: 'https://www.celine-naturopathe.fr/hypo',
-    enabled: true,
+    enabled: false,
   },
   {
     type: 'hashimoto',
@@ -36,7 +36,7 @@ export const headers: Header[] = [
     imagePath: 'https://www.celine-naturopathe.fr/assets/hashimoto.jpg',
     description: 'Hashimoto',
     canonical: 'https://www.celine-naturopathe.fr/hashimoto',
-    enabled: true,
+    enabled: false,
   },
   {
     type: 'rendez-vous',
@@ -45,7 +45,7 @@ export const headers: Header[] = [
     imagePath: 'https://www.celine-naturopathe.fr/assets/rendez-vous.jpg',
     description: 'Prendre rendez-vous',
     canonical: 'https://www.celine-naturopathe.fr/rendez-vous',
-    enabled: true,
+    enabled: false,
   },
   {
     type: 'contact',
@@ -54,7 +54,7 @@ export const headers: Header[] = [
     imagePath: 'https://www.celine-naturopathe.fr/assets/contact.jpg',
     description: 'Coordonnées pour me rencontrer',
     canonical: 'https://www.celine-naturopathe.fr/contact',
-    enabled: true,
+    enabled: false,
   },
   {
     type: 'e-book',
@@ -63,6 +63,24 @@ export const headers: Header[] = [
     imagePath: 'https://www.celine-naturopathe.fr/assets/e-book.jpg',
     description: 'E-book naturopathie',
     canonical: 'https://www.celine-naturopathe.fr/e-book',
+    enabled: false,
+  },
+  {
+    type: 'mention-legale',
+    title: 'Mentions légales',
+    name: 'Mentions légales',
+    imagePath: 'https://www.celine-naturopathe.fr/assets/mention-legale.jpg',
+    description: 'Mentions légales naturopathie',
+    canonical: 'https://www.celine-naturopathe.fr/mention-legale',
+    enabled: false,
+  },
+  {
+    type: 'politique-de-confidentialite',
+    title: 'Politique de confidentialité',
+    name: 'Politique de confidentialité',
+    imagePath: 'https://www.celine-naturopathe.fr/assets/politique-de-confidentialite.jpg',
+    description: 'Politique de confidentialité naturopathie',
+    canonical: 'https://www.celine-naturopathe.fr/politique-de-confidentialite',
     enabled: false,
   },
 ];

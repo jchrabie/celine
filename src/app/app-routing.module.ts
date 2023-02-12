@@ -24,18 +24,19 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'contact',
+    path: '',
     loadChildren: () =>
       import('./contact/contact.module').then(
         (contact) => contact.ContactModule
       ),
   },
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
   },
   { path: 'hashimoto', loadChildren: () => import('./hashimoto/hashimoto.module').then(m => m.HashimotoModule) },
   { path: 'e-book', loadChildren: () => import('./e-book/e-book.module').then(m => m.EBookModule) },
+  { path: 'politique-de-confidentialite', loadChildren: () => import('./politique-de-confidentialite/politique-de-confidentialite.module').then(m => m.PolitiqueDeConfidentialiteModule) },
 ];
 
 @NgModule({
