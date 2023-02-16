@@ -55,9 +55,22 @@ h2:not(.custom-header) {
 
 
 h3 {
-  @apply font-bold text-primary text-xl;
+  @apply font-bold text-primary text-xl my-3;
 
   small {
     @apply font-normal;
   }
+}
+
+
+h4, h4 strong {
+  @apply font-bold text-secondary-dark text-lg my-2;
+
+  small {
+    @apply font-normal;
+  }
+}
+
+p {
+  @apply my-2;
 }

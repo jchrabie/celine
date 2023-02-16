@@ -9,7 +9,16 @@ import {RecaptchaFormsModule, RecaptchaModule} from "ng-recaptcha";
 
 @NgModule({
   declarations: [ContactComponent],
-  imports: [CommonModule, ContactRoutingModule, MatIconModule, MatSnackBarModule, ReactiveFormsModule, FormsModule, RecaptchaModule, RecaptchaFormsModule,],
+  imports: [
+    CommonModule,
+    ContactRoutingModule,
+    FormsModule,
+    MatIconModule,
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
+  ],
   exports: [ContactComponent],
 })
 export class ContactModule {

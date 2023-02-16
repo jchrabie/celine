@@ -33,7 +33,10 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    loadChildren: () =>
+      import('./home/home.module').then(
+        (home) => home.HomeModule
+      ),
   },
   { path: 'hashimoto', loadChildren: () => import('./hashimoto/hashimoto.module').then(m => m.HashimotoModule) },
   { path: 'e-book', loadChildren: () => import('./e-book/e-book.module').then(m => m.EBookModule) },
@@ -45,7 +48,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      useHash: true,
+      useHash: false,
       scrollPositionRestoration: 'disabled',
       anchorScrolling: 'enabled',
     }),

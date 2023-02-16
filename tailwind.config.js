@@ -10,7 +10,8 @@ module.exports = {
         'primary-light': '#d5f3e8',
         'primary-dark': '#3a6e5a',
         secondary: '#deb891',
-        'secondary-light': '#f4e8d8'
+        'secondary-light': '#f4e8d8',
+        'secondary-dark': '#B18E6A'
       },
       content: {
         'after': 'url(/assets/svg/after.svg)',

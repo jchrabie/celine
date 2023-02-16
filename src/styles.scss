@@ -4,6 +4,7 @@
 
 @import "styles/button";
 @import "styles/headers";
+@import "styles/input";
 @import "styles/section";
 @import "styles/spacer";
 @import "styles/theme";
@@ -42,6 +43,7 @@ body {
 * {
   @apply text-gray-700 tracking-wide;
 }
+
 .mat-expansion-panel {
   @apply shadow;
 }

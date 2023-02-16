@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { EBookRoutingModule } from './e-book-routing.module';
-import { EBookComponent } from './e-book.component';
+import {EBookRoutingModule} from './e-book-routing.module';
+import {EBookComponent} from './e-book.component';
 import {MatIconModule} from "@angular/material/icon";
-import {MatExpansionModule} from "@angular/material/expansion";
+import {RecaptchaFormsModule, RecaptchaModule} from "ng-recaptcha";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -15,7 +17,11 @@ import {MatExpansionModule} from "@angular/material/expansion";
     CommonModule,
     EBookRoutingModule,
     MatIconModule,
-    MatExpansionModule
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
   ]
 })
-export class EBookModule { }
+export class EBookModule {
+}

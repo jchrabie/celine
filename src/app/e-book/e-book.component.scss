@@ -1,0 +1,33 @@
+form {
+  @apply h-0 hidden;
+  transition: 1s height ease;
+
+  &.toggled {
+    @apply h-auto block;
+  }
+}
+
+
+input[type="radio"] {
+  @apply h-0 w-0 opacity-0 p-0;
+
+  + label {
+    @apply relative cursor-pointer mb-4 mr-4 rounded;
+
+    @screen md {
+      @apply mr-0;
+    }
+  }
+
+  &:checked {
+    + label::after {
+
+    }
+  }
+
+  &:focus {
+    + label {
+      @apply ring-primary ring-2
+    }
+  }
+}

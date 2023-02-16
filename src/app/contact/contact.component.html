@@ -2,16 +2,16 @@
   <h2 class="col-span-2 w-fit mx-10">Me contacter</h2>
   <p class="col-span-2 w-4/5 mx-auto">Le site est en cours de création, en attendant, vous pouvez me joindre : </p>
   <article>
-    <img src="assets/img/logo.png" alt="Céline CHRABIE Naturopathe" class="logo">
+    <img alt="Céline CHRABIE Naturopathe" class="logo" src="assets/img/logo.png">
     <div class="wrapper">
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">phone_iphone</mat-icon>
-        <a href="tel:+33610830253" class="text-with-hover text-bold text-primary">
+        <a class="text-with-hover text-bold text-primary" href="tel:+33610830253">
           06 10 83 02 53</a>
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">mail_outline</mat-icon>
-        <a href="mailto:chrabieceline@outlook.fr" class="text-with-hover text-bold text-primary">
+        <a class="text-with-hover text-bold text-primary" href="mailto:chrabieceline@outlook.fr">
           chrabieceline@outlook.fr</a>
       </div>
       <div class="flex items-center mb-3">
@@ -20,69 +20,71 @@
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2" svgIcon="instagram"></mat-icon>
-        <a href="https://www.instagram.com/bien_avec_sa_thyroide_/" target="_blank"
-          class="text-with-hover text-bold text-primary">@bien_avec_sa_thyroide_</a>
+        <a class="text-with-hover text-bold text-primary" href="https://www.instagram.com/bien_avec_sa_thyroide_/"
+           target="_blank">@bien_avec_sa_thyroide_</a>
       </div>
       <div class="flex items-center">
         <mat-icon class="mr-2" svgIcon="facebook"></mat-icon>
-        <a href="https://www.facebook.com/celinenaturopathie.naturopathie" target="_blank"
-          class="text-with-hover text-bold text-primary">@Céline Naturopathie</a>
+        <a class="text-with-hover text-bold text-primary" href="https://www.facebook.com/celinenaturopathie.naturopathie"
+           target="_blank">@Céline Naturopathie</a>
       </div>
     </div>
   </article>
   <article>
     <p>Les champs avec un * sont obligatoires</p>
-    <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)">
+    <form (ngSubmit)="onSubmit(formData.value)" [formGroup]="formData">
       <div class="form-group">
         <label for="email">Votre adresse e-mail *</label>
-        <input type="email" id="email" aria-describedby="email-error" formControlName="email" required>
+        <input aria-describedby="email-error" formControlName="email" id="email" required type="email">
         <p *ngIf="formData.controls['email'].hasError('email')" class="text-red-500 text-sm" id="email-error">
           Le format est incorrect
         </p>
         <p *ngIf="formData.controls['email'].hasError('required') && formData.controls['email'].dirty"
-          class="text-red-500 text-sm" id="email-errors">
+           class="text-red-500 text-sm" id="email-errors">
           Le champs est requis
         </p>
       </div>
       <div class="form-group">
         <label for="phone">Votre numéro de téléphone</label>
-        <input type="phone" id="phone" aria-describedby="phone-error" formControlName="phone">
+        <input aria-describedby="phone-error" formControlName="phone" id="phone" type="phone">
       </div>
       <div class="form-group">
         <label for="fullName">Votre nom et prénom *</label>
-        <input type="text" class="form-control" id="fullName" formControlName="fullName" required
-          aria-describedby="fullName-error">
+        <input aria-describedby="fullName-error" class="form-control" formControlName="fullName" id="fullName" required
+               type="text">
         <p *ngIf="formData.controls['fullName'].hasError('required') && formData.controls['fullName'].dirty"
-          class="text-red-500 text-sm" id="fullName-error">
+           class="text-red-500 text-sm" id="fullName-error">
           Le champs est
           requis
         </p>
       </div>
       <div class="form-group">
         <label for="comment">Votre message *</label>
-        <textarea formControlName="comment" id="comment" required aria-describedby="comment-error"></textarea>
+        <textarea aria-describedby="comment-error" formControlName="comment" id="comment" required></textarea>
         <p *ngIf="formData.controls['comment'].hasError('required') && formData.controls['comment'].dirty"
-          class="text-red-500 text-sm" id="comment-error">
+           class="text-red-500 text-sm" id="comment-error">
           Le champs est requis
         </p>
       </div>
       <div class="flex items-start ">
-        <input id="checked-checkbox" type="checkbox" formControlName="consent">
-        <label for="checked-checkbox" class="ml-2 text-sm !font-normal">
+        <input formControlName="consent" id="checked-checkbox" type="checkbox">
+        <label class="ml-2 text-sm !font-normal" for="checked-checkbox">
           En cochant cette case, j'accepte que mes données soient utilisées pour me recontacter dans le cadre de ma
           demande. Aucun autre traitement ne sera effectué avec mes informations. Pour lire notre politique de
           traitement des données, se référer aux mentions légales.
         </label>
       </div>
       <re-captcha
+        (errored)="resolved(false)"
+        (resolved)="resolved(true)"
         formControlName="recaptcha"
         siteKey="6LcolXYkAAAAAPb52Bxl9xTNvYpS5jQqRnKOODK4"
-        (resolved)="resolved(true)"
-        (errored)="resolved(false)"
       ></re-captcha>
-      <button class="bg-primary cursor-pointer disabled:cursor-not-allowed disabled:bg-primary-light" type="submit"
-        [disabled]="!formData.valid">Envoyer le
-        formulaire</button>
+      <button
+        [disabled]="!formData.valid"
+        class="bg-primary cursor-pointer disabled:cursor-not-allowed disabled:bg-primary-light disabled:text-gray-800 mt-4"
+        type="submit">Envoyer le message
+      </button>
     </form>
   </article>
 </section>

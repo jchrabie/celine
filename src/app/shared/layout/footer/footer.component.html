@@ -1,6 +1,6 @@
-<footer class="bg-gray-100">
+<footer>
   <div class="flex md:flex-col md:justify-between md:gap-0 gap-12">
-    <img src="assets/img/logo.png" alt="Céline CHRABIE Naturopathe" loading="lazy">
+    <img alt="Céline CHRABIE Naturopathe" loading="lazy" src="assets/img/logo.png">
     <div class="text-sm">
       <p class="md:mt-4">
         <a href="tel:0610830253">06 10 83 02 53</a>
@@ -11,8 +11,10 @@
     </div>
   </div>
 
-  <ul>
-    <li *ngIf="links.length">
+  </div>
+
+  <ul *ngIf="links.length">
+    <li>
       <h3>Site</h3>
       <ul class="horizontal">
         <li *ngFor="let link of links">
@@ -26,12 +28,13 @@
     class="col-span-2 w-full flex justify-between pt-5 md:gap-32 gap-12 m-auto items-center border-t border-gray-600">
     <p class="text-sm">
       &copy; 2023 Céline Naturopathie. Tout droits réservés. -
-      <a routerLink="/mentions-legales" class="font-bold">Mentions légales</a> -
-      <a routerLink="/politique-de-confidentialite" class="font-bold">Politique de confidentialité</a> -
-      <a routerLink="/accessibilite" class="font-bold">Accessibilité : <span class="text-green-500">conforme</span></a>
+      <a class="font-bold" routerLink="/mentions-legales">Mentions légales</a> -
+      <a class="font-bold" routerLink="/politique-de-confidentialite">Politique de confidentialité</a> -
+      <a class="font-bold" routerLink="/accessibilite">Accessibilité : <span
+        class="text-primary-dark">conforme</span></a>
     </p>
     <p>Site réalisé par
-      <a href="https://webster-dev.fr" class="font-bold text-primary" target="_blank">
+      <a class="font-bold text-primary-dark" href="https://webster-dev.fr" target="_blank">
         Webster
       </a>
     </p>
