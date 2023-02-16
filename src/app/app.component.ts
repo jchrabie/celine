@@ -63,6 +63,10 @@ export class AppComponent implements OnInit {
           header.description,
           header.imagePath
         );
+
+        document
+          .getElementsByTagName('main')[0]
+          .scroll({ top: 0, behavior: 'smooth' });
       });
   }
 }
