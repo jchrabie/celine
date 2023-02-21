@@ -1,0 +1,23 @@
+:host {
+  @apply justify-self-center;
+
+  figure {
+    @apply w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow pb-10;
+
+    figcaption {
+      @apply flex flex-col items-center;
+
+      p {
+        @apply w-24 h-24 mb-3 rounded-full -mt-12 shadow-lg bg-primary text-white flex justify-center items-center text-3xl;
+      }
+
+      .stars {
+        @apply flex gap-2;
+      }
+    }
+
+    blockquote {
+      @apply overflow-auto max-h-60 mt-4;
+    }
+  }
+}

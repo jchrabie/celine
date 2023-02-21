@@ -1,0 +1,95 @@
+<app-layout>
+  <p class="quoted"> Je suis <strong class="text-primary">Céline</strong> et je vous
+    accompagne pour retrouver un <strong class="text-primary">confort de vie</strong> en
+    optimisant
+    le fonctionnement de votre <strong class="text-primary">thyroïde</strong>.
+    <img alt="" aria-hidden="true" class="w-1/3 absolute -bottom-8 left-1/4"
+         src="/assets/svg/souligne.svg">
+  </p>
+</app-layout>
+<section class="white-section mt-12">
+  <article class="grid gap-5 md:grid-cols-3 !py-0 w-4/5 mx-auto  mt-12">
+    <div class="photo-wrapper">
+      <div class="photo">
+        <img alt="Céline CHRABIE" src="assets/img/celine.jpg">
+      </div>
+    </div>
+
+    <div class="block p-6 bg-secondary-light rounded-lg shadow-xl">
+      <h3>Mon parcours</h3>
+      <p class="text-justify"> J’ai toujours été fasciné par le fonctionnement de notre organisme et passionnée par
+        l’<strong>alimentation</strong>. Issue d’un cursus social, accompagner fait partie de mon parcours de
+        vie.</p>
+      <p class="text-justify">Je n’ai pas connu tout de suite la <strong>naturopathie</strong>,
+        j’y suis arrivée petit à petit en
+        cherchant les moyens pour <strong>apporter à mon corps le bon carburant</strong>. Esprit curieux et
+        scientifique, j’avais à cœur de creuser les informations que j’ai pu recevoir lors de ma
+        formation en BTS économie sociale et familiale. L’alimentation était principalement
+        évoquée, aussi je ne me contentais pas d’écouter passivement l’enseignement
+        proposé.</p>
+      <p class="text-justify"> Au fil de mes recherches, je me suis rendu compte que <strong>l’alimentation jouait un
+        rôle
+        vital</strong> et tout doucement je me suis dirigée vers la <strong>naturopathie</strong>.</p>
+      <p class="text-justify"> Je me suis donc naturellement (sans mauvais jeux de mots :D) formée à l’IFSH ou
+        l’enseignement prodigué était, grâce aux formateurs, d’une grande qualité humaine
+        et pédagogique. Evidemment, ce monde étant vaste, j’ai choisi de me spécialisée
+        dans <strong>les troubles de la thyroïde</strong> afin de vous accompagner au mieux.</p>
+    </div>
+  </article>
+  <article class="grid gap-5 md:grid-cols-3 !py-0 w-4/5 mx-auto  mt-12">
+    <div class="block p-6 bg-secondary-light rounded-lg shadow-xl">
+      <h3>Pourquoi la <strong>thyroïde</strong> ?</h3>
+      <p class="text-justify"> Mon mari étant atteint de la <strong>maladie d’Hashimoto</strong>,
+        je souhaitais <strong>améliorer son quotidien</strong> car les symptômes persistaient malgré le traitement
+        classique de la médecine conventionnelle.</p>
+      <p class="text-justify"> Lors du diagnostic, nous ignorions qu’une <strong>approche complémentaire</strong>
+        était possible et la seule solution était la prise d’hormones de synthèse. J’ai donc cherché à
+        comprendre comment notre petit papillon fonctionnait.</p>
+      <p class="text-justify"> Aujourd’hui, j’ai à cœur d’être à vos côtés pour <strong>vous informer et vous
+        guider</strong>
+        vers le chemin du <strong>mieux-être</strong>. Vous seul(e) trouverez VOTRE harmonie.</p>
+      <app-link link="/hashimoto">Accompagnement Hashimoto</app-link>
+      <app-link link="/hypothyroidie">Accompagnement Hypothyroïdie</app-link>
+    </div>
+
+    <div class="photo-wrapper">
+      <div class="photo">
+        <img alt="" src="assets/img/thyroid.jpeg">
+      </div>
+      <div class="lg:max-w-xs w-4/5 mx-auto">
+      </div>
+    </div>
+  </article>
+</section>
+<section class="light-section pt-10 ">
+  <h2>Déroulement d'une consultation</h2>
+  <app-deroulement [steps]="steps"></app-deroulement>
+  <div class="flex flex-col lg:flex-row justify-around gap-12 w-4/5 mx-auto justify-between mt-12">
+    <a
+      class="flex flex-col items-center bg-secondary-lighter border border-gray-200 rounded-lg shadow-xl md:flex-row md:max-w-xl hover:bg-gray-100"
+      routerLink="/rendez-vous">
+      <img alt=""
+           class="object-cover w-full rounded-t-lg h-96 md:h-full md:w-48 md:rounded-none md:rounded-l-lg"
+           src="/assets/img/cabinet.jpg">
+      <div class="flex flex-col justify-between p-4 leading-normal">
+        <h3>En Cabinet</h3>
+        <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so
+          far, in reverse chronological order.</p>
+        <app-link link="/rendez-vous">Prendre rendez-vous en cabinet</app-link>
+      </div>
+    </a>
+    <a
+      class="flex flex-col items-center bg-secondary-lighter rounded-lg shadow-xl md:flex-row md:max-w-xl hover:bg-gray-100"
+      routerLink="/rendez-vous">
+      <img alt=""
+           class="object-cover w-full rounded-t-lg h-96 md:h-full md:w-48 md:rounded-none md:rounded-l-lg"
+           src="/assets/img/cabinet.jpg">
+      <div class="flex flex-col justify-between p-4 leading-normal">
+        <h3>En Visio</h3>
+        <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so
+          far, in reverse chronological order.</p>
+        <app-link link="/rendez-vous">Prendre rendez-vous en visio</app-link>
+      </div>
+    </a>
+  </div>
+</section>

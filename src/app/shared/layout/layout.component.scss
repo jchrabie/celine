@@ -1,37 +1,16 @@
-@use 'src/styles/breakpoint';
-
-:host {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
 section {
-  display: flex;
-  position: relative;
-  min-height: 33vh;
-  align-items: center;
+  @apply flex relative items-center pt-4 pb-8;
+  height: 100vh;
 
   .background {
-    position: absolute;
-    background-size: cover;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: .2;
+    @apply absolute bg-cover bg-bottom top-0 bottom-0 right-0 left-0 opacity-40;
+  }
+
+  @screen sm {
+    height: 45vh;
   }
 }
 
 article {
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  width: 100%;
-  color: white;
-  background: var(--label-color);
-
-  @include breakpoint.breakpoint(lg) {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    padding: var(--spacer-5);
-  }
+  @apply justify-center py-4 w-full w-4/5 mx-auto z-10 h-full flex flex-col;
 }

@@ -1,6 +1,6 @@
-import { Injectable, Inject } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
-import { DOCUMENT } from '@angular/common';
+import {Inject, Injectable} from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
+import {DOCUMENT} from '@angular/common';
 
 class MetaTag {
   name: string;
@@ -27,7 +27,8 @@ export class TagService {
     private titleService: Title,
     private metaService: Meta,
     @Inject(DOCUMENT) private doc: Document
-  ) {}
+  ) {
+  }
 
   public setTitle(title: string): void {
     this.titleService.setTitle(`Céline CHRABIE | ${title}`);

@@ -1,18 +1,20 @@
 <nav>
   <h1>
-    <a routerLink="/" aria-label="Retour à la page d'accueil">
-      <img src="assets/img/logo.png" alt="Céline CHRABIE Naturopathe" class="w-10 md:w-14 lg:w-18">
+    <a aria-label="Retour à la page d'accueil" routerLink="/">
+      <img alt="Céline CHRABIE Naturopathe" class="w-10 md:w-14 lg:w-18" src="assets/img/logo.png">
     </a>
   </h1>
-  <a routerLink="/e-book" class="button whitespace-nowrap">E-book</a>
+  <a class="button" routerLink="/e-book">E-book spécial hypothyroïdie</a>
 
   <ul class="hidden lg:grid list-none nav-list">
     <li *ngFor="let link of links">
-      <a [routerLink]="[link.type]" routerLinkActive="active">{{link.name}}</a>
+      <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="[link.type]"
+         routerLinkActive="active">{{link.name}}</a>
     </li>
   </ul>
 
-  <button *ngIf="links.length" class="block lg:hidden justify-self-end rounded-full p-2 h-10" [matMenuTriggerFor]="menu" aria-label="Menu">
+  <button *ngIf="links.length" [matMenuTriggerFor]="menu" aria-label="Menu"
+          class="block lg:hidden justify-self-end rounded-full p-2 h-10">
     <mat-icon class="text-white">menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">

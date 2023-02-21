@@ -1,6 +1,6 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { LayoutService } from '../shared/services/layout.service';
-import { AbstractLayoutComponent } from '../shared/layout/abstract-layout.component';
+import {AfterViewInit, Component} from '@angular/core';
+import {LayoutService} from '../shared/services/layout.service';
+import {AbstractLayoutComponent} from '../shared/layout/abstract-layout.component';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +9,8 @@ import { AbstractLayoutComponent } from '../shared/layout/abstract-layout.compon
 })
 export class HomeComponent
   extends AbstractLayoutComponent
-  implements AfterViewInit
-{
+  implements AfterViewInit {
+
   constructor(protected override layoutService: LayoutService) {
     super(layoutService);
   }
@@ -20,8 +20,8 @@ export class HomeComponent
 
     this.layoutService.layoutConfiguration$.next({
       ...this.layoutService.layoutConfiguration$.value,
-      title: 'Céline CHRABIE',
-      backgroundImage: 'fond-nature.jpg',
+      title: 'Votre Naturopathe en LOIRE ATLANTIQUE',
+      backgroundImage: 'plage.jpg',
     });
   }
 }

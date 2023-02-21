@@ -1,14 +1,9 @@
 <section *ngIf="layoutConfiguration$ | async as layoutConfiguration">
-  <div class="background"
-       [style.background-image]="'url(assets/img/'+layoutConfiguration.backgroundImage+ ')'">
+  <div [style.background-image]="'url(assets/img/'+layoutConfiguration.backgroundImage+ ')'"
+       class="background">
   </div>
   <article>
-    <div class="p-5 flex flex-column items-center items-lg-baseline">
-      <div class="py-4">
-        <h1><span>{{layoutConfiguration.title}}</span></h1>
-      </div>
-      <ng-container *ngIf="layoutConfiguration.subtitle" [ngTemplateOutlet]="layoutConfiguration.subtitle"></ng-container>
-      <ng-container *ngIf="layoutConfiguration.body" [ngTemplateOutlet]="layoutConfiguration.body"></ng-container>
-    </div>
+    <h2 class="custom-header text-4xl font-bold">{{layoutConfiguration.title}}</h2>
+    <ng-content></ng-content>
   </article>
 </section>

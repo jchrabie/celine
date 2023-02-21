@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Header, Link } from './models';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter, map } from 'rxjs';
-import { TagService } from './shared/services/tag.service';
-import { getHeaderByType, getLinks } from './shared/constants/header.constants';
+import {Component, OnInit} from '@angular/core';
+import {MatIconRegistry} from '@angular/material/icon';
+import {DomSanitizer} from '@angular/platform-browser';
+import {Header, Link} from './models';
+import {NavigationEnd, Router} from '@angular/router';
+import {filter, map} from 'rxjs';
+import {TagService} from './shared/services/tag.service';
+import {getHeaderByType, getLinks} from './shared/constants/header.constants';
+import {Ville} from "./shared/models/ville";
 
 @Component({
   selector: 'app-root',
@@ -24,14 +25,14 @@ export class AppComponent implements OnInit {
     const icons: string[] = [
       'facebook',
       'instagram',
+      'immunology',
       'irido',
-      'jaune',
       'logo',
       'naturo',
       'pin',
       'phone',
       'reflexo',
-      'vert',
+      "thyroide",
       'webster',
     ];
 
@@ -52,10 +53,12 @@ export class AppComponent implements OnInit {
         map(() => this.router)
       )
       .subscribe(() => {
-        const urlArray = this.router.url.split('/');
-        const finalUrl = urlArray[urlArray.length - 1].replace(/\?.*/gi, '');
+        const urlArray = this.router.url.split('/')
+          .map(url => url.replace(/\?.*/gi, ''));
+        const path = urlArray[1];
+        const ville = urlArray.length > 2 ? urlArray[urlArray.length - 1] : null;
 
-        const header: Header = getHeaderByType(finalUrl);
+        const header: Header = getHeaderByType(path, ville as Ville);
 
         this.tagService.setSocialMediaTags(
           this.router.url,
@@ -66,7 +69,7 @@ export class AppComponent implements OnInit {
 
         document
           .getElementsByTagName('main')[0]
-          .scroll({ top: 0, behavior: 'smooth' });
+          .scroll({top: 0, behavior: 'smooth'});
       });
   }
 }

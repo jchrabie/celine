@@ -6,7 +6,6 @@
 @import "styles/headers";
 @import "styles/input";
 @import "styles/section";
-@import "styles/spacer";
 @import "styles/theme";
 
 * {
@@ -37,7 +36,7 @@ body {
   margin: 0;
   font-family: Poppins, "Helvetica Neue", sans-serif;
   overflow: hidden;
-  @include spacer();
+  @apply bg-secondary-lighter
 }
 
 * {

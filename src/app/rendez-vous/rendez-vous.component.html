@@ -1,5 +1,5 @@
-<section class="mt-10">
-  <h2>Prendre rendez-vous</h2>
+<h2>Prendre rendez-vous</h2>
+<section class="white-section">
   <article>
     <header>
       <div>
@@ -8,7 +8,7 @@
       </div>
       <div>
         <button
-          (click)="decouverteToggle = !decouverteToggle">{{decouverteToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
+          (click)="decouverteToggle = !decouverteToggle">{{decouverteToggle ? 'Fermer le calendrier' : 'Je prends rendez - vous'}}</button>
       </div>
     </header>
     <p>
@@ -16,9 +16,11 @@
       d'un accompagnement. Il ne vous engage pas à réserver une séance par la suite. Il ne constitue pas une
       consultation.
     </p>
-    <app-calendar *ngIf="decouverteToggle" (openChanged)="decouverteToggle = $event"></app-calendar>
+    <app-calendar (openChanged)="decouverteToggle = $event" *ngIf="decouverteToggle"></app-calendar>
   </article>
-  <article id="naturo">
+</section>
+<section class="light-section" id="naturo">
+  <article>
     <header>
       <div>
         <h3>Scéance naturopatique <small>- 1h30</small></h3>
@@ -26,7 +28,7 @@
       </div>
       <div>
         <button
-          (click)="naturoToggle = !naturoToggle">{{naturoToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
+          (click)="naturoToggle = !naturoToggle">{{naturoToggle ? 'Fermer le calendrier' : 'Je prends rendez - vous'}}</button>
       </div>
     </header>
     <p>
@@ -37,12 +39,14 @@
       gagner en qualité de vie.
     </p>
     <app-calendar
-      *ngIf="naturoToggle"
       (openChanged)="naturoToggle = $event"
+      *ngIf="naturoToggle"
       calendarPath="naturopathie-reflexologie">
     </app-calendar>
   </article>
-  <article id="reflexo">
+</section>
+<section id="reflexo">
+  <article>
     <header>
       <div>
         <h3>Réflexologie plantaire <small>- 1h</small></h3>
@@ -50,7 +54,7 @@
       </div>
       <div>
         <button
-          (click)="reflexoToggle = !reflexoToggle">{{reflexoToggle ? 'Fermer le calendrier' : 'Je prend rendez - vous'}}</button>
+          (click)="reflexoToggle = !reflexoToggle">{{reflexoToggle ? 'Fermer le calendrier' : 'Je prends rendez - vous'}}</button>
       </div>
     </header>
     <p>
@@ -64,7 +68,7 @@
       Un toucher spécifique localise les tensions et les débloquent. Incroyablement détendant, cette
       technique active la circulation sanguine au niveau des pieds, effaçant les contraintes de la journée.
     </p>
-    <app-calendar *ngIf="reflexoToggle" (openChanged)="reflexoToggle = $event"
+    <app-calendar (openChanged)="reflexoToggle = $event" *ngIf="reflexoToggle"
                   calendarPath="naturopathie-reflexologie"></app-calendar>
   </article>
 </section>

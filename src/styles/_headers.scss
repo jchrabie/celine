@@ -11,8 +11,8 @@ h2:not(.custom-header) {
   px-8
   bg-cover
   rounded-xl
-  text-white;
-  background-image: url(/assets/svg/title.svg);
+  text-white
+  bg-secondary;
 
   small {
     @apply
@@ -29,10 +29,20 @@ h2:not(.custom-header) {
     rounded-lg
     left-1/2
     -translate-x-1/2
-    whitespace-nowrap;
+    whitespace-nowrap
+    bg-primary;
+  }
 
-    background-image: url(/assets/svg/subtitle.svg);
+  .light-section & {
+    @apply bg-primary;
 
+    &:before {
+      @apply content-before-light -top-6 -left-6;
+    }
+
+    &:after {
+      @apply content-after-light -bottom-6 -right-6;
+    }
   }
 
   @screen md {
@@ -40,21 +50,20 @@ h2:not(.custom-header) {
   }
 
   &:before, &:after {
-    @apply h-8 w-8 block absolute;
-
+    @apply h-8 w-8 block absolute text-secondary;
   }
 
   &:before {
-    @apply content-before -top-6 -left-8;
+    @apply content-before -top-6 -left-6;
   }
 
   &:after {
-    @apply content-after -bottom-6 -right-8;
+    @apply content-after -bottom-6 -right-6;
   }
 }
 
 
-h3 {
+h3, .h3 {
   @apply font-bold text-primary text-xl my-3;
 
   small {

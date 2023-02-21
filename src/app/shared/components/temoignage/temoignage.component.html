@@ -1,0 +1,12 @@
+<figure>
+  <figcaption>
+    <p aria-hidden="true">{{digram}}</p>
+    <h3>{{name}}</h3>
+    <div class="stars">
+      <mat-icon *ngFor="let star of starsArray" class="text-secondary">star</mat-icon>
+    </div>
+  </figcaption>
+  <blockquote>
+    <ng-content></ng-content>
+  </blockquote>
+</figure>

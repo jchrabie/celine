@@ -1,39 +1,47 @@
-.custom-header {
-  @apply font-bold text-2xl mb-12 pl-12 pl-10 text-gray-900;
-}
-
-article {
-  @apply flex justify-center items-center p-0 flex-col;
-
-  @screen lg {
-    @apply p-10 grid grid-cols-2;
-  }
-}
-
-mat-card {
-  max-width: 400px;
-  width: 80%;
-  margin: 0 10%;
-
-  .mat-card-subtitle {
-    color: rgba(75, 75, 73, 0.85);
-    font-weight: 500;
-  }
-
-  mat-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  mat-card-content p {
-    @apply py-2;
-  }
-}
-
 .sticky {
   @screen lg {
     position: sticky;
     top: 120px;
     align-self: baseline;
+  }
+}
+
+.card-wrapper {
+  @apply w-4/5 z-20 mx-auto grid gap-12 grid-cols-1 justify-center relative;
+
+  li {
+    @apply justify-self-center
+  }
+
+  h2 {
+    @apply col-span-1;
+  }
+
+  @screen lg {
+    @apply justify-between grid-cols-3 ;
+
+    h2 {
+      @apply col-span-3;
+    }
+  }
+}
+
+.mini-card {
+  @apply max-w-md p-6 bg-white rounded-lg shadow-2xl flex flex-col items-center bg-secondary-lighter justify-self-center;
+
+  &:hover {
+    @apply bg-secondary-light
+  }
+
+  @screen lg {
+    @apply max-w-xs;
+  }
+
+  &-svg {
+    @apply text-5xl w-10 h-10 mb-2 text-secondary #{!important};
+  }
+
+  &-content {
+    @apply mb-3 font-normal;
   }
 }

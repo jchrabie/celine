@@ -1,5 +1,5 @@
 .deroulement {
-  @apply  px-10 grid gap-x-12 gap-y-10 justify-center items-center mt-10;
+  @apply grid gap-x-12 gap-y-10 justify-center items-baseline mt-10 w-4/5 mx-auto;
 
   @screen lg {
     @apply grid-rows-1;

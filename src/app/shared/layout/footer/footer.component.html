@@ -10,30 +10,45 @@
       </address>
     </div>
   </div>
+  <div>
+    <h2 class="custom-header h3 text-center">Votre naturopathe spécialisée dans les troubles de la
+      <strong>thyroïde</strong> dans votre ville :
+    </h2>
+    <ul class="votre-naturopathe">
+      <li><a routerLink="/votre-naturopathe-a/nantes">
+        Naturopathe à Nantes</a></li>
+      <li><a routerLink="/votre-naturopathe-a/nantes">
+        Réflexologie à Nantes</a></li>
+      <li><a routerLink="/votre-naturopathe-a/blain">
+        Naturopathe à Blain</a></li>
+      <li><a routerLink="/votre-naturopathe-a/blain">
+        Réflexologie à Blain</a></li>
+      <li><a routerLink="/votre-naturopathe-a/rennes">
+        Naturopathe à Rennes</a></li>
+      <li><a routerLink="/votre-naturopathe-a/rennes">
+        Réflexologie à Rennes</a></li>
+      <li><a routerLink="/votre-naturopathe-a/heric">
+        Naturopathe à Heric</a></li>
+      <li><a routerLink="/votre-naturopathe-a/heric">
+        Réflexologie à Heric</a></li>
+    </ul>
 
   </div>
 
-  <ul *ngIf="links.length">
-    <li>
-      <h3>Site</h3>
-      <ul class="horizontal">
-        <li *ngFor="let link of links">
-          <a [routerLink]="[link.type]" class="text-dark">{{link.name}}</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
   <div
     class="col-span-2 w-full flex justify-between pt-5 md:gap-32 gap-12 m-auto items-center border-t border-gray-600">
-    <p class="text-sm">
-      &copy; 2023 Céline Naturopathie. Tout droits réservés. -
-      <a class="font-bold" routerLink="/mentions-legales">Mentions légales</a> -
-      <a class="font-bold" routerLink="/politique-de-confidentialite">Politique de confidentialité</a> -
-      <a class="font-bold" routerLink="/accessibilite">Accessibilité : <span
-        class="text-primary-dark">conforme</span></a>
-    </p>
-    <p>Site réalisé par
+    <div class="text-sm">
+      <p> &copy; 2023 Céline Naturopathie. Tout droits réservés.</p>
+      <ul class="votre-naturopathe !m-0 pl-4">
+        <li><a class="font-bold" routerLink="/mentions-legales">Mentions légales</a></li>
+        <li><a class="font-bold" routerLink="/politique-de-confidentialite">Politique de confidentialité</a>
+        </li>
+        <li><a class="font-bold" routerLink="/accessibilite">Accessibilité : <span
+          class="text-primary-dark">conforme</span></a>
+        </li>
+      </ul>
+    </div>
+    <p class="text-sm">Site réalisé par
       <a class="font-bold text-primary-dark" href="https://webster-dev.fr" target="_blank">
         Webster
       </a>

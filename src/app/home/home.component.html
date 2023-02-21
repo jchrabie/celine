@@ -1,112 +1,148 @@
+<app-layout>
+  <img alt="" aria-hidden="true" class="w-60 my-2" src="/assets/svg/primary-underline.svg">
+  <p class="text-lg mt-2 font-semi-bold">Une citation vraiment super inspirante de fou avec de la
+    philosophie
+    touça
+    touça!</p>
+  <p class="text-lg mt-2 font-semi-bold">Prendre le temps, faire une vraie pause, pour retrouver
+    bien-être, santé
+    et
+    équilibre: voilà ce que vous offre la naturopathie</p>
+</app-layout>
 <section class="white-section">
-  <article class="grid gap-5 md:grid-cols-2 md:mt-4 mt-6">
-    <img src="assets/img/celine.jpg" alt="Céline CHRABIE" class="m-5 rounded-full w-1/2 justify-self-center">
+  <ul class="card-wrapper -mt-12">
+    <li>
+      <a class="mini-card" routerLink="/a-propos">
+        <img alt="" aria-hidden="true" class="mini-card-svg" src="/assets/svg/person.svg">
+        <h3>A propos de moi</h3>
+        <p class="mini-card-content">
+          Je suis <strong class="text-primary">Céline</strong>, <strong class="text-primary">naturopathe sur
+          Blain</strong>. <br>
+          Je vous accompagne pour retrouver un <strong class="text-primary">confort de vie</strong> en optimisant
+          le fonctionnement de votre <strong class="text-primary">thyroïde</strong>.
+        </p>
+        <app-link link="/a-propos">En savoir plus</app-link>
+      </a>
+    </li>
+    <li>
+      <a class="mini-card" routerLink="/hypothyroidie">
+        <img alt="" aria-hidden="true" class="mini-card-svg" src="/assets/svg/thyroide.svg">
+        <h3>Hypothyroïdie</h3>
+        <p class="mini-card-content">
+          Soutenir la fonction thyroïdienne en utilisant
+          des <strong class="text-primary">approches naturelle</strong> telles que
+          l'<strong class="text-primary">alimentation</strong>, la <strong class="text-primary">supplémentation</strong>,
+          l'<strong class="text-primary">exercice</strong> et la
+          <strong class="text-primary">réduction du stress</strong>.
+        </p>
+        <app-link link="/hypothyroidie">En savoir plus</app-link>
+      </a>
+    </li>
+    <li>
+      <a class="mini-card" routerLink="/hashimoto">
+        <img alt="" aria-hidden="true" class="mini-card-svg" src="/assets/svg/immunology.svg">
+        <h3>Hashimoto</h3>
+        <p class="mini-card-content">
+          Gérer les symptômes de la <strong class="text-primary">maladie d'Hashimoto</strong>
+          en identifiant les <strong class="text-primary">déséquilibres nutritionnels</strong>, en améliorant
+          la <strong class="text-primary">digestion</strong>, en réduisant
+          l'<strong class="text-primary">inflammation</strong> et en soutenant la
+          <strong class="text-primary">fonction thyroïdienne</strong>.
 
-    <div class="p-5 lg:m-5 w-full">
-      <h2>Qui suis-je?</h2>
-      <p class="text-justify">
-        Hi there 👋 My name is Céline CHRABIE, I'm the maker of Happy Hues. One of my favorite things to do is launch
-        fun, useful and sometimes silly side-projects that I think should exist outside my head :)
-      </p>
-      <p class="text-justify">
-        My goal with Happy Hues was to try to remove the issue where you know you like a color palette, but you're
-        unsure about how to apply it to your design or illustration. I built this site to not only give you color
-        inspiration, but also give you an example as to how and where you could use the color
-      </p>
-      <div class="d-flex justify-content-center">
-      </div>
+        </p>
+        <app-link link="/hashimoto">En savoir plus</app-link>
+      </a>
+    </li>
+  </ul>
+</section>
+<section class="light-section">
+  <article class="w-4/5 mx-auto">
+    <h2 class="custom-header text-4xl font-bold py-12">Est ce que la naturopathie peut m'aider ?</h2>
+    <div class="flex justify-center items-center">
+      <a class="button" routerLink="/rendez-vous">Je prend un rendez-vous gratuit de découverte !</a>
     </div>
   </article>
 </section>
-<section class="light-section">
-  <article>
-    <div class="lg:mx-5 px-10 py-4 lg:py-0 sticky">
-      <h2>Mes prestations</h2>
-      <p class="px-10">Vous avez envie de prendre soin de vous, de prendre en charge votre santé et votre bien-être ou de
-        (re)devenir acteur de votre santé ?
-        <br>
-        Alors, il se pourrait bien que vous soyez au bon endroit !
-        <br>
-        J’espère que cet espace vous apportera de l’aide, de la joie et de petits moments de bonheur</p>
-    </div>
-    <div class="grid gap-10 justify-center py-4 lg:py-0">
-      <mat-card>
-        <mat-card-header>
-          <div mat-card-avatar>
-            <mat-icon svgIcon="naturo"></mat-icon>
-          </div>
-          <mat-card-title>Naturopathie</mat-card-title>
-          <mat-card-subtitle>Soin du corps et de l'esprit</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image
-             src="/assets/img/naturo.webp"
-             alt="">
-        <mat-card-content class="p-5">
-          <p>
-            La naturopathie est une médecine non conventionnelle qui intervient idéalement en prévention. </p>
-          <p>
-            Reconnue par l’OMS comme la troisième médecine traditionnelle après les médecines traditionnelles chinoise
-            et ayurvédique, elle permet grâce à des moyens naturels de préserver ou d’optimiser son capital santé, de
-            gagner en qualité de vie.
-          </p>
-        </mat-card-content>
-        <mat-card-actions class="p-5">
-          <a class="button" routerLink="/rendez-vous" fragment="naturo">Je prend rendez vous</a>
-        </mat-card-actions>
-      </mat-card>
-      <mat-card>
-        <mat-card-header>
-          <div mat-card-avatar>
-            <mat-icon svgIcon="reflexo"></mat-icon>
-          </div>
-          <mat-card-title>Reflexologie</mat-card-title>
-          <mat-card-subtitle>Soins plantaires</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image
-             src="/assets/img/reflexo.jpeg"
-             alt="">
-        <mat-card-content class="p-5">
-          <p>
-            La réflexologie est un massage des pieds d'origine chinoise.
-          </p>
-          <p>
-            Selon une médecine chinoise anscestrale, chaque zone réflexe correspondrait à un organe, une glande ou une
-            partie du corps qui se projetterait sur la plantedes pieds.
-          </p>
-          <p>
-            Un toucher spécifique localise les tensions et les débloquent. Incroyablement détendant, cette
-            technique active la circulation sanguine au niveau des pieds, effaçant les contraintes de la journée.
-          </p>
-        </mat-card-content>
-        <mat-card-actions class="p-5">
-          <a class="button" routerLink="/rendez-vous" fragment="reflexo">Je prend rendez vous</a>
-        </mat-card-actions>
-      </mat-card>
-      <mat-card>
-        <mat-card-header>
-          <div mat-card-avatar>
-            <mat-icon svgIcon="irido"></mat-icon>
-          </div>
-          <mat-card-title>Iridologie</mat-card-title>
-          <mat-card-subtitle>Diagnostique par l'iris</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image
-             src="/assets/img/irido.png"
-             alt="">
-        <mat-card-content class="p-5">
-          <p>
-            L'iridologie est une technique utilisée par certains médecins, homéopathes ainsi qu'en médecine
-            non-conventionnelle et particulièrement par les naturopathes.
-          </p>
-          <p>
-            Son l'objectif est d'étudier la partie colorée
-            de l'œil, l'iris, pour apprécier l'état de santé global d'une personne.
-          </p>
-        </mat-card-content>
-        <mat-card-actions class="p-5">
-          <a class="button" routerLink="/rendez-vous" fragment="decouverte">Je prend rendez vous</a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </article>
+<section>
+  <h2 class="custom-header text-4xl font-bold w-4/5 mx-auto">Témoignages</h2>
+  <ul class="card-wrapper flex-wrap !gap-y-24 list-inside mt-24">
+    <li>
+      <app-temoignage [stars]="5" name="Marie L.">
+        <p class="flex space-x-3 px-8">
+          Séance de rèflexologie très concluante et accompagnée de bons conseils par rapport à mon infection urinaire.
+          Très à l'écoute et échanges très intéressants sur l'hygiene de vie, je la recommande vivement.
+        </p>
+      </app-temoignage>
+    </li>
+    <li>
+      <app-temoignage [stars]="5" name="Claudine B.">
+        <p class="flex space-x-3 px-8">
+          Céline a été très à l'écoute suite à la découverte de mon cancer en février 2022. M'a bien ordonné de suivre
+          les
+          traitements médicaux et qu'elle ne se substituait pas à ces derniers. Très bons conseils et produits
+          naturels
+          pris afin de protéger au maximum mes organes sains. Je continue toujours certains de ces produits et
+          également
+          un changement d'alimentation qui font que je mange plus naturellement et cela fait réellement du bien. Je
+          recommande Céline qui prend régulièrement de mes nouvelles et toujours avec un petit conseil glissé en plus.
+        </p>
+      </app-temoignage>
+    </li>
+    <li>
+      <app-temoignage [stars]="5" name="Sophie T.">
+        <p class="flex space-x-3 px-8">
+          Superbe écoute, bons conseils pour mon accompagnement naturopathie je recommande
+        </p>
+      </app-temoignage>
+    </li>
+    <li>
+      <app-temoignage [stars]="5" name="Anais V.">
+        <p class="flex space-x-3 px-8">
+          Merci Céline.
+        </p>
+        <p class="flex mt-4 space-x-3 md:mt-6 px-8">
+          Je suis atteinte d'hypothyroïdie depuis plusieurs années et je voyais les effets secondaires comme un
+          passage obligé et avec lesquels il fallait faire et c'est tout.
+        </p>
+
+        <p class="flex mt-4 space-x-3 md:mt-6 px-8">
+          Mais grace à Céline j'ai pu comprendre bien mieux le fonctionnement de ma thyroïde et elle m'a transmis les
+          bases pour mieux vivre avec!
+        </p>
+
+        <p class="flex mt-4 space-x-3 md:mt-6 px-8">
+          Une approche douce, humaine et dévouée.
+        </p>
+      </app-temoignage>
+    </li>
+    <li>
+      <app-temoignage [stars]="5" name="Morgane B.">
+        <p class="flex space-x-3 px-8">
+          J'ai vu Céline pour un suivi en naturopathie. Elle est très à l'écoute et bienveillante à tout ce qu'on lui
+          dit.</p>
+        <p class="flex mt-4 space-x-3 md:mt-6 px-8">
+          Je l'ai aussi vu pour des séances de reflexologie plantaire. Je ne connaissais pas avant, je ne pensais pas
+          que ça allait autant me détendre et me faire lâcher prise.
+        </p>
+        <p class="flex mt-4 space-x-3 md:mt-6 px-8">
+          Je recommande 😊
+        </p>
+      </app-temoignage>
+    </li>
+    <li>
+      <app-temoignage [stars]="5" name="Diane D.">
+        <p class="flex space-x-3 px-8">
+          J'ai bénéficié de plusieurs séances de réflexo avec Céline , je conseille vivement . Professionnelle, douce et
+          à l'écoute c'est un vrai moment de reconnexion à soi .
+        </p>
+        <p class="flex space-x-3 px-8">
+          Des conseils, du temps , de la précision , Céline Chrabie est une thérapeute que je conseille vivement à tous
+          ceux et celles qui souhaitent prendre soin de leur santé .
+        </p>
+        <p class="flex space-x-3 px-8">
+          Merci à elle :)
+        </p>
+      </app-temoignage>
+    </li>
+  </ul>
 </section>

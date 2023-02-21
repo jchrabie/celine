@@ -12,7 +12,9 @@ import {LayoutService} from './services/layout.service';
 import {AbstractLayoutComponent} from './layout/abstract-layout.component';
 import {HttpClientModule} from "@angular/common/http";
 import {TagService} from './services/tag.service';
-import {DeroulementComponent} from './components/deroulement/deroulement.component';
+import {DeroulementComponent} from "./components/deroulement/deroulement.component";
+import {LinkComponent} from './components/link/link.component';
+import {TemoignageComponent} from './components/temoignage/temoignage.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,9 @@ import {DeroulementComponent} from './components/deroulement/deroulement.compone
     FooterComponent,
     HeaderComponent,
     LayoutComponent,
+    DeroulementComponent,
+    LinkComponent,
+    TemoignageComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +41,10 @@ import {DeroulementComponent} from './components/deroulement/deroulement.compone
     FooterComponent,
     HeaderComponent,
     LayoutComponent,
+    DeroulementComponent,
+    LinkComponent,
+    TemoignageComponent,
   ],
 })
-export class SharedModule {}
+export class SharedModule {
+}

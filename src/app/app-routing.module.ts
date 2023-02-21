@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {AccessibiliteComponent} from "./accessibilite/accessibilite.component";
 
 const routes: Routes = [
@@ -10,13 +9,16 @@ const routes: Routes = [
     redirectTo: '',
   },
   {
-    path: 'consultation',
+    path: 'a-propos',
     loadChildren: () =>
-      import('./consultation/consultation.module').then(
-        (c) => c.ConsultationModule
+      import('./a-propos/a-propos.module').then(
+        (a) => a.AProposModule
       ),
   },
-  { path: 'hypothyroidie', loadChildren: () => import('./hypothyroidie/hypothyroidie.module').then(h => h.HypothyroidieModule) },
+  {
+    path: 'hypothyroidie',
+    loadChildren: () => import('./hypothyroidie/hypothyroidie.module').then(h => h.HypothyroidieModule)
+  },
   {
     path: 'rendez-vous',
     loadChildren: () =>
@@ -27,22 +29,32 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./contact/contact.module').then(
-        (contact) => contact.ContactModule
-      ),
-  },
-  {
-    path: 'home',
-    loadChildren: () =>
       import('./home/home.module').then(
         (home) => home.HomeModule
       ),
   },
-  { path: 'hashimoto', loadChildren: () => import('./hashimoto/hashimoto.module').then(m => m.HashimotoModule) },
-  { path: 'e-book', loadChildren: () => import('./e-book/e-book.module').then(m => m.EBookModule) },
-  { path: 'politique-de-confidentialite', loadChildren: () => import('./politique-de-confidentialite/politique-de-confidentialite.module').then(m => m.PolitiqueDeConfidentialiteModule) },
-  { path: 'mentions-legales', loadChildren: () => import('./mentions-legales/mentions-legales.module').then(m => m.MentionsLegalesModule) },
-  { path: 'accessibilite', component: AccessibiliteComponent },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then(
+        (contact) => contact.ContactModule
+      ),
+  },
+  {path: 'hashimoto', loadChildren: () => import('./hashimoto/hashimoto.module').then(m => m.HashimotoModule)},
+  {path: 'e-book', loadChildren: () => import('./e-book/e-book.module').then(m => m.EBookModule)},
+  {
+    path: 'politique-de-confidentialite',
+    loadChildren: () => import('./politique-de-confidentialite/politique-de-confidentialite.module').then(m => m.PolitiqueDeConfidentialiteModule)
+  },
+  {
+    path: 'mentions-legales',
+    loadChildren: () => import('./mentions-legales/mentions-legales.module').then(m => m.MentionsLegalesModule)
+  },
+  {path: 'accessibilite', component: AccessibiliteComponent},
+  {
+    path: 'votre-naturopathe-a/:ville',
+    loadChildren: () => import('./votre-naturopathe-a/votre-naturopathe-a.module').then(m => m.VotreNaturopatheAModule)
+  },
 ];
 
 @NgModule({
@@ -55,4 +67,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

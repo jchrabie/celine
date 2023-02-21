@@ -1,0 +1,11 @@
+a {
+  @apply inline-flex items-center text-primary font-semibold;
+
+  &:hover {
+    @apply underline
+  }
+
+  svg {
+    @apply w-5 h-5 ml-2;
+  }
+}

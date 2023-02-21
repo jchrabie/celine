@@ -1,7 +1,6 @@
 footer {
-  @apply bg-white flex flex-col justify-center gap-x-20 gap-y-6 py-5 px-16;
+  @apply bg-secondary-lighter flex flex-col justify-center gap-x-20 gap-y-6 py-5 px-16;
   grid-template-rows: auto auto auto;
-  box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.1);
 
   & > * {
     place-self: center;
@@ -26,7 +25,7 @@ footer {
     }
   }
 
-  ul {
+  ul:not(.votre-naturopathe) {
     @apply flex justify-between gap-12 mt-8;
 
     @screen md {
@@ -35,6 +34,14 @@ footer {
 
     &.horizontal {
       @apply flex-col gap-2 mt-2;
+    }
+  }
+
+  .votre-naturopathe {
+    @apply list-disc flex flex-col gap-x-8 gap-y-4 mt-8 justify-start mx-10 marker:text-secondary;
+
+    @screen md {
+      @apply justify-center flex-row flex-wrap;
     }
   }
 

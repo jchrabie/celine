@@ -12,7 +12,7 @@ input[type="radio"] {
   @apply h-0 w-0 opacity-0 p-0;
 
   + label {
-    @apply relative cursor-pointer mb-4 mr-4 rounded;
+    @apply relative cursor-pointer mb-0 mr-4 rounded;
 
     @screen md {
       @apply mr-0;

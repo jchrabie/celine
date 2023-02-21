@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3082 700"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="m3082,0c-79.22,646.72-340,624-902,657-565.67,33.22-919.84-69.03-1865-72C-2.83,584,0,701,0,701c182.99,0,3081.45.12,3082,0"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" viewBox="0 0 3082 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>.cls-1 {
+      fill: #fffbf6;
+    }</style>
+  </defs>
+  <path class="cls-1"
+        d="m3082,0c-79.22,646.72-340,624-902,657-565.67,33.22-919.84-69.03-1865-72C-2.83,584,0,701,0,701c182.99,0,3081.45.12,3082,0"/>
+</svg>

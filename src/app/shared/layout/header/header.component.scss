@@ -1,7 +1,5 @@
-@use 'src/styles/breakpoint';
-
 nav {
-  @apply grid gap-8 m-0 py-4 items-center bg-white shadow z-50 w-full px-6;
+  @apply bg-secondary-lighter grid gap-8 m-0 py-4 items-center shadow z-50 w-full px-6;
   grid-template-columns: minmax(40px, auto) auto 1fr;
 
   @screen md {
@@ -10,14 +8,24 @@ nav {
 
   .nav-list {
     @apply justify-self-end gap-4 m-0;
-    grid-template-columns: repeat(6, minmax(120px, auto));
+    grid-template-columns: repeat(6, auto);
 
     a {
-      @apply flex justify-center gap-6;
+      @apply justify-center gap-6 inline-flex box-content;
+
+      &::after {
+        @apply content-[''] absolute w-0 h-1 bg-primary bottom-0;
+        transition: .25s all ease-in-out;
+      }
 
       &:hover,
       &.active {
-        @apply font-bold no-underline;
+        @apply no-underline relative;
+        text-shadow: 0px 0px 1px black;
+
+        &::after {
+          @apply w-full;
+        }
       }
     }
   }
