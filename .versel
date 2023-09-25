@@ -1,7 +1,7 @@
 {
   "version": 2,
   "public": true,
-  "name": "test-universal",
+  "name": "celine-naturo",
   "rewrites": [
     { "source": "/(.*)", "destination": "/api" }
   ],
