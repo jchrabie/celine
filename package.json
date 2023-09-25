@@ -9,11 +9,12 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev:ssr": "ng run celine-naturo:serve-ssr",
-    "serve:ssr": "node dist/celine-naturo/server/main.js",
-    "build:ssr": "ng build && ng run celine-naturo:server",
-    "prerender": "ng run celine-naturo:prerender",
-    "build:prod": "ng build --configuration production"
+    "build:prod": "ng build --configuration production",
+    "dev:ssr": "ng run test:serve-ssr",
+    "serve:ssr": "node dist/test/server/main.js",
+    "build:ssr": "ng build && ng run test:server",
+    "prerender": "ng run test:prerender",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
