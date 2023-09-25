@@ -1,0 +1,21 @@
+
+.mini-card {
+  @apply max-w-md p-6 bg-white rounded-lg shadow-2xl flex flex-col items-center bg-secondary-lighter justify-self-center h-full;
+  transition: .25s all ease-in-out;
+
+  &:hover {
+    @apply bg-secondary-light
+  }
+
+  @screen lg {
+    @apply max-w-xs;
+  }
+
+  &-svg {
+    @apply text-5xl w-10 h-10 mb-2 text-secondary #{!important};
+  }
+
+  &-content {
+    @apply mb-3 font-normal;
+  }
+}

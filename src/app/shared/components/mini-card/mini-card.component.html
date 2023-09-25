@@ -1,0 +1,19 @@
+<a *ngIf="link;else simpleCard" class="mini-card" [routerLink]="link">
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</a>
+
+<ng-template #simpleCard>
+  <span class="mini-card">  
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </span>
+</ng-template>
+
+
+<ng-template #content>
+  <img width="20px" height="20px" alt="" aria-hidden="true" class="mini-card-svg" [src]="'/assets/svg/' + icon + '.svg'">
+  <h3>{{title}}</h3>
+  <p class="mini-card-content">
+    <ng-content></ng-content>
+  </p>
+  <app-link *ngIf="link" [link]="link">En savoir plus</app-link>
+</ng-template>

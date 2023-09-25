@@ -1,11 +1,12 @@
+import { provideHttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './shared/shared.module';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FooterComponent, HeaderComponent } from './shared/layout';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,8 +14,10 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    SharedModule
+    FooterComponent,
+    HeaderComponent,
   ],
+  providers: [provideHttpClient()],
   exports: [RouterModule],
   bootstrap: [AppComponent],
 })

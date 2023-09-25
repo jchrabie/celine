@@ -20,8 +20,8 @@ export class HomeComponent
 
     this.layoutService.layoutConfiguration$.next({
       ...this.layoutService.layoutConfiguration$.value,
-      title: 'Votre Naturopathe en LOIRE ATLANTIQUE',
-      backgroundImage: 'plage.jpg',
+      title: 'Votre Naturopathe spécialisée dans la maladie d\'Hashimoto et l\'hypothyroïdie',
+      backgroundImage: 'plage.webp',
     });
   }
 }

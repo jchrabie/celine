@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   templateUrl: './accessibilite.component.html',
   styleUrls: ['./accessibilite.component.scss'],
 })
-export class AccessibiliteComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class AccessibiliteComponent {}

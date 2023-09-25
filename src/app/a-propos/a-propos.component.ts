@@ -10,24 +10,6 @@ import {LayoutService} from "../shared/services/layout.service";
 export class AProposComponent
   extends AbstractLayoutComponent
   implements AfterViewInit {
-  steps: Step[] = [
-    {
-      number: 1,
-      title: 'Etat des lieux',
-      description: 'de votre situation individuelle dans sa globalité',
-    },
-    {
-      number: 2,
-      title: 'Conseil personnalisé',
-      description: 'retranscrits en détails dans une fiche récapitulative : alimentation, micronutrition, etc …',
-    },
-    {
-      number: 3,
-      title: 'Fiches complémentaires',
-      description: 'En fonction de vos besoins : liste de courses type, recettes, listes d’aliments, techniques de respiration, illustrations, etc …',
-    },
-  ];
-
   constructor(protected override layoutService: LayoutService) {
     super(layoutService);
   }
@@ -38,7 +20,7 @@ export class AProposComponent
     this.layoutService.layoutConfiguration$.next({
       ...this.layoutService.layoutConfiguration$.value,
       title: 'A propos de moi',
-      backgroundImage: 'plage.jpg',
+      backgroundImage: 'plage.webp',
     });
   }
 }

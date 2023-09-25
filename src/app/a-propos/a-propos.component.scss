@@ -1,4 +1,4 @@
-article {
+.grid-article {
   @apply flex justify-center items-center flex-col;
 
   @screen lg {
@@ -8,22 +8,6 @@ article {
 
 .photo-wrapper {
   @apply flex flex-col justify-center items-center gap-10;
-}
-
-.quoted {
-  @apply relative max-w-2xl text-lg text-justify mt-12;
-
-  &:before, &:after {
-    @apply h-8 w-8 block absolute text-secondary;
-  }
-
-  &:before {
-    @apply content-quote-before -top-8 -left-8;
-  }
-
-  &:after {
-    @apply content-quote-after -bottom-6 -right-6;
-  }
 }
 
 .photo {
@@ -39,5 +23,25 @@ article {
     content: ' ';
     @apply w-full h-full bg-primary top-4 right-4 absolute bg-opacity-80;
     border-radius: 10rem 11rem 8rem 13rem;
+  }
+}
+
+.card-wrapper {
+  @apply w-4/5 z-20 mx-auto grid gap-12 grid-cols-1 justify-center relative;
+
+  li {
+    @apply justify-self-center
+  }
+
+  h2 {
+    @apply col-span-1;
+  }
+
+  @screen lg {
+    @apply justify-between grid-cols-3 ;
+
+    h2 {
+      @apply col-span-3;
+    }
   }
 }

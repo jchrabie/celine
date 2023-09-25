@@ -1,4 +1,4 @@
-import {Header, Link} from '../../models';
+import {Header, Link} from '../models';
 import {Ville} from "../models/ville";
 
 export const headers: Header[] = [
@@ -39,15 +39,15 @@ export const headers: Header[] = [
     canonical: 'https://www.celine-naturopathe.fr/hashimoto',
     enabled: true,
   },
-  {
-    type: 'rendez-vous',
-    title: 'Prendre rendez-vous',
-    name: 'Rendez-vous',
-    imagePath: 'https://www.celine-naturopathe.fr/assets/img/logo.jpg',
-    description: 'Prendre rendez-vous',
-    canonical: 'https://www.celine-naturopathe.fr/rendez-vous',
-    enabled: true,
-  },
+  // {
+  //   type: 'rendez-vous',
+  //   title: 'Prendre rendez-vous',
+  //   name: 'Rendez-vous',
+  //   imagePath: 'https://www.celine-naturopathe.fr/assets/img/logo.jpg',
+  //   description: 'Prendre rendez-vous',
+  //   canonical: 'https://www.celine-naturopathe.fr/rendez-vous',
+  //   enabled: false,
+  // },
   {
     type: 'contact',
     title: 'Contact',

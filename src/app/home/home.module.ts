@@ -1,11 +1,13 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-
-import {HomeRoutingModule} from './home-routing.module';
-import {HomeComponent} from "./home.component";
-import {MatIconModule} from "@angular/material/icon";
-import {RouterModule} from "@angular/router";
-import {SharedModule} from "../shared/shared.module";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MatIconModule } from "@angular/material/icon";
+import { RouterModule } from "@angular/router";
+import { LinkComponent } from '../shared/components/link/link.component';
+import { TemoignageComponent } from '../shared/components/temoignage/temoignage.component';
+import { LayoutComponent } from '../shared/layout/layout.component';
+import { HomeRoutingModule } from './home-routing.module';
+import { HomeComponent } from "./home.component";
+import { MiniCardComponent } from '../shared/components/mini-card/mini-card.component';
 
 
 @NgModule({
@@ -17,7 +19,10 @@ import {SharedModule} from "../shared/shared.module";
     HomeRoutingModule,
     MatIconModule,
     RouterModule,
-    SharedModule,
+    LinkComponent,
+    LayoutComponent,
+    TemoignageComponent,
+    MiniCardComponent,
   ]
 })
 export class HomeModule {

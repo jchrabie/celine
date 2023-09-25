@@ -1,14 +1,18 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Inject, Input, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
+  standalone: true,
 })
 export class CalendarComponent implements AfterViewInit{
   @ViewChild('calendar') calendar: ElementRef<HTMLElement> | undefined
   @Output() openChanged: EventEmitter<boolean> = new EventEmitter<boolean>()
   @Input() calendarPath: 'naturopathie-reflexologie' | 'decouverte' = 'decouverte'
+
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   ngAfterViewInit() {
     this.#initIframe();
@@ -26,7 +30,7 @@ export class CalendarComponent implements AfterViewInit{
   }
 
   #showIframe() {
-    const elem = document.createElement("iframe");
+    const elem = this.document.createElement("iframe");
     elem.src = `https://on.sprintful.com/${this.calendarPath}?hide-logo=false&hide-message=false?embeded=inline`;
     elem.width = "100%";
     elem.height = "100%";

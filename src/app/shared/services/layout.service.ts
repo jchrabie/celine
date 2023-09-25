@@ -1,5 +1,5 @@
 import { Injectable, TemplateRef } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 export interface LayoutConfiguration {
   backgroundImage: string;

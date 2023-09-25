@@ -1,6 +1,7 @@
 footer {
   @apply bg-secondary-lighter flex flex-col justify-center gap-x-20 gap-y-6 py-5 px-16;
   grid-template-rows: auto auto auto;
+  margin-top: -1px;
 
   & > * {
     place-self: center;

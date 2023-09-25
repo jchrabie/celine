@@ -19,13 +19,13 @@ const routes: Routes = [
     path: 'hypothyroidie',
     loadChildren: () => import('./hypothyroidie/hypothyroidie.module').then(h => h.HypothyroidieModule)
   },
-  {
-    path: 'rendez-vous',
-    loadChildren: () =>
-      import('./rendez-vous/rendez-vous.module').then(
-        (rv) => rv.RendezVousModule
-      ),
-  },
+  // {
+  //   path: 'rendez-vous',
+  //   loadChildren: () =>
+  //     import('./rendez-vous/rendez-vous.module').then(
+  //       (rv) => rv.RendezVousModule
+  //     ),
+  // },
   {
     path: '',
     loadChildren: () =>

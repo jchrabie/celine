@@ -1,8 +1,8 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { DOCUMENT } from "@angular/common";
+import { AfterViewInit, Component, Inject } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 import { AbstractLayoutComponent } from '../shared/layout/abstract-layout.component';
 import { LayoutService } from '../shared/services/layout.service';
-import {ViewportScroller} from "@angular/common";
-import {ActivatedRoute} from "@angular/router";
 
 @Component({
   templateUrl: './rendez-vous.component.html',
@@ -15,7 +15,7 @@ export class RendezVousComponent extends AbstractLayoutComponent implements Afte
 
   constructor(
     protected override layoutService: LayoutService,
-    private viewportScroller: ViewportScroller,
+    @Inject(DOCUMENT) private document: Document,
     private activatedRoute: ActivatedRoute,
   ) {
     super(layoutService);
@@ -26,7 +26,7 @@ export class RendezVousComponent extends AbstractLayoutComponent implements Afte
 
     this.activatedRoute.fragment
       .subscribe(fragment => {
-        const element = document.querySelector("#" + fragment)
+        const element = this.document.querySelector("#" + fragment)
         if (element) element.scrollIntoView()
       })
 

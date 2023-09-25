@@ -12,5 +12,29 @@ section {
 }
 
 article {
-  @apply justify-center py-4 w-full w-4/5 mx-auto z-10 h-full flex flex-col;
+  @apply justify-center py-4 w-4/5 mx-auto z-10 h-full flex flex-col;
+
+  h2 {
+    @apply text-2xl w-full max-w-2xl;
+
+    @screen sm {
+      @apply text-4xl;
+    }
+  }
+}
+
+.quoted {
+  @apply relative max-w-2xl text-lg text-justify mt-12;
+
+  &:before, &:after {
+    @apply h-8 w-8 block absolute text-secondary;
+  }
+
+  &:before {
+    @apply content-quote-before -top-8 -left-8;
+  }
+
+  &:after {
+    @apply content-quote-after -bottom-6 -right-6;
+  }
 }

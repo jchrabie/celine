@@ -1,9 +1,9 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import {VotreNaturopatheARoutingModule} from './votre-naturopathe-a-routing.module';
-import {VotreNaturopatheAComponent} from './votre-naturopathe-a.component';
-import {SharedModule} from "../shared/shared.module";
+import { DeroulementComponent } from '../shared/components/deroulement/deroulement.component';
+import { VotreNaturopatheARoutingModule } from './votre-naturopathe-a-routing.module';
+import { VotreNaturopatheAComponent } from './votre-naturopathe-a.component';
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import {SharedModule} from "../shared/shared.module";
   ],
   imports: [
     CommonModule,
-    SharedModule,
+    DeroulementComponent,
     VotreNaturopatheARoutingModule,
   ]
 })

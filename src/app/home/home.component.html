@@ -1,69 +1,38 @@
 <app-layout>
-  <img alt="" aria-hidden="true" class="w-60 my-2" src="/assets/svg/primary-underline.svg">
-  <p class="text-lg mt-2 font-semi-bold">Une citation vraiment super inspirante de fou avec de la
-    philosophie
-    touça
-    touça!</p>
-  <p class="text-lg mt-2 font-semi-bold">Prendre le temps, faire une vraie pause, pour retrouver
-    bien-être, santé
-    et
-    équilibre: voilà ce que vous offre la naturopathie</p>
+  Je vous offre mon expertise pour <strong>améliorer votre bien-être</strong> 
+  face aux problèmes <strong>thyroïdiens</strong>, tels que <strong>fatigue</strong>, <strong>stress</strong>, 
+  <strong>prise de poids</strong>, <strong>douleurs</strong>, et <strong>troubles du transit</strong>.
 </app-layout>
 <section class="white-section">
-  <ul class="card-wrapper -mt-12">
+  <ul class="card-wrapper -mt-8">
     <li>
-      <a class="mini-card" routerLink="/a-propos">
-        <img alt="" aria-hidden="true" class="mini-card-svg" src="/assets/svg/person.svg">
-        <h3>A propos de moi</h3>
-        <p class="mini-card-content">
-          Je suis <strong class="text-primary">Céline</strong>, <strong class="text-primary">naturopathe sur
-          Blain</strong>. <br>
-          Je vous accompagne pour retrouver un <strong class="text-primary">confort de vie</strong> en optimisant
-          le fonctionnement de votre <strong class="text-primary">thyroïde</strong>.
-        </p>
-        <app-link link="/a-propos">En savoir plus</app-link>
-      </a>
+      <app-mini-card link="/a-propos" title="A propos de moi" icon="person">
+        Je suis <strong class="text-primary">Céline naturopathe</strong>. J'exerce sur
+        <strong class="text-primary">Blain</strong> et en <strong class="text-primary">visio</strong>. <br>
+        Je vous accompagne pour retrouver un <strong class="text-primary">confort de vie</strong> en optimisant
+      </app-mini-card>
     </li>
     <li>
-      <a class="mini-card" routerLink="/hypothyroidie">
-        <img alt="" aria-hidden="true" class="mini-card-svg" src="/assets/svg/thyroide.svg">
-        <h3>Hypothyroïdie</h3>
-        <p class="mini-card-content">
-          Soutenir la fonction thyroïdienne en utilisant
-          des <strong class="text-primary">approches naturelle</strong> telles que
-          l'<strong class="text-primary">alimentation</strong>, la <strong class="text-primary">supplémentation</strong>,
-          l'<strong class="text-primary">exercice</strong> et la
-          <strong class="text-primary">réduction du stress</strong>.
-        </p>
-        <app-link link="/hypothyroidie">En savoir plus</app-link>
-      </a>
+      <app-mini-card link="/hypothyroidie" title="Hypothyroïdie" icon="thyroide">
+        Que vous soyez avec ou sans 
+        <strong class="text-primary">traitement</strong>, 
+        que vous ayez subi ou non une <strong class="text-primary">ablation</strong> 
+        de la thyroïde, je peux vous orienter vers le chemin du <strong class="text-primary">mieux-être</strong>.
+      </app-mini-card>
     </li>
     <li>
-      <a class="mini-card" routerLink="/hashimoto">
-        <img alt="" aria-hidden="true" class="mini-card-svg" src="/assets/svg/immunology.svg">
-        <h3>Hashimoto</h3>
-        <p class="mini-card-content">
-          Gérer les symptômes de la <strong class="text-primary">maladie d'Hashimoto</strong>
-          en identifiant les <strong class="text-primary">déséquilibres nutritionnels</strong>, en améliorant
-          la <strong class="text-primary">digestion</strong>, en réduisant
-          l'<strong class="text-primary">inflammation</strong> et en soutenant la
-          <strong class="text-primary">fonction thyroïdienne</strong>.
-
-        </p>
-        <app-link link="/hashimoto">En savoir plus</app-link>
-      </a>
+      <app-mini-card link="/hashimoto" title="Hashimoto" icon="immunology">
+        Si vous avez déclaré la maladie d'<strong class="text-primary">Hashimoto</strong>, 
+        je peux vous accompagner vers une régulation de votre <strong class="text-primary">système immunitaire</strong> 
+        et une diminution de l'<strong class="text-primary">inflammation</strong>.
+      </app-mini-card>
     </li>
   </ul>
+    <div class="flex justify-center items-center mt-20">
+      <a class="button" routerLink="/contact">Je prends un rendez-vous</a>
+    </div>
 </section>
 <section class="light-section">
-  <article class="w-4/5 mx-auto">
-    <h2 class="custom-header text-4xl font-bold py-12">Est ce que la naturopathie peut m'aider ?</h2>
-    <div class="flex justify-center items-center">
-      <a class="button" routerLink="/rendez-vous">Je prend un rendez-vous gratuit de découverte !</a>
-    </div>
-  </article>
-</section>
-<section>
   <h2 class="custom-header text-4xl font-bold w-4/5 mx-auto">Témoignages</h2>
   <ul class="card-wrapper flex-wrap !gap-y-24 list-inside mt-24">
     <li>
@@ -145,4 +114,7 @@
       </app-temoignage>
     </li>
   </ul>
+</section>
+<section class="w-4/5 mx-auto">
+  <iframe title="derniers posts instagram" loading="lazy" src="https://embedsocial.com/api/pro_hashtag/a9bea3c22a3312e9b2cffa1a1ce9868fdd91ba6f" width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0"></iframe>
 </section>

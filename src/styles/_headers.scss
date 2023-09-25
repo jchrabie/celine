@@ -12,7 +12,7 @@ h2:not(.custom-header) {
   bg-cover
   rounded-xl
   text-white
-  bg-secondary;
+  bg-primary-light;
 
   small {
     @apply
@@ -34,15 +34,6 @@ h2:not(.custom-header) {
   }
 
   .light-section & {
-    @apply bg-primary;
-
-    &:before {
-      @apply content-before-light -top-6 -left-6;
-    }
-
-    &:after {
-      @apply content-after-light -bottom-6 -right-6;
-    }
   }
 
   @screen md {
@@ -54,11 +45,11 @@ h2:not(.custom-header) {
   }
 
   &:before {
-    @apply content-before -top-6 -left-6;
+    @apply content-before-light -top-6 -left-6;
   }
 
   &:after {
-    @apply content-after -bottom-6 -right-6;
+    @apply content-after-light -bottom-6 -right-6;
   }
 }
 

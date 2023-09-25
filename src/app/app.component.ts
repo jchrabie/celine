@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {MatIconRegistry} from '@angular/material/icon';
-import {DomSanitizer} from '@angular/platform-browser';
-import {Header, Link} from './models';
-import {NavigationEnd, Router} from '@angular/router';
-import {filter, map} from 'rxjs';
-import {TagService} from './shared/services/tag.service';
-import {getHeaderByType, getLinks} from './shared/constants/header.constants';
-import {Ville} from "./shared/models/ville";
+import { Component, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter, map } from 'rxjs';
+import { Header, Link } from './shared/models';
+import { getHeaderByType, getLinks } from './shared/constants/header.constants';
+import { Ville } from "./shared/models/ville";
+import { TagService } from './shared/services/tag.service';
 
 @Component({
   selector: 'app-root',
