@@ -11,7 +11,7 @@
     "test": "ng test",
     "dev:ssr": "ng run celine-naturo:serve-ssr",
     "serve:ssr": "node dist/celine-naturo/server/main.js",
-    "build:ssr": "ng build && ng run celine-naturo:server",
+    "build:ssr": "ng build --configuration production && ng run celine-naturo:server",
     "prerender": "ng run celine-naturo:prerender",
     "build:prod": "ng build --configuration production",
     "vercel-build": "npm run build:ssr"
