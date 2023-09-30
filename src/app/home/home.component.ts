@@ -15,7 +15,7 @@ export class HomeComponent extends AbstractLayoutComponent implements AfterViewI
 
     this.#layoutService.layoutConfiguration$.next({
       ...this.#layoutService.layoutConfiguration$.value,
-      title: 'Votre Naturopathe spécialisée dans la maladie d\'Hashimoto et l\'hypothyroïdie',
+      title: 'Votre Naturopathe spécialisée dans la <strong>maladie d\'Hashimoto</strong> et l\'<strong>hypothyroïdie</strong>',
       backgroundImage: 'plage.webp',
     });
   }

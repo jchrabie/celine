@@ -50,7 +50,11 @@ footer {
     @apply font-bold;
   }
 
-  a:hover {
-    @apply underline;
+  a {
+    @apply font-semibold;
+    
+    &:hover {
+      @apply underline;
+    }
   }
 }

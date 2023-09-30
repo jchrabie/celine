@@ -3,7 +3,7 @@
        class="background">
   </div>
   <article>
-    <h2 class="custom-header font-bold w-4xl">{{layoutConfiguration.title}}</h2>
+    <h2 class="custom-header font-bold w-4xl" [innerHTML]="layoutConfiguration.title"></h2>
     <img width="60px" height="20px" alt="" aria-hidden="true" class="w-60 my-2" src="/assets/svg/primary-underline.svg">
     <p class="quoted">
       <ng-content></ng-content>

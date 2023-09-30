@@ -17,6 +17,11 @@ article {
   h2 {
     @apply text-2xl w-full max-w-2xl;
 
+    ::ng-deep strong {
+      @apply text-primary;
+      font-weight: 700;
+    }
+
     @screen sm {
       @apply text-4xl;
     }
