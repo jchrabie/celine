@@ -1,8 +1,8 @@
 :host {
-  @apply justify-self-center;
+  @apply justify-self-center block h-full;
 
   figure {
-    @apply w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow pb-10;
+    @apply w-full h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow pb-10;
 
     figcaption {
       @apply flex flex-col items-center;

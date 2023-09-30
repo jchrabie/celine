@@ -1,6 +1,5 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {AccessibiliteComponent} from "./accessibilite/accessibilite.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -50,11 +49,11 @@ const routes: Routes = [
     path: 'mentions-legales',
     loadChildren: () => import('./mentions-legales/mentions-legales.module').then(m => m.MentionsLegalesModule)
   },
-  {path: 'accessibilite', component: AccessibiliteComponent},
-  {
-    path: 'votre-naturopathe-a/:ville',
-    loadChildren: () => import('./votre-naturopathe-a/votre-naturopathe-a.module').then(m => m.VotreNaturopatheAModule)
-  },
+  {path: 'accessibilite', loadComponent: () => import('./accessibilite/accessibilite.component').then(a => a.AccessibiliteComponent)},
+  // {
+  //   path: 'votre-naturopathe-a/:ville',
+  //   loadChildren: () => import('./votre-naturopathe-a/votre-naturopathe-a.module').then(m => m.VotreNaturopatheAModule)
+  // },
 ];
 
 @NgModule({

@@ -25,3 +25,11 @@
     }
   }
 }
+
+iframe {
+  height: 460px;
+
+  @screen lg {
+    height: 560px;
+  }
+}

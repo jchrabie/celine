@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, inject} from '@angular/core';
 import {LayoutService} from '../shared/services/layout.service';
 import {AbstractLayoutComponent} from '../shared/layout/abstract-layout.component';
 
@@ -7,19 +7,14 @@ import {AbstractLayoutComponent} from '../shared/layout/abstract-layout.componen
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent
-  extends AbstractLayoutComponent
-  implements AfterViewInit {
-
-  constructor(protected override layoutService: LayoutService) {
-    super(layoutService);
-  }
-
+export class HomeComponent extends AbstractLayoutComponent implements AfterViewInit {
+  #layoutService = inject(LayoutService);
+  
   override ngAfterViewInit() {
     super.ngAfterViewInit();
 
-    this.layoutService.layoutConfiguration$.next({
-      ...this.layoutService.layoutConfiguration$.value,
+    this.#layoutService.layoutConfiguration$.next({
+      ...this.#layoutService.layoutConfiguration$.value,
       title: 'Votre Naturopathe spécialisée dans la maladie d\'Hashimoto et l\'hypothyroïdie',
       backgroundImage: 'plage.webp',
     });

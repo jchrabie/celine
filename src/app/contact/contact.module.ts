@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { provideHttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { RecaptchaFormsModule, RecaptchaModule } from "ng-recaptcha";
+import { LayoutComponent } from '../shared/layout';
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
 
@@ -14,6 +14,7 @@ import { ContactComponent } from './contact.component';
     CommonModule,
     ContactRoutingModule,
     FormsModule,
+    LayoutComponent,
     MatIconModule,
     MatSnackBarModule,
     ReactiveFormsModule,
