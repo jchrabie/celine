@@ -1,8 +1,8 @@
 section {
-  @apply p-0 flex-col bg-no-repeat bg-bottom pb-32;
+  @apply p-0 flex-col bg-no-repeat bg-bottom pb-32 -mt-1;
   background-size: 100%;
   min-height: 400px;
-  margin-top: -1px;
+  background-position: 0 calc(100% + 1px);
 
   &.white-section {
     background-image: url(/assets/svg/wave.svg);
@@ -11,19 +11,5 @@ section {
   &.light-section {
     background-image: url(/assets/svg/wave-white.svg);
     @apply bg-secondary-light;
-  }
-
-  &.light-section-double {
-    background-image: url(/assets/svg/wave-white.svg);
-    @apply bg-secondary-light relative;
-
-    &:after {
-      content: '';
-      background-image: url(/assets/svg/wave-white-reverse.svg);
-      background-size: 100%;
-      pointer-events: none;
-
-      @apply w-full top-0 absolute bg-no-repeat bg-top h-full;
-    }
   }
 }
