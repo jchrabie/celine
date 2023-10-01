@@ -18,8 +18,8 @@
     <mat-icon class="text-white">menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button *ngFor="let link of links" mat-menu-item routerLinkActive="active">
-      <a [routerLink]="[link.type]">{{link.name}}</a>
+    <button *ngFor="let link of links" mat-menu-item routerLinkActive="active" [routerLink]="[link.type]">
+      {{link.name}}
     </button>
   </mat-menu>
 </nav>

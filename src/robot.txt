@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap:https://celine-swart.vercel.app/assets/sitemap.xml
+Sitemap:https://celine-naturopathe.fr/assets/sitemap.xml
