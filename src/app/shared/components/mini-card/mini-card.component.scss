@@ -1,6 +1,6 @@
 
 .mini-card {
-  @apply max-w-md p-6 bg-white rounded-lg shadow-2xl flex flex-col items-center bg-secondary-lighter justify-self-center h-full;
+  @apply max-w-xs p-6 bg-white rounded-lg shadow-2xl flex flex-col items-center bg-secondary-lighter justify-self-center h-full;
   transition: .25s all ease-in-out;
 
   &:hover {

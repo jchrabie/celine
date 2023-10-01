@@ -1,24 +1,7 @@
 <app-layout>
   Votre naturopathe spécialisée dans les troubles de la <strong>thyroïde</strong> sur <strong>Blain</strong> ou en <strong>visio</strong>.
 </app-layout>
-<section class="white-section">
-  <h3 class="w-4/5 mx-auto my-10">Tarifs</h3>
-  <div class="flex md:justify-center md:flex-row flex-col justify-between gap-12 items-center md:items-stretch">
-    <app-mini-card title="Consultation" icon="naturo" subtitle="1h30 à 2h">
-      <span class="text-4xl font-black flex justify-center items-center h-52 w-full">60€</span>
-      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dolorum odio omnis inventore officia a ad cumque id!</span>
-    </app-mini-card>
-    <app-mini-card title="Consultation + CR" [icon]="['naturo', 'cr']" subtitle="1h30 à 2h avec un compte rendu détaillé">
-      <span class="text-4xl font-black flex justify-center items-center h-52 w-full">70€</span>
-      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dolorum odio omnis inventore officia a ad cumque id!</span>
-    </app-mini-card>
-    <app-mini-card title="Reflexologie" icon="reflexo" subtitle="1h">
-      <span class="text-4xl font-black flex justify-center items-center h-52 w-full">60€</span>
-      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dolorum odio omnis inventore officia a ad cumque id!</span>
-    </app-mini-card>
-  </div>
-</section>
-<section class="light-section lg:grid grid-cols-2 grid-rows-[auto_1fr] mb-10">
+<section class="white-section lg:grid grid-cols-2 grid-rows-[auto_1fr]">
   <article>
     <img width="60px" height="60px" alt="Céline CHRABIE Naturopathe" class="logo" src="assets/img/logo.png">
     <div class="wrapper">
@@ -106,4 +89,42 @@
       </button>
     </form>
   </article>
+</section>
+<section class="light-section">
+  <h3 class="w-4/5 mx-auto my-0 py-10">Tarifs</h3>
+  <div class="flex md:justify-center md:flex-row flex-col justify-between gap-12 items-center md:items-stretch flex-wrap">
+    <app-mini-card title="Consultation" icon="naturo" subtitle="1h30 à 2h">
+      <span class="text-4xl font-black flex justify-center items-center h-28 w-full">60€</span>
+      <ul class="min-h-[10rem] lg:min-w-[20rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
+        <li>
+          Une consultation entre 1h30 et 2h.
+        </li>
+      </ul>
+    </app-mini-card>
+    <app-mini-card title="Consultation + CR" [icon]="['naturo', 'cr']" subtitle="1h30 à 2h avec un compte rendu détaillé">
+      <span class="text-4xl font-black flex justify-center items-center h-28 w-full">70€</span>
+      <ul class="min-h-[10rem] lg:min-w-[20rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
+        <li>
+          Une consultation entre 1h30 et 2h.
+        </li>
+        <li>
+          Un compte rendu détaillé de notre séance.
+        </li>
+      </ul>
+    </app-mini-card>
+    <app-mini-card title="Consultation + CR + échange" [icon]="['naturo', 'cr', 'mail-notif']">
+      <span class="text-4xl font-black flex justify-center items-center h-28 w-full">80€</span>
+      <ul class="min-h-[10rem] lg:min-w-[20rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
+        <li>
+          Une consultation entre 1h30 et 2h.
+        </li>
+        <li>
+          Un compte rendu détaillé de notre séance.
+        </li>
+        <li>
+          Deux échanges par mail concernant la consultation ou un appel de 20 minutes.
+        </li>
+      </ul>
+    </app-mini-card>
+  </div>
 </section>

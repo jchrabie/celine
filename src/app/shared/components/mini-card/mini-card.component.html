@@ -22,8 +22,7 @@
   <ng-template #simpleImg>
   <img width="20px" height="20px" alt="" aria-hidden="true" class="mini-card-svg" [src]="'/assets/svg/' + icon + '.svg'">
   </ng-template>
-  <h3>{{title}}</h3>
-  <p *ngIf="subtitle" class="text-sm text-gray-500 m-0">({{subtitle}})</p>
+  <h3 class="text-center">{{title}}</h3>
   <p class="mini-card-content">
     <ng-content></ng-content>
   </p>
