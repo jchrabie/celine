@@ -1,13 +1,26 @@
 import 'zone.js/node';
 
 import { APP_BASE_HREF } from '@angular/common';
-import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { existsSync } from 'fs';
 import { join } from 'path';
 
-import { AppServerModule } from './src/main.server';
 const compression = require('compression')
+
+const xmlbuilder = require('xmlbuilder');
+
+// Define your application's routes
+const routes = [
+  '/',
+  '/a-propos',
+  '/hypothyroidie',
+  '/hashimoto',
+  '/e-book',
+  '/politique-de-confidentialite',
+  '/mentions-legales',
+  '/accessibilite',
+  '/contact',
+];  
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -15,11 +28,6 @@ export function app(): express.Express {
   server.use(compression())
   const distFolder = join(process.cwd(), 'dist/celine-naturo/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
-
-  // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
-  server.engine('html', ngExpressEngine({
-    bootstrap: AppServerModule,
-  }));
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
@@ -34,6 +42,19 @@ export function app(): express.Express {
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
     res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+  });
+
+  server.get('/sitemap.xml', (req, res) => {
+    const root = xmlbuilder.create('urlset', { version: '1.0', encoding: 'UTF-8' });
+    root.att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+
+    routes.forEach(route => {
+      const url = root.ele('url');
+      url.ele('loc', `https://bien-avec-sa-thyroide.com${route}`);
+    });
+
+    res.header('Content-Type', 'application/xml');
+    res.send(root.end({ pretty: true }));
   });
 
   return server;

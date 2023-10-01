@@ -1,7 +1,9 @@
 <ul class="deroulement">
-  <li *ngFor="let step of steps" class="deroulement-step">
-    <p class="deroulement-step-number">{{step.number}}</p>
-    <h3 class="deroulement-step-title">{{step.title}}</h3>
-    <p [innerHTML]="step.description" class="deroulement-step-description"></p>
-  </li>
+  @for ( step of steps; track step.number) {
+    <li class="deroulement-step">
+      <p class="deroulement-step-number">{{step.number}}</p>
+      <h3 class="deroulement-step-title">{{step.title}}</h3>
+      <p [innerHTML]="step.description" class="deroulement-step-description"></p>
+    </li>
+  }
 </ul>

@@ -1,16 +1,18 @@
 <nav>
   <h1>
-    <a aria-label="Retour à la page d'accueil" routerLink="/">
+    <a class="no-style" aria-label="Retour à la page d'accueil" routerLink="/">
       <img alt="Céline CHRABIE Naturopathe" class="w-10 md:w-14 lg:w-18" width="60px" height="60px" src="assets/img/logo.png">
     </a>
   </h1>
-  <a class="button" routerLink="/e-book">E-book spécial hypothyroïdie</a>
+  <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/e-book']" routerLinkActive="active">Commande ton e-book</a>
 
   <ul class="hidden lg:grid list-none nav-list">
-    <li *ngFor="let link of links">
-      <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="[link.type]"
-         routerLinkActive="active">{{link.name}}</a>
-    </li>
+    @for (link of links; track link.name) {
+      <li>
+        <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="[link.type]"
+          routerLinkActive="active">{{link.name}}</a>
+      </li>
+    }
   </ul>
 
   <button *ngIf="links.length" [matMenuTriggerFor]="menu" aria-label="Menu"
@@ -18,8 +20,10 @@
     <mat-icon class="text-white">menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button *ngFor="let link of links" mat-menu-item routerLinkActive="active" [routerLink]="[link.type]">
-      {{link.name}}
-    </button>
+     @for (link of links; track link.name) {
+      <button mat-menu-item routerLinkActive="active" [routerLink]="[link.type]">
+        {{link.name}}
+      </button>
+    }
   </mat-menu>
 </nav>

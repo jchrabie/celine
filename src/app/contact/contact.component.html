@@ -13,7 +13,7 @@
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">mail_outline</mat-icon>
         <a class="text-with-hover font-semibold text-primary hover:underline" href="mailto:chrabieceline@outlook.fr">
-          chrabieceline@outlook.fr</a>
+          chrabieceline&#64;outlook.fr</a>
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary" svgIcon="pin"></mat-icon>
@@ -22,13 +22,13 @@
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2" svgIcon="instagram"></mat-icon>
         <a class="text-with-hover font-semibold text-primary hover:underline" href="https://www.instagram.com/bien_avec_sa_thyroide_/"
-           target="_blank">@bien_avec_sa_thyroide_</a>
+           target="_blank">&#64;bien_avec_sa_thyroide_</a>
       </div>
       <div class="flex items-center">
         <mat-icon class="mr-2" svgIcon="facebook"></mat-icon>
         <a class="text-with-hover font-semibold text-primary hover:underline"
            href="https://www.facebook.com/celinenaturopathie.naturopathie"
-           target="_blank">@Céline Naturopathie</a>
+           target="_blank">&#64;Céline Naturopathie</a>
       </div>
     </div>
   </article>
@@ -51,11 +51,11 @@
         <input aria-describedby="phone-error" formControlName="phone" id="phone" type="phone">
       </div>
       <div class="form-group">
-        <label for="fullName">Votre nom et prénom *</label>
-        <input aria-describedby="fullName-error" class="form-control" formControlName="fullName" id="fullName" required
+        <label for="fullname">Votre nom et prénom *</label>
+        <input aria-describedby="fullname-error" class="form-control" formControlName="fullname" id="fullname" required
                type="text">
-        <p *ngIf="formData.controls['fullName'].hasError('required') && formData.controls['fullName'].dirty"
-           class="text-red-500 text-sm" id="fullName-error">
+        <p *ngIf="formData.controls['fullname'].hasError('required') && formData.controls['fullname'].dirty"
+           class="text-red-500 text-sm" id="fullname-error">
           Le champs est
           requis
         </p>
@@ -95,33 +95,39 @@
   <div class="flex md:justify-center md:flex-row flex-col justify-between gap-12 items-center md:items-stretch flex-wrap">
     <app-mini-card title="Consultation" icon="naturo" subtitle="1h30 à 2h">
       <span class="text-4xl font-black flex justify-center items-center h-28 w-full">60€</span>
-      <ul class="min-h-[10rem] lg:min-w-[20rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
-        <li>
-          Une consultation entre 1h30 et 2h.
+      <ul class="min-h-[10rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
+        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
+          <mat-icon class="text-secondary">check</mat-icon>
+          Une consultation d'une durée d'environ 1h30.
         </li>
       </ul>
     </app-mini-card>
     <app-mini-card title="Consultation + CR" [icon]="['naturo', 'cr']" subtitle="1h30 à 2h avec un compte rendu détaillé">
       <span class="text-4xl font-black flex justify-center items-center h-28 w-full">70€</span>
-      <ul class="min-h-[10rem] lg:min-w-[20rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
-        <li>
-          Une consultation entre 1h30 et 2h.
+      <ul class="min-h-[10rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
+        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
+          <mat-icon class="text-secondary">check</mat-icon>
+          Une consultation d'une durée d'environ 1h30.
         </li>
-        <li>
+        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
+          <mat-icon class="text-secondary">check</mat-icon>
           Un compte rendu détaillé de notre séance.
         </li>
       </ul>
     </app-mini-card>
     <app-mini-card title="Consultation + CR + échange" [icon]="['naturo', 'cr', 'mail-notif']">
       <span class="text-4xl font-black flex justify-center items-center h-28 w-full">80€</span>
-      <ul class="min-h-[10rem] lg:min-w-[20rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
-        <li>
-          Une consultation entre 1h30 et 2h.
+      <ul class="min-h-[10rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
+        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
+          <mat-icon class="text-secondary">check</mat-icon>
+          Une consultation d'une durée d'environ 1h30.
         </li>
-        <li>
+        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
+          <mat-icon class="text-secondary">check</mat-icon>
           Un compte rendu détaillé de notre séance.
         </li>
-        <li>
+        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
+          <mat-icon class="text-secondary">check</mat-icon>
           Deux échanges par mail concernant la consultation ou un appel de 20 minutes.
         </li>
       </ul>

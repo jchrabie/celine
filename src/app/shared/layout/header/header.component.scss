@@ -5,12 +5,8 @@ nav {
   @screen md {
     @apply gap-10 px-10;
   }
-
-  .nav-list {
-    @apply justify-self-end gap-4 m-0;
-    grid-template-columns: repeat(6, auto);
-
-    a {
+  
+  a:not(.no-style) {
       @apply justify-center gap-6 inline-flex box-content;
 
       &::after {
@@ -28,5 +24,11 @@ nav {
         }
       }
     }
+
+  .nav-list {
+    @apply justify-self-end gap-4 m-0;
+    grid-template-columns: repeat(6, auto);
+
+    
   }
 }

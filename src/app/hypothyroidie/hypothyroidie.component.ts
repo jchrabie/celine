@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, inject } from '@angular/core';
 import { AbstractLayoutComponent } from '../shared/layout/abstract-layout.component';
 import { LayoutService } from '../shared/services/layout.service';
 
@@ -7,16 +7,15 @@ import { LayoutService } from '../shared/services/layout.service';
   templateUrl: './hypothyroidie.component.html',
   styleUrls: ['./hypothyroidie.component.scss']
 })
-export class HypothyroidieComponent extends AbstractLayoutComponent implements AfterViewInit {
+export class HypothyroidieComponent extends AbstractLayoutComponent implements AfterContentChecked {
   #layoutService = inject(LayoutService);
   
-  override ngAfterViewInit() {
-    super.ngAfterViewInit();
-
-    this.#layoutService.layoutConfiguration$.next({
-      ...this.#layoutService.layoutConfiguration$.value,
+  ngAfterContentChecked() {
+    this.#layoutService.updateConfig({
       title: 'Hypothyroïdie',
       backgroundImage: 'plage.webp',
+      body: this.bodyLayout,
+      subtitle: this.subtitleLayout,
     });
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable, TemplateRef } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 export interface LayoutConfiguration {
   backgroundImage: string;
@@ -12,15 +12,14 @@ export interface LayoutConfiguration {
   providedIn: 'root',
 })
 export class LayoutService {
-  private _layoutConfiguration: LayoutConfiguration = {} as LayoutConfiguration;
+  private layoutConfiguration$$ = new BehaviorSubject<LayoutConfiguration>({} as LayoutConfiguration);
 
-  layoutConfiguration$: BehaviorSubject<LayoutConfiguration> =
-    new BehaviorSubject<LayoutConfiguration>({} as LayoutConfiguration);
+  layoutConfiguration$: Observable<LayoutConfiguration> = this.layoutConfiguration$$.asObservable();
 
-  constructor() {
-    this.layoutConfiguration$.subscribe(
-      (layoutConfiguration) => (this._layoutConfiguration = layoutConfiguration)
-    );
-    this.layoutConfiguration$.next(this._layoutConfiguration);
+  public updateConfig(config: Partial<LayoutConfiguration>): void {
+    this.layoutConfiguration$$.next({
+      ...this.layoutConfiguration$$.value,
+      ...config
+    });
   }
 }

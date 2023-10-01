@@ -3,7 +3,9 @@
     <p aria-hidden="true">{{digram}}</p>
     <h3>{{name}}</h3>
     <div class="stars">
-      <mat-icon *ngFor="let star of starsArray" class="text-secondary">star</mat-icon>
+      @for (star of starsArray; track star) {
+        <mat-icon class="text-secondary">star</mat-icon>
+      }
     </div>
   </figcaption>
   <blockquote>
