@@ -1,6 +1,6 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { Subject } from 'rxjs';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
+import { Observable, Subject, tap } from 'rxjs';
 import { LayoutConfiguration, LayoutService } from '../services/layout.service';
 
 @Component({
@@ -8,11 +8,11 @@ import { LayoutConfiguration, LayoutService } from '../services/layout.service';
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
   standalone: true,
-  imports: [AsyncPipe, NgIf]
+  imports: [AsyncPipe, NgIf],
 })
 export class LayoutComponent {
-  layoutConfiguration$: Subject<LayoutConfiguration> =
-    this.layoutService.layoutConfiguration$;
+  private layoutService = inject(LayoutService);
+  private cdr = inject(ChangeDetectorRef);
 
-  constructor(private layoutService: LayoutService) {}
+  layoutConfiguration$: Observable<LayoutConfiguration> = this.layoutService.layoutConfiguration$;
 }

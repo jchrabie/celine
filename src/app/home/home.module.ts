@@ -8,22 +8,24 @@ import { LayoutComponent } from '../shared/layout/layout.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from "./home.component";
 import { MiniCardComponent } from '../shared/components/mini-card/mini-card.component';
+import { InstagramFeedComponent } from "../shared/components/instagram-feed/instagram-feed.component";
 
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    MatIconModule,
-    RouterModule,
-    LinkComponent,
-    LayoutComponent,
-    TemoignageComponent,
-    MiniCardComponent,
-  ]
+    declarations: [
+        HomeComponent,
+    ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        MatIconModule,
+        RouterModule,
+        LinkComponent,
+        LayoutComponent,
+        TemoignageComponent,
+        MiniCardComponent,
+        InstagramFeedComponent
+    ]
 })
 export class HomeModule {
 }

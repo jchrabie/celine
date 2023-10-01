@@ -1,3 +1,1 @@
-const server = require('../dist/celine-naturo/server/main');
-
-module.exports = server.app();
+export default import('../dist/server/main.js').then(module => module.app());

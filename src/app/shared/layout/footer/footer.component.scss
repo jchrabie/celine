@@ -3,6 +3,7 @@ footer {
   grid-template-rows: auto auto auto;
   margin-top: -1px;
 
+
   & > * {
     place-self: center;
   }
@@ -15,14 +16,14 @@ footer {
 
 
   img {
-    @apply w-20;
+    @apply w-20 h-20;
 
     @screen md {
-      @apply w-28;
+      @apply w-28 h-28;
     }
 
     @screen lg {
-      @apply w-32;
+      @apply w-32 h-32;
     }
   }
 

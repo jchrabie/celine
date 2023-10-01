@@ -1,17 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
 import { Header, Link } from './shared/models';
 import { getHeaderByType, getLinks } from './shared/constants/header.constants';
 import { Ville } from "./shared/models/ville";
 import { TagService } from './shared/services/tag.service';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { FooterComponent, HeaderComponent } from './shared/layout';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    FooterComponent,
+    HeaderComponent,
+  ],
+  standalone: true,
 })
 export class AppComponent implements OnInit {
   links: Link[] = getLinks();
@@ -20,7 +29,8 @@ export class AppComponent implements OnInit {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private router: Router,
-    private tagService: TagService
+    private tagService: TagService,
+    @Inject(DOCUMENT) private document: Document
   ) {
     const icons: string[] = [
       'facebook',
@@ -67,9 +77,8 @@ export class AppComponent implements OnInit {
           header.imagePath
         );
 
-        document
-          .getElementsByTagName('main')[0]
-          .scroll({top: 0, behavior: 'smooth'});
+        this.document?.getElementsByTagName('main')?.[0]
+          .scroll?.({top: 0, behavior: 'smooth'});
       });
   }
 }

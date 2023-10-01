@@ -2,18 +2,18 @@
   <article class="grid gap-4 md:grid-cols-[auto_1fr] lg:sticky top-10">
     <div class="overflow-auto order-2 md:order-none md:max-h-[30rem]">
       <fieldset class="flex md:flex-col px-4 justify-center w-max">
-        <div
-          *ngFor="let image of images; trackBy: trackById"
-        >
-          <input (click)="selectedImage = image"
-                 [id]="'radio-' + image.id"
-                 name="radio"
-                 type="radio"
-          >
-          <label [for]="'radio-' + image.id">
-            <img width="60px" height="60px" [alt]="image.alt" [src]="'/assets/e-book/' + image.thumb" class="w-20 h-20 rounded" loading="lazy">
-          </label>
-        </div>
+        @for ( image of images; track image.id) {
+          <div>
+            <input (click)="selectedImage = image"
+                  [id]="'radio-' + image.id"
+                  name="radio"
+                  type="radio"
+            >
+            <label [for]="'radio-' + image.id">
+              <img width="60px" height="60px" [alt]="image.alt" [src]="'/assets/e-book/' + image.thumb" class="w-20 h-20 rounded" loading="lazy">
+            </label>
+          </div>
+        }
       </fieldset>
 
     </div>
@@ -83,12 +83,12 @@
         </p>
       </div>
       <div class="form-group">
-        <label for="fullName">Votre nom et prénom *</label>
-        <input aria-describedby="fullName-error" class="form-control" formControlName="fullName" id="fullName" required
+        <label for="fullname">Votre nom et prénom *</label>
+        <input aria-describedby="fullname-error" class="form-control" formControlName="fullname" id="fullname" required
                type="text">
-        <p *ngIf="formData.controls['fullName'].hasError('required') && formData.controls['fullName'].dirty"
-           class="text-red-500 text-sm" id="fullName-error">
-          Le champs est
+        <p *ngIf="formData.controls['fullname'].hasError('required') && formData.controls['fullname'].dirty"
+           class="text-red-500 text-sm" id="fullname-error">
+Le champs est
           requis
         </p>
       </div>

@@ -22,19 +22,18 @@ export class RendezVousComponent  extends AbstractLayoutComponent implements Aft
     super();
   }
 
-  override ngAfterViewInit() {
-    super.ngAfterViewInit();
-
+  ngAfterViewInit() {
     this.#activatedRoute.fragment
       .subscribe(fragment => {
         const element = this.document.querySelector("#" + fragment)
         if (element) element.scrollIntoView()
       })
 
-    this.#layoutService.layoutConfiguration$.next({
-      ...this.#layoutService.layoutConfiguration$.value,
+    this.#layoutService.updateConfig({
       title: 'Qui suis-je ?',
       backgroundImage: 'fond-nature.jpg',
+      body: this.bodyLayout,
+      subtitle: this.subtitleLayout,
     });
   }
 }
