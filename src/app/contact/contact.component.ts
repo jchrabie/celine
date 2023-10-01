@@ -31,7 +31,7 @@ export class ContactComponent extends AbstractLayoutComponent implements AfterVi
 
     this.#layoutService.layoutConfiguration$.next({
       ...this.#layoutService.layoutConfiguration$.value,
-      title: 'Contact',
+      title: 'Contact et Tarifs',
       backgroundImage: 'plage.webp',
     });
   }

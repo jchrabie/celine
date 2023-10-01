@@ -50,8 +50,8 @@ export const headers: Header[] = [
   // },
   {
     type: 'contact',
-    title: 'Contact',
-    name: 'Contact',
+    title: 'Contact et Tarifs',
+    name: 'Contact et Tarifs',
     imagePath: 'https://www.celine-naturopathe.fr/assets/img/logo.jpg',
     description: 'Coordonnées pour me rencontrer',
     canonical: 'https://www.celine-naturopathe.fr/contact',

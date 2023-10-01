@@ -1,4 +1,4 @@
-<a *ngIf="link;else simpleCard" class="mini-card" [routerLink]="link">
+<a *ngIf="link; else simpleCard" class="mini-card" [routerLink]="link">
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </a>
 
@@ -10,8 +10,20 @@
 
 
 <ng-template #content>
+  <ng-container *ngIf="isArray(icon); then arrayImg; else simpleImg"></ng-container>
+  <ng-template #arrayImg>
+    <div class="flex gap-4 items-center">
+      <ng-container *ngFor="let item of $any(icon); let last = last">
+        <img width="20px" height="20px" alt="" aria-hidden="true" class="mini-card-svg" [src]="'/assets/svg/' + item + '.svg'">
+        <span *ngIf="!last" class="font-semibold"> + </span>
+      </ng-container>
+    </div>
+  </ng-template>
+  <ng-template #simpleImg>
   <img width="20px" height="20px" alt="" aria-hidden="true" class="mini-card-svg" [src]="'/assets/svg/' + icon + '.svg'">
+  </ng-template>
   <h3>{{title}}</h3>
+  <p *ngIf="subtitle" class="text-sm text-gray-500 m-0">({{subtitle}})</p>
   <p class="mini-card-content">
     <ng-content></ng-content>
   </p>

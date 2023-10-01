@@ -1,18 +1,35 @@
 <app-layout>
-  Votre naturopathe spécialisée dans les troubles de la <strong>thyroïde</strong>.
+  Votre naturopathe spécialisée dans les troubles de la <strong>thyroïde</strong> sur <strong>Blain</strong> ou en <strong>visio</strong>.
 </app-layout>
-<section class="mt-10 lg:grid grid-cols-2 grid-rows-[auto_1fr] pb-10">
+<section class="white-section">
+  <h3 class="w-4/5 mx-auto my-10">Tarifs</h3>
+  <div class="flex md:justify-center md:flex-row flex-col justify-between gap-12 items-center md:items-stretch">
+    <app-mini-card title="Consultation" icon="naturo" subtitle="1h30 à 2h">
+      <span class="text-4xl font-black flex justify-center items-center h-52 w-full">60€</span>
+      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dolorum odio omnis inventore officia a ad cumque id!</span>
+    </app-mini-card>
+    <app-mini-card title="Consultation + CR" [icon]="['naturo', 'cr']" subtitle="1h30 à 2h avec un compte rendu détaillé">
+      <span class="text-4xl font-black flex justify-center items-center h-52 w-full">70€</span>
+      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dolorum odio omnis inventore officia a ad cumque id!</span>
+    </app-mini-card>
+    <app-mini-card title="Reflexologie" icon="reflexo" subtitle="1h">
+      <span class="text-4xl font-black flex justify-center items-center h-52 w-full">60€</span>
+      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dolorum odio omnis inventore officia a ad cumque id!</span>
+    </app-mini-card>
+  </div>
+</section>
+<section class="light-section lg:grid grid-cols-2 grid-rows-[auto_1fr] mb-10">
   <article>
     <img width="60px" height="60px" alt="Céline CHRABIE Naturopathe" class="logo" src="assets/img/logo.png">
     <div class="wrapper">
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">phone_iphone</mat-icon>
-        <a class="text-with-hover text-bold text-primary" href="tel:+33610830253">
+        <a class="text-with-hover font-semibold text-primary hover:underline" href="tel:+33610830253">
           06 10 83 02 53</a>
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">mail_outline</mat-icon>
-        <a class="text-with-hover text-bold text-primary" href="mailto:chrabieceline@outlook.fr">
+        <a class="text-with-hover font-semibold text-primary hover:underline" href="mailto:chrabieceline@outlook.fr">
           chrabieceline@outlook.fr</a>
       </div>
       <div class="flex items-center mb-3">
@@ -21,12 +38,12 @@
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2" svgIcon="instagram"></mat-icon>
-        <a class="text-with-hover text-bold text-primary" href="https://www.instagram.com/bien_avec_sa_thyroide_/"
+        <a class="text-with-hover font-semibold text-primary hover:underline" href="https://www.instagram.com/bien_avec_sa_thyroide_/"
            target="_blank">@bien_avec_sa_thyroide_</a>
       </div>
       <div class="flex items-center">
         <mat-icon class="mr-2" svgIcon="facebook"></mat-icon>
-        <a class="text-with-hover text-bold text-primary"
+        <a class="text-with-hover font-semibold text-primary hover:underline"
            href="https://www.facebook.com/celinenaturopathie.naturopathie"
            target="_blank">@Céline Naturopathie</a>
       </div>

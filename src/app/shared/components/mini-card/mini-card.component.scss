@@ -8,11 +8,11 @@
   }
 
   @screen lg {
-    @apply max-w-xs;
+    @apply max-w-sm;
   }
 
   &-svg {
-    @apply text-5xl w-10 h-10 mb-2 text-secondary #{!important};
+    @apply text-5xl w-14 h-14 mb-2 text-secondary #{!important};
   }
 
   &-content {
