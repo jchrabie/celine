@@ -1,14 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { send } from '@emailjs/browser';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactService {
-  private api = 'https://mailthis.to/chrabieceline@outlook.fr'
-  #http = inject(HttpClient)
-
   postMessage(input: any) {
-    return this.#http.post(this.api, input, { responseType: 'text'})
+    return send("service_1uuzufj","template_d4zafrx", input, 'ExeN1mubJSivwoz-n')
   }
 }

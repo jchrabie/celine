@@ -18,7 +18,7 @@ export class ContactComponent extends AbstractLayoutComponent implements AfterVi
   #matSnackBar = inject(MatSnackBar);
 
   formData: FormGroup = this.#builder.group({
-    fullName: new FormControl('', [Validators.required]),
+    fullname: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     phone: new FormControl(''),
     comment: new FormControl('', [Validators.required]),
@@ -38,8 +38,7 @@ export class ContactComponent extends AbstractLayoutComponent implements AfterVi
 
   onSubmit(value: any) {
     this.#contact.postMessage(value)
-      .pipe(first())
-      .subscribe(() => {
+      .then(() => {
         this.formData.reset();
         this.#matSnackBar.open('Votre message à bien été envoyé')
       })

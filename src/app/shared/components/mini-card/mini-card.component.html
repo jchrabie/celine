@@ -10,18 +10,16 @@
 
 
 <ng-template #content>
-  <ng-container *ngIf="isArray(icon); then arrayImg; else simpleImg"></ng-container>
-  <ng-template #arrayImg>
+  @if (isArray(icon)) {
     <div class="flex gap-4 items-center">
-      <ng-container *ngFor="let item of $any(icon); let last = last">
+      @for (item of $any(icon); track item; let last = $last) {
         <img width="20px" height="20px" alt="" aria-hidden="true" class="mini-card-svg" [src]="'/assets/svg/' + item + '.svg'">
         <span *ngIf="!last" class="font-semibold"> + </span>
-      </ng-container>
+      }
     </div>
-  </ng-template>
-  <ng-template #simpleImg>
-  <img width="20px" height="20px" alt="" aria-hidden="true" class="mini-card-svg" [src]="'/assets/svg/' + icon + '.svg'">
-  </ng-template>
+  } @else {
+    <img width="20px" height="20px" alt="" aria-hidden="true" class="mini-card-svg" [src]="'/assets/svg/' + icon + '.svg'">
+  }
   <h3 class="text-center">{{title}}</h3>
   <p class="mini-card-content">
     <ng-content></ng-content>

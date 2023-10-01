@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { Header, Link } from './shared/models';
 import { getHeaderByType, getLinks } from './shared/constants/header.constants';
 import { Ville } from "./shared/models/ville";
 import { TagService } from './shared/services/tag.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +21,8 @@ export class AppComponent implements OnInit {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private router: Router,
-    private tagService: TagService
-  ) {
+    private tagService: TagService,
+@Inject(DOCUMENT) private document: Document  ) {
     const icons: string[] = [
       'facebook',
       'instagram',
@@ -67,9 +68,8 @@ export class AppComponent implements OnInit {
           header.imagePath
         );
 
-        document
-          .getElementsByTagName('main')[0]
-          .scroll({top: 0, behavior: 'smooth'});
+        this.document?.getElementsByTagName('main')?.[0]
+          .scroll?.({top: 0, behavior: 'smooth'});
       });
   }
 }
