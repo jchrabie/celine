@@ -1,15 +1,4 @@
-<a *ngIf="link; else simpleCard" class="mini-card" [routerLink]="link">
-  <ng-container *ngTemplateOutlet="content"></ng-container>
-</a>
-
-<ng-template #simpleCard>
-  <span class="mini-card">  
-    <ng-container *ngTemplateOutlet="content"></ng-container>
-  </span>
-</ng-template>
-
-
-<ng-template #content>
+<span class="mini-card">  
   @if (icon && isArray(icon)) {
     <div class="flex gap-4 items-center">
       @for (item of $any(icon); track item; let last = $last) {
@@ -27,4 +16,4 @@
     <ng-content></ng-content>
   </div>
   <app-link *ngIf="link" [link]="link">En savoir plus</app-link>
-</ng-template>
+</span>

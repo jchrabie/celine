@@ -1,33 +1,21 @@
 import 'zone.js/node';
 
 import { APP_BASE_HREF } from '@angular/common';
-import * as express from 'express';
-import { existsSync } from 'fs';
-import { join } from 'path';
-
-const compression = require('compression')
-
-const xmlbuilder = require('xmlbuilder');
-
-// Define your application's routes
-const routes = [
-  '/',
-  '/a-propos',
-  '/hypothyroidie',
-  '/hashimoto',
-  '/e-book',
-  '/politique-de-confidentialite',
-  '/mentions-legales',
-  '/accessibilite',
-  '/contact',
-];  
+import { CommonEngine } from '@angular/ssr';
+import express from 'express';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import bootstrap from './src/main.server';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
-  server.use(compression())
   const distFolder = join(process.cwd(), 'dist/celine-naturo/browser');
-  const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
+  const indexHtml = existsSync(join(distFolder, 'index.original.html'))
+    ? join(distFolder, 'index.original.html')
+    : join(distFolder, 'index1.html');
+
+  const commonEngine = new CommonEngine();
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
@@ -39,22 +27,20 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
-  // All regular routes use the Universal engine
-  server.get('*', (req, res) => {
-    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
-  });
+  // All regular routes use the Angular engine
+  server.get('*', (req, res, next) => {
+    const { protocol, originalUrl, baseUrl, headers } = req;
 
-  server.get('/sitemap.xml', (req, res) => {
-    const root = xmlbuilder.create('urlset', { version: '1.0', encoding: 'UTF-8' });
-    root.att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
-
-    routes.forEach(route => {
-      const url = root.ele('url');
-      url.ele('loc', `https://bien-avec-sa-thyroide.com${route}`);
-    });
-
-    res.header('Content-Type', 'application/xml');
-    res.send(root.end({ pretty: true }));
+    commonEngine
+      .render({
+        bootstrap,
+        documentFilePath: indexHtml,
+        url: `${protocol}://${headers.host}${originalUrl}`,
+        publicPath: distFolder,
+        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+      })
+      .then((html) => res.send(html))
+      .catch((err) => next(err));
   });
 
   return server;
@@ -70,14 +56,6 @@ function run(): void {
   });
 }
 
-// Webpack will replace 'require' with '__webpack_require__'
-// '__non_webpack_require__' is a proxy to Node 'require'
-// The below code is to ensure that the server is run only when not requiring the bundle.
-declare const __non_webpack_require__: NodeRequire;
-const mainModule = __non_webpack_require__.main;
-const moduleFilename = mainModule && mainModule.filename || '';
-if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
-  run();
-}
+// run();
 
-export * from './src/main.server';
+export default bootstrap;

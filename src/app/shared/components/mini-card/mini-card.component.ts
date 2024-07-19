@@ -1,4 +1,4 @@
-import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LinkComponent } from '../link/link.component';
@@ -6,7 +6,7 @@ import { LinkComponent } from '../link/link.component';
 @Component({
   selector: 'app-mini-card',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink, LinkComponent, NgTemplateOutlet],
+  imports: [NgIf, RouterLink, LinkComponent],
   templateUrl: './mini-card.component.html',
   styleUrls: ['./mini-card.component.scss'],
   host: {class: 'block h-full'}

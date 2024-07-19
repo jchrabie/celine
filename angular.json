@@ -15,14 +15,16 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/celine-naturo/browser",
-            "index": "src/index.html",
-            "main": "src/main.ts",
+            "outputPath": "dist/celine-naturo",
+            "index": "src/index1.html",
+            "server": "src/main.server.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
+            "prerender": false,
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -40,7 +42,10 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -59,9 +64,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -73,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "celine-naturo:build:production"
+              "buildTarget": "celine-naturo:build:production"
             },
             "development": {
-              "browserTarget": "celine-naturo:build:development"
+              "buildTarget": "celine-naturo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "celine-naturo:build"
+            "buildTarget": "celine-naturo:build"
           }
         },
         "test": {
@@ -108,60 +111,6 @@
             ],
             "scripts": []
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/celine-naturo/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media"
-            },
-            "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "celine-naturo:build:development",
-              "serverTarget": "celine-naturo:server:development"
-            },
-            "production": {
-              "browserTarget": "celine-naturo:build:production",
-              "serverTarget": "celine-naturo:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "celine-naturo:build:production",
-              "serverTarget": "celine-naturo:server:production"
-            },
-            "development": {
-              "browserTarget": "celine-naturo:build:development",
-              "serverTarget": "celine-naturo:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }

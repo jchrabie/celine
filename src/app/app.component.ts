@@ -7,7 +7,7 @@ import { Header, Link } from './shared/models';
 import { getHeaderByType, getLinks } from './shared/constants/header.constants';
 import { Ville } from "./shared/models/ville";
 import { TagService } from './shared/services/tag.service';
-import { CommonModule, DOCUMENT } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FooterComponent, HeaderComponent } from './shared/layout';
 
 @Component({
@@ -30,7 +30,6 @@ export class AppComponent implements OnInit {
     private domSanitizer: DomSanitizer,
     private router: Router,
     private tagService: TagService,
-    @Inject(DOCUMENT) private document: Document
   ) {
     const icons: string[] = [
       'facebook',
@@ -76,9 +75,6 @@ export class AppComponent implements OnInit {
           header.description,
           header.imagePath
         );
-
-        this.document?.getElementsByTagName('main')?.[0]
-          .scroll?.({top: 0, behavior: 'smooth'});
       });
   }
 }

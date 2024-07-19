@@ -6,7 +6,10 @@ import { provideClientHydration, withHttpTransferCacheOptions } from '@angular/p
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(withFetch()), provideAnimations(),
+  providers: [
+    provideRouter(routes), 
+    provideHttpClient(withFetch()), 
+    provideAnimations(),
     provideClientHydration(withHttpTransferCacheOptions({
       includePostRequests: true
     }))

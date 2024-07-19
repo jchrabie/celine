@@ -1,4 +1,3 @@
-export { CalendarComponent } from './calendar/calendar.component'
 export { DeroulementComponent } from './deroulement/deroulement.component'
 export { InstagramFeedComponent } from './instagram-feed/instagram-feed.component'
 export { LinkComponent } from './link/link.component'
