@@ -15,7 +15,8 @@ export class MiniCardComponent {
   @Input() subtitle?: string;
   @Input() title!: string;
   @Input() link?: string;
-  @Input() icon!: string | string[];
+  @Input() icon?: string | string[];
+  @Input() imageSrc!: string | string[];
 
   isArray(icon: string | string[]): boolean {
     return Array.isArray(icon);

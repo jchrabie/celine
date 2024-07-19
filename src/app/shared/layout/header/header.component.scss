@@ -28,7 +28,5 @@ nav {
   .nav-list {
     @apply justify-self-end gap-4 m-0;
     grid-template-columns: repeat(6, auto);
-
-    
   }
 }

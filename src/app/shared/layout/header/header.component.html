@@ -4,7 +4,7 @@
       <img alt="Céline CHRABIE Naturopathe" class="w-10 md:w-14 lg:w-18" width="60px" height="60px" src="assets/img/logo.png">
     </a>
   </h1>
-  <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/e-book']" routerLinkActive="active">Commande ton e-book</a>
+  <a [routerLink]="['/e-books']" routerLinkActive="active">Mes e-books</a>
 
   <ul class="hidden lg:grid list-none nav-list">
     @for (link of links; track link.name) {

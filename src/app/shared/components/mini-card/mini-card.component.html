@@ -10,19 +10,21 @@
 
 
 <ng-template #content>
-  @if (isArray(icon)) {
+  @if (icon && isArray(icon)) {
     <div class="flex gap-4 items-center">
       @for (item of $any(icon); track item; let last = $last) {
         <img width="20px" height="20px" alt="" aria-hidden="true" class="mini-card-svg" [src]="'/assets/svg/' + item + '.svg'">
         <span *ngIf="!last" class="font-semibold"> + </span>
       }
     </div>
-  } @else {
+  } @else if(icon) {
     <img width="20px" height="20px" alt="" aria-hidden="true" class="mini-card-svg" [src]="'/assets/svg/' + icon + '.svg'">
+  } @else {
+    <img width="60px" height="60px" alt="" [src]="'/assets/e-book/' + imageSrc" class="w-20 h-20 rounded" loading="lazy">
   }
   <h3 class="text-center">{{title}}</h3>
-  <p class="mini-card-content">
+  <div class="mini-card-content">
     <ng-content></ng-content>
-  </p>
+  </div>
   <app-link *ngIf="link" [link]="link">En savoir plus</app-link>
 </ng-template>

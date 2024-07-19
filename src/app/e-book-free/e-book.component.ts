@@ -14,38 +14,26 @@ export class EBookComponent  {
   images: Image[] = [
     {
       id: 0,
-      path: 'page-1.png',
-      thumb: 'page-1.png',
+      path: '1.png',
+      thumb: '1-thumb.png',
       alt: 'Page de garde du E-book',
     },
     {
       id: 1,
-      path: 'page-2.png',
-      thumb: 'page-2.png',
+      path: '2.png',
+      thumb: '2-thumb.png',
       alt: 'Page "est tu en hypothyroïdie ?"',
     },
     {
       id: 2,
-      path: 'page-3.png',
-      thumb: 'page-3.png',
+      path: '3.png',
+      thumb: '3-thumb.png',
       alt: `Page "focus sur l'iode"`,
     },
     {
       id: 3,
-      path: 'page-4.png',
-      thumb: 'page-4.png',
-      alt: `Page "quelques recettes sucrées"`,
-    },
-    {
-      id: 4,
-      path: 'page-5.png',
-      thumb: 'page-5.png',
-      alt: `Page "quelques recettes sucrées"`,
-    },
-    {
-      id: 5,
-      path: 'page-6.png',
-      thumb: 'page-6.png',
+      path: '4.png',
+      thumb: '4-thumb.png',
       alt: `Page "quelques recettes sucrées"`,
     },
   ];

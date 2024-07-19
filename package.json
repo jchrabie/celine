@@ -4,7 +4,6 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:heroku": "node dist/celine-naturo/server/main.js",
     "postinstall": "npm run build:ssr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -13,8 +12,7 @@
     "serve:ssr": "node dist/celine-naturo/server/main.js",
     "build:ssr": "ng build --configuration production && ng run celine-naturo:server",
     "prerender": "ng run celine-naturo:prerender",
-    "build:prod": "ng build --configuration production",
-    "vercel-build": "npm run build:ssr"
+    "build:prod": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {

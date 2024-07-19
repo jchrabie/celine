@@ -1,0 +1,129 @@
+<section class="grid w-11/12 mx-auto lg:grid-cols-2 lg:grid-rows-1 grid-rows-[auto_auto] my-10 gap-10 items-start pb-0">
+  <nav class="breadcrumbs">
+    <ul>
+      <li>
+        <a routerLink="/">
+          <mat-icon>home</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/e-books">
+          <span class="sr-only">Revenir à la liste de</span> E-books
+        </a>
+      </li>
+      <li>Prendre soin de sa thyroïde</li>
+    </ul>
+  </nav>
+  <article class="grid gap-4 md:grid-cols-[auto_1fr] lg:sticky top-10">
+    <div class="overflow-auto order-2 md:order-none md:max-h-[30rem]">
+      <fieldset class="flex md:flex-col px-4 justify-center w-max">
+        @for ( image of images; track image.id) {
+          <div>
+            <input (click)="selectedImage = image"
+                  [id]="'radio-' + image.id"
+                  name="radio"
+                  type="radio"
+            >
+            <label [for]="'radio-' + image.id">
+              <img width="60px" height="60px" [alt]="image.alt" [src]="'/assets/e-book/' + image.thumb" class="w-20 h-20 rounded">
+            </label>
+          </div>
+        }
+      </fieldset>
+
+    </div>
+    <input
+      [alt]="selectedImage.alt"
+      [src]="'/assets/e-book/' + selectedImage.path"
+      class="w-full h-fit rounded-lg max-w-[30rem] mx-auto"
+      loading="lazy"
+      type="image"/>
+  </article>
+  <article class="flex flex-col gap-y-4 sticky top-10">
+    <h2 class="w-fit inline-block !mx-0 place-self-center">Prendre soin de sa thyroïde</h2>
+    <p class="text-sm mb-0"><strong>Type : </strong> Ebook </p>
+    <p class="text-sm mt-0"><strong>Tarif : </strong> GRATUIT </p>
+    <h3>Bonjour et bienvenue dans ce premier
+      e-book.</h3>
+
+    <p> Moi, c'est Céline, naturopathe
+      passionnée et spécialisée dans les
+      troubles de la thyroïde.</p>
+
+    <p> Je t'invite, à travers ces quelques pages
+      à faire connaissance avec cette petite
+      glande en forme de papillon.</p>
+
+    <p> Bonne lecture !</p>
+
+    <p> Que tu souffres de
+      dysfonctionnement thyroïdien ou
+      que tu t'intéresses à ta santé, cet
+      e-book est fait pour <span class="font-bold text-primary text-xl">toi !</span></p>
+
+    <p> Tu y trouveras :</p>
+    <ul class="flex flex-col gap-4">
+      <li class="ml-2 flex items-center">
+        <mat-icon class="text-secondary">check</mat-icon>
+        A quoi sert la thyroïde ?
+      </li>
+      <li class="ml-2 flex items-center">
+        <mat-icon class="text-secondary">check</mat-icon>
+        Comment savoir si j'ai une hypothyroïdie ?
+      </li>
+      <li class="ml-2 flex items-center">
+        <mat-icon class="text-secondary">check</mat-icon>
+        Les analyses à réaliser.
+      </li>
+      <li class="ml-2 flex items-center">
+        <mat-icon class="text-secondary">check</mat-icon>
+        Les 5 aliments à ne pas rater.
+      </li>
+      <li class="ml-2 flex items-center">
+        <mat-icon class="text-secondary">check</mat-icon>
+        6 recettes spéciales hypothyroïdie.
+      </li>
+    </ul>
+    <button (click)="toggleBtn = !toggleBtn">Je veux le e-book !</button>
+    <form (ngSubmit)="onSubmit(formData.value)" [class.toggled]="toggleBtn" [formGroup]="formData">
+      <div class="form-group">
+        <label for="email">Votre adresse e-mail *</label>
+        <input aria-describedby="email-error" formControlName="email" id="email" required type="email">
+        <p *ngIf="formData.controls['email'].hasError('email')" class="text-red-500 text-sm" id="email-error">
+          Le format est incorrect
+        </p>
+        <p *ngIf="formData.controls['email'].hasError('required') && formData.controls['email'].dirty"
+           class="text-red-500 text-sm" id="email-errors">
+          Le champs est requis
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="fullname">Votre nom et prénom *</label>
+        <input aria-describedby="fullname-error" class="form-control" formControlName="fullname" id="fullname" required
+               type="text">
+        <p *ngIf="formData.controls['fullname']?.hasError('required') && formData.controls['fullname'].dirty"
+           class="text-red-500 text-sm" id="fullname-error">
+ols['fullname'].dirty"
+           class="text-red-500 text-sm" id="fullname-error">
+start ">
+        <input formControlName="consent" id="checked-checkbox" type="checkbox">
+        <label class="ml-2 text-sm !font-normal" for="checked-checkbox">
+          En cochant cette case, j'accepte que mes données soient utilisées pour me recontacter dans le cadre de ma
+          demande. Aucun autre traitement ne sera effectué avec mes informations. Pour lire notre politique de
+          traitement des données, se référer aux mentions légales.
+        </label>
+      </div>
+      <re-captcha
+        (errored)="resolved(false)"
+        (resolved)="resolved(true)"
+        formControlName="recaptcha"
+        siteKey="6LcolXYkAAAAAPb52Bxl9xTNvYpS5jQqRnKOODK4"
+      ></re-captcha>
+      <button
+        [disabled]="!formData.valid"
+        class="bg-primary cursor-pointer disabled:cursor-not-allowed disabled:bg-primary-light disabled:text-gray-800 mt-4"
+        type="submit">Télecharger le e-book
+      </button>
+    </form>
+  </article>
+</section>

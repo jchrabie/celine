@@ -58,12 +58,12 @@ export const headers: Header[] = [
     enabled: true,
   },
   {
-    type: 'e-book',
-    title: 'E-book',
-    name: 'E-book',
+    type: 'e-books',
+    title: 'E-books',
+    name: 'E-books',
     imagePath: 'https://www.bien-avec-sa-thyroide.com/assets/img/logo.png',
     description: `Vous avez envie de prendre soin de vous, de prendre en charge votre santé et votre bien-être ou de (re)devenir acteur de votre santé ? Alors, il se pourrait bien que vous soyez au bon endroit ! Je suis Céline Chrabie Naturopathe spécialisée dans les troubles de la thyroïde à blain 44 ou en visio`,
-    canonical: 'https://www.bien-avec-sa-thyroide.com/e-book',
+    canonical: 'https://www.bien-avec-sa-thyroide.com/e-books',
     enabled: false,
   },
   {

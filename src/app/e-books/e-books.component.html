@@ -1,0 +1,77 @@
+
+<app-layout>
+  Mes e-books sont conçus pour vous aider à mieux comprendre et prendre soin de votre thyroïde. <br/><br/>
+  Ils vous fournirons des conseils et des stratégies basés sur des approches naturelles pour améliorer
+  votre bien-être et optimiser la santé de votre thyroïde.
+</app-layout>
+
+<section class="grid w-11/12 mx-auto lg:grid-cols-2 lg:grid-rows-1 grid-rows-[auto_auto] my-10 gap-10 items-start pb-0">
+  <nav class="breadcrumbs">
+    <ul>
+      <li>
+        <a routerLink="/">
+          <mat-icon>home</mat-icon>
+        </a>
+      </li>
+      <li>
+        <span class="sr-only">Revenir à la liste de</span> E-books
+      </li>
+    </ul>
+  </nav>
+<app-mini-card title="Hashimoto - Comment dompter la maladie" imageSrc="page-1.png" class="flex justify-center">
+  <p class="text-3xl font-black flex justify-center items-center h-16 w-full m-0">29,90 €</p>
+  <p>Tu y trouveras :</p>
+  <ul class="min-h-[10rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
+    <li class="mx-2 grid grid-cols-[auto_1fr] gap-4">
+      <mat-icon class="text-secondary">check</mat-icon>
+      Des indications pour équilibrer ton assiette.
+    </li>
+    <li class="mx-2 grid grid-cols-[auto_1fr] gap-4">
+      <mat-icon class="text-secondary">check</mat-icon>
+      Les aliments à consommer en PRIORITÉ et ceux à éviter.
+    </li>
+    <li class="mx-2 grid grid-cols-[auto_1fr] gap-4">
+      <mat-icon class="text-secondary">check</mat-icon>
+      L'astuce INDISPENSABLE pour améliorer ton bien être rapidement.
+    </li>
+    <li class="mx-2 grid grid-cols-[auto_1fr] gap-4">
+      <mat-icon class="text-secondary">check</mat-icon>
+      Un test pour savoir si tu souffres d'intestin poreux.
+    </li>
+  </ul>
+  <div class="flex justify-center items-center my-5">
+    <a class="button" [routerLink]="['/e-books/hashimoto-comment-dompter-la-maladie']">Je veux le e-book !</a>
+  </div>
+</app-mini-card>
+
+<app-mini-card title="Prendre soin de sa thyroïde" imageSrc="1-thumb.png" class="flex justify-center">
+  <p class="text-3xl font-black flex justify-center items-center h-16 w-full m-0">Gratuit</p>
+  <p>Tu y trouveras :</p>
+  <ul class="min-h-[10rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
+    <li class="mx-2 grid grid-cols-[auto_1fr] gap-4">
+      <mat-icon class="text-secondary">check</mat-icon>
+      A quoi sert la thyroïde ?
+    </li>
+    <li class="mx-2 grid grid-cols-[auto_1fr] gap-4">
+      <mat-icon class="text-secondary">check</mat-icon>
+      Comment savoir si j'ai une hypothyroïdie ?
+    </li>
+    <li class="mx-2 grid grid-cols-[auto_1fr] gap-4">
+      <mat-icon class="text-secondary">check</mat-icon>
+      Les analyses à réaliser.
+    </li>
+    <li class="mx-2 grid grid-cols-[auto_1fr] gap-4">
+      <mat-icon class="text-secondary">check</mat-icon>
+      Les 5 aliments à ne pas rater.
+    </li>
+    <li class="mx-2 grid grid-cols-[auto_1fr] gap-4">
+      <mat-icon class="text-secondary">check</mat-icon>
+      6 recettes spéciales hypothyroïdie.
+    </li>
+  </ul>
+  <div class="flex justify-center items-center my-5">
+    <a class="button" [routerLink]="['/e-books/prendre-soin-de-sa-thyroide']">Je veux le e-book !</a>
+  </div>
+</app-mini-card>
+
+</section>
