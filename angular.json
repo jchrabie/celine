@@ -21,6 +21,9 @@
             "index": "src/index1.html",
             "server": "src/main.server.ts",
             "browser": "src/main.ts",
+            "allowedCommonJsDependencies": [
+              "xmlbuilder"
+            ],
             "polyfills": [
               "zone.js"
             ],
@@ -30,11 +33,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/sitemap.xml",
-              "src/robot.txt",
               {
                 "glob": "robots.txt",
-                "input": "src/assets",
+                "input": "src/",
                 "output": "./"
               }
             ],
