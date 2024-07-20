@@ -7,7 +7,7 @@ export const headers: Header[] = [
     name: 'Accueil',
     imagePath: 'https://www.bien-avec-sa-thyroide.com/assets/img/logo.png',
     description: `Prenez soin de votre thyroïde avec Céline Chrabie, naturopathe à Blain (44) et en visio. Spécialisée en hypothyroïdie et Hashimoto, pour une santé naturelle et équilibrée.`,
-    canonical: 'https://www.bien-avec-sa-thyroide.com',
+    canonical: 'https://www.bien-avec-sa-thyroide.com/',
     enabled: true,
   },
   {

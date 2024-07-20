@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap:https://bien-avec-sa-thyroide.com/sitemap.xml
+Sitemap:https://www.bien-avec-sa-thyroide.com/sitemap.xml

@@ -91,8 +91,8 @@ export function app(): express.Express {
 
     routes.forEach(route => {
       const url = root.ele('url');
-      url.ele('loc', `https://bien-avec-sa-thyroide.com${route}`);
-      url.ele('lastmod', `2024-07-20T16:20:48+00:00`);
+      url.ele('loc', `https://www.bien-avec-sa-thyroide.com${route}`);
+      url.ele('lastmod', `2024-07-20T22:00:00+00:00`);
       url.ele('priority', route === '/' ? 1 : .8);
     });
 

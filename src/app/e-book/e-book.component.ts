@@ -1,7 +1,4 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ContactService} from "../shared/services/contact.service";
-import {MatSnackBar} from "@angular/material/snack-bar";
 
 type Image = { id: number, path: string, alt: string, thumb: string }
 
@@ -15,68 +12,42 @@ export class EBookComponent  {
     {
       id: 0,
       path: 'page-1.png',
-      thumb: 'page-1.png',
+      thumb: 'page-1-thumb.png',
       alt: 'Page de garde du E-book',
     },
     {
       id: 1,
       path: 'page-2.png',
-      thumb: 'page-2.png',
-      alt: 'Page "est tu en hypothyroïdie ?"',
+      thumb: 'page-2-thumb.png',
+      alt: 'Page: des recettes simples et faciles à réaliser"',
     },
     {
       id: 2,
       path: 'page-3.png',
-      thumb: 'page-3.png',
-      alt: `Page "focus sur l'iode"`,
+      thumb: 'page-3-thumb.png',
+      alt: `Page "Sommaire"`,
     },
     {
       id: 3,
       path: 'page-4.png',
-      thumb: 'page-4.png',
-      alt: `Page "quelques recettes sucrées"`,
+      thumb: 'page-4-thumb.png',
+      alt: `Page "Comment bien choisir tes sources de protéines"`,
     },
     {
       id: 4,
       path: 'page-5.png',
-      thumb: 'page-5.png',
-      alt: `Page "quelques recettes sucrées"`,
+      thumb: 'page-5-thumb.png',
+      alt: `Page "les indispensables"`,
     },
     {
       id: 5,
       path: 'page-6.png',
-      thumb: 'page-6.png',
-      alt: `Page "quelques recettes sucrées"`,
+      thumb: 'page-6-thumb.png',
+      alt: `Page "glace façon snikers"`,
     },
   ];
   selectedImage = this.images[0];
   toggleBtn = false;
 
-  formData: FormGroup = this.builder.group({
-    fullname: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    consent: new FormControl(false, [Validators.requiredTrue]),
-    recaptcha: new FormControl(false, [Validators.requiredTrue])
-  });
-
-  constructor(
-    private builder: FormBuilder,
-    private contactService: ContactService,
-    private matSnackBar: MatSnackBar,
-  ) { }
-
   trackById = (index: number, item: Image) => item.id;
-
-  onSubmit(value: any) {
-    this.contactService.postMessage({...value, comment: 'Je souhaite ton e-book !'})
-      .then(() => {
-        this.formData.reset();
-        this.matSnackBar.open('Votre e-book sera envoyé dans les plus bref délais')
-      })
-  }
-
-  resolved(captchaResponse: boolean) {
-    this.formData.controls['recaptcha'].setValue(captchaResponse);
-  }
-
 }
