@@ -14,7 +14,7 @@ section {
 article {
   @apply justify-center py-4 w-4/5 mx-auto z-10 h-full flex flex-col;
 
-  h2 {
+  h1 {
     @apply text-xl w-full max-w-4xl;
 
     ::ng-deep strong {

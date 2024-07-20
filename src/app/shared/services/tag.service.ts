@@ -42,12 +42,13 @@ export class TagService {
     url: string,
     title: string,
     description: string,
-    image: string
+    image: string,
+    canonical: string
   ): void {
     const realUrl = url.includes('bien-avec-sa-thyroide.com') ? url : `https://www.bien-avec-sa-thyroide.com${url}`;
     const tags = [
-      new MetaTag(this.urlMeta, `og:${this.urlMeta}`, realUrl),
-      new MetaTag(this.titleMeta, `og:${this.titleMeta}`, `Céline CHRABIE | ${title}`),
+      new MetaTag(this.urlMeta, `og:${this.urlMeta}`, canonical),
+      new MetaTag(this.titleMeta, `og:${this.titleMeta}`, `Céline | ${title}`),
       new MetaTag(this.descriptionMeta, `og:${this.descriptionMeta}`, description),
       new MetaTag(this.imageMeta, `og:${this.imageMeta}`, image),
       new MetaTag('twitter:card', '', 'summary_large_image'),
@@ -58,7 +59,7 @@ export class TagService {
 
     this.setTags(tags);
     this.setTitle(title);
-    this.createLinkForCanonicalURL(realUrl);
+    this.createLinkForCanonicalURL(canonical);
     this.setStructuredData(title, description, realUrl, image);
   }
 

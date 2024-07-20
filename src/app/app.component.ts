@@ -5,7 +5,6 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
 import { Header, Link } from './shared/models';
 import { getHeaderByType, getLinks } from './shared/constants/header.constants';
-import { Ville } from "./shared/models/ville";
 import { TagService } from './shared/services/tag.service';
 import { CommonModule } from '@angular/common';
 import { FooterComponent, HeaderComponent } from './shared/layout';
@@ -62,18 +61,14 @@ export class AppComponent implements OnInit {
         map(() => this.router)
       )
       .subscribe(() => {
-        const urlArray = this.router.url.split('/')
-          .map(url => url.replace(/\?.*/gi, ''));
-        const path = urlArray[1];
-        const ville = urlArray.length > 2 ? urlArray[urlArray.length - 1] : null;
-
-        const header: Header = getHeaderByType(path, ville as Ville);
+        const header: Header = getHeaderByType(this.router.url);
 
         this.tagService.setSocialMediaTags(
           this.router.url,
           header.title,
           header.description,
-          header.imagePath
+          header.imagePath,
+          header.canonical
         );
       });
   }

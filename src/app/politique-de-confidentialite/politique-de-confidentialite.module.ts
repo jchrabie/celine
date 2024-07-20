@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PolitiqueDeConfidentialiteRoutingModule } from './politique-de-confidentialite-routing.module';
 import { PolitiqueDeConfidentialiteComponent } from './politique-de-confidentialite.component';
+import { LayoutComponent } from '../shared/layout';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PolitiqueDeConfidentialiteComponent } from './politique-de-confidential
   ],
   imports: [
     CommonModule,
-    PolitiqueDeConfidentialiteRoutingModule
+    PolitiqueDeConfidentialiteRoutingModule,
+    LayoutComponent
   ]
 })
 export class PolitiqueDeConfidentialiteModule { }

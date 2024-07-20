@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MentionsLegalesRoutingModule } from './mentions-legales-routing.module';
 import { MentionsLegalesComponent } from './mentions-legales.component';
+import { LayoutComponent } from '../shared/layout';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MentionsLegalesComponent } from './mentions-legales.component';
   ],
   imports: [
     CommonModule,
-    MentionsLegalesRoutingModule
+    MentionsLegalesRoutingModule,
+    LayoutComponent
   ]
 })
 export class MentionsLegalesModule { }
