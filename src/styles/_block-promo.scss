@@ -1,0 +1,27 @@
+.block-promo {
+  @apply mx-auto p-12 grid gap-10 items-center bg-secondary-light;
+  grid-template-columns: 1fr;
+  border-radius: 3rem;
+  width: 80%;
+
+  @screen md {
+    grid-template-columns: auto 1fr;
+  }
+  
+  @screen lg {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &--img {
+    max-height: 250px;
+    margin: auto;
+  }
+
+  &--txt {
+    @apply flex flex-col items-center gap-5;
+
+    p {
+      padding: 0 !important;
+    }
+  }
+}

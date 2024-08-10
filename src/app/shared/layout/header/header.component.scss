@@ -1,32 +1,41 @@
 nav {
   @apply bg-secondary-lighter grid gap-8 m-0 py-4 items-center shadow z-50 w-full px-6;
-  grid-template-columns: minmax(40px, auto) auto 1fr;
+  grid-template-columns: minmax(40px, auto) 1fr auto;
 
   @screen md {
     @apply gap-10 px-10;
   }
   
   a:not(.no-style) {
-      @apply justify-center gap-6 inline-flex box-content;
+    @apply justify-center gap-6 inline-flex box-content;
 
-      &::after {
-        @apply content-[''] absolute w-0 h-1 bg-primary bottom-0;
-        transition: .25s all ease-in-out;
-      }
-
-      &:hover,
-      &.active {
-        @apply no-underline relative;
-        text-shadow: 0px 0px 1px #374151;
-
-        &::after {
-          @apply w-full;
-        }
-      }
+    &::after {
+      @apply content-[''] absolute w-0 h-1 bg-primary bottom-0;
+      transition: .25s all ease-in-out;
     }
 
+    &:hover,
+    &.active {
+      @apply no-underline relative;
+      text-shadow: 0px 0px 1px #374151;
+
+      &::after {
+        @apply w-full;
+      }
+    }
+  }
+
+  #e-books {
+    color: #374151;
+    background-color: #f4e6d4;
+    font-weight: 500;
+    align-items: center;
+    gap: 1.5rem;
+    padding: .25rem .5rem;
+  }
+
   .nav-list {
-    @apply justify-self-end gap-4 m-0;
-    grid-template-columns: repeat(6, auto);
+    @apply justify-self-end items-center gap-4 m-0;
+    grid-template-columns: repeat(7, auto);
   }
 }

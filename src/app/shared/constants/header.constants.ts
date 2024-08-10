@@ -3,12 +3,13 @@ import {Header, Link} from '../models';
 export const headers: Header[] = [
   {
     type: '/',
-    title: 'Naturopathe spécialiste de la thyroïde',
+    title: 'Naturopathe spécialiste de la thyroïde, hypothyroïdie et Hashimoto sur Blain',
     name: 'Accueil',
     imagePath: 'https://www.bien-avec-sa-thyroide.com/assets/img/logo.png',
     description: `Prenez soin de votre thyroïde avec Céline Chrabie, naturopathe à Blain (44) et en visio. Spécialisée en hypothyroïdie et Hashimoto, pour une santé naturelle et équilibrée.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/',
     enabled: true,
+    clazz: 'home'
   },
   {
     type: '/a-propos',
@@ -19,6 +20,7 @@ export const headers: Header[] = [
       "Céline, naturopathe à Blain et en visio, optimise le fonctionnement de votre thyroïde pour retrouver un confort de vie. Accompagnement personnalisé et bien-être naturel.",
     canonical: 'https://www.bien-avec-sa-thyroide.com/a-propos',
     enabled: true,
+    clazz: 'a-propos'
   },
   {
     type: '/hypothyroidie',
@@ -28,6 +30,7 @@ export const headers: Header[] = [
     description: `Céline, naturopathe à Blain et en visio, découvrez comment je peux vous aider à gérer l'hypothyroïdie pour améliorer votre santé et bien-être avec des méthodes naturelles grace à la Naturopathie.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/hypothyroidie',
     enabled: true,
+    clazz: 'hypothyroidie'
   },
   {
     type: '/hashimoto',
@@ -37,6 +40,18 @@ export const headers: Header[] = [
     description: `Céline, naturopathe à Blain et en visio, je vous accompagne dans la gestion de la thyroïdite de Hashimoto pour améliorer votre bien-être avec des solutions naturelles.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/hashimoto',
     enabled: true,
+    clazz: 'hashimoto'
+  },
+  {
+    type: 'https://www.resalib.fr/praticien/80810-celine-chrabie-naturopathe-blain',
+    title: 'Prendre rendez-vous',
+    name: 'Prendre rendez-vous',
+    imagePath: '',
+    description: '',
+    canonical: '',
+    external: true,
+    enabled: true,
+    clazz: 'rdv'
   },
   {
     type: '/contact',
@@ -46,6 +61,7 @@ export const headers: Header[] = [
     description: `Contactez Céline, naturopathe à Blain et en visio, pour des consultations en thyroïde. Découvrez nos tarifs adaptés pour un accompagnement personnalisé.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/contact',
     enabled: true,
+    clazz: 'contact'
   },
   {
     type: '/e-books',
@@ -54,7 +70,8 @@ export const headers: Header[] = [
     imagePath: 'https://www.bien-avec-sa-thyroide.com/assets/img/logo.png',
     description: `Découvrez les e-books de Céline Chrabie sur la thyroïde. Guides pratiques pour comprendre et gérer votre maladie.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/e-books',
-    enabled: false,
+    enabled: true,
+    clazz: 'e-books'
   },
   {
     type: '/e-books/hashimoto-comment-dompter-la-maladie',
@@ -64,6 +81,7 @@ export const headers: Header[] = [
     description: `Découvrez l'e-book de Céline Chrabie "Hashimoto : Comment dompter la maladie" pour des conseils pratiques et améliorer votre bien-être.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/e-books/hashimoto-comment-dompter-la-maladie',
     enabled: false,
+    clazz: 'hashimoto-comment-dompter-la-maladie'
   },
   {
     type: '/e-books/prendre-soin-de-sa-thyroide',
@@ -73,6 +91,7 @@ export const headers: Header[] = [
     description: `prendre-soin-de-sa-thyroide.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/e-books/prendre-soin-de-sa-thyroide',
     enabled: false,
+    clazz: 'prendre-soin-de-sa-thyroide'
   },
   {
     type: '/mentions-legales',
@@ -82,6 +101,7 @@ export const headers: Header[] = [
     description: `Consultez les mentions légales de Céline Chrabie Naturopathe pour connaître les informations légales et réglementaires de notre site.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/mentions-legales',
     enabled: false,
+    clazz: 'mentions-legales'
   },
   {
     type: '/politique-de-confidentialite',
@@ -91,7 +111,8 @@ export const headers: Header[] = [
     description: `Découvrez la politique de confidentialité de Céline Chrabie Naturopathe pour comprendre comment nous protégeons vos données personnelles`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/politique-de-confidentialite',
     enabled: false,
-  },
+    clazz: 'politique-de-confidentialite'
+ },
   {
     type: '/accessibilite',
     title: 'Accessibilité',
@@ -100,6 +121,7 @@ export const headers: Header[] = [
     description: `Consultez notre politique d'accessibilité pour savoir nous assurons l'accès et l'inclusivité du site pour tous les utilisateurs et toutes les utilisatrices.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/accessibilite',
     enabled: false,
+    clazz: 'a11y'
   },
 ];
 
@@ -109,11 +131,13 @@ export function getHeaderByType(type: string): Header {
 
 export function getLinks(): Link[] {
   return headers
-    .map(({title, type, name, enabled}) => ({
+    .map(({title, type, name, enabled, external, clazz}) => ({
       title,
       type,
       name,
       enabled,
+      external,
+      clazz
     }))
     .filter(({enabled}) => enabled);
 }

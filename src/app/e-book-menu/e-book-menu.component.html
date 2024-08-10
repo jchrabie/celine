@@ -1,0 +1,69 @@
+<section class="grid w-11/12 mx-auto lg:grid-cols-2 lg:grid-rows-1 grid-rows-[auto_auto] my-10 gap-10 items-start pb-0">
+  <nav class="breadcrumbs">
+    <ul>
+      <li>
+        <a routerLink="/">
+          <mat-icon>home</mat-icon>
+          <span class="sr-only">Revenir à la page d'accueil</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/e-books">
+          <span class="sr-only">Revenir à la liste de</span> E-books
+        </a>
+      </li>
+      <li>Hashimoto - 15 jours de menu pour chouchouter ta thyroïde</li>
+    </ul>
+  </nav>
+  <article class="grid gap-4 md:grid-cols-[auto_1fr] lg:sticky top-10">
+    <div class="overflow-auto order-2 md:order-none md:max-h-[30rem]">
+      <fieldset class="flex md:flex-col px-4 justify-center w-max">
+        @for (image of images; track image.id) {
+          <div>
+            <input (click)="selectedImage = image"
+                  [id]="'radio-' + image.id"
+                  name="radio"
+                  type="radio"
+            >
+            <label [for]="'radio-' + image.id">
+              <img width="60px" height="60px" [alt]="image.alt" [src]="'/assets/e-book/' + image.thumb" class="w-20 h-20 rounded" loading="lazy">
+            </label>
+          </div>
+        }
+      </fieldset>
+
+    </div>
+    <input
+      [alt]="selectedImage.alt"
+      [src]="'/assets/e-book/' + selectedImage.path"
+      class="w-full h-fit rounded-lg max-w-[30rem] mx-auto"
+      loading="lazy"
+      type="image" />
+  </article>
+  <article class="flex flex-col gap-y-4 sticky top-10">
+    <h1 class="font-bold text-xl">Hashimoto - 15 jours de menu pour chouchouter ta thyroïde</h1>
+    <p class="text-sm mb-0"><b>Type : </b> Ebook </p>
+    <p class="text-sm mt-0"><b>Tarif : </b> 14,90 € </p>
+
+    <p>
+      <strong>15 jours de menus</strong> avec Hashimoto est un <strong>programme alimentaire</strong> conçu pour vous aider à mieux vivre avec la maladie d'<strong>Hashimoto</strong>.
+      En 15 jours, vous découvrirez des menus complets, équilibrés et gourmands, avec des recettes simples et rapides à préparer.
+    </p>
+    <p>
+      Ce programme vous guidera pour :
+    </p>
+
+    <ul>
+      <li>❇️ <strong>Mieux choisir vos aliments</strong> : des conseils clairs pour des courses simplifiées.</li>
+      <li>❇️ <strong>Mieux manger</strong> : des idées de repas variés pour vous faire plaisir sans vous priver.</li>
+      <li>❇️ <strong>Mieux digérer</strong> : une digestion apaisée pour un ventre plus léger.</li>
+      <li>❇️ <strong>Mieux dormir</strong> : un sommeil de meilleure qualité.</li>
+    </ul>
+
+    <p>
+      En soutenant votre thyroïde, ce programme vous aidera à retrouver de l'énergie et une meilleure humeur.
+    </p>
+
+    <iframe titre="Module d'achat du e-book" src="https://www.payfacile.com/celine-naturopathe/si/15-jours-de-avec-hashimoto" frameBorder="no" width="100%" height="700px" scrolling="no" ></iframe>
+  </article>
+</section>

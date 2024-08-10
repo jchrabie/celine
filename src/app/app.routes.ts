@@ -35,6 +35,7 @@ export const routes: Routes = [
   {path: 'e-books', loadComponent: () => import('./e-books/e-books.component').then(m => m.EBooksComponent)},
   {path: 'e-books/prendre-soin-de-sa-thyroide', loadChildren: () => import('./e-book-free/e-book.module').then(m => m.EBookModule)},
   {path: 'e-books/hashimoto-comment-dompter-la-maladie', loadChildren: () => import('./e-book/e-book.module').then(m => m.EBookModule)},
+  {path: 'e-books/hashimoto-15-jours-de-menu-pour-chouchouter-ta-thyroide', loadChildren: () => import('./e-book-menu/e-book-menu.module').then(m => m.EBookMenuModule)},
   {
     path: 'politique-de-confidentialite',
     loadChildren: () => import('./politique-de-confidentialite/politique-de-confidentialite.module').then(m => m.PolitiqueDeConfidentialiteModule)

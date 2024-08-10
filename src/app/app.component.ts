@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
 import { Header, Link } from './shared/models';
 import { getHeaderByType, getLinks } from './shared/constants/header.constants';
@@ -18,6 +18,7 @@ import { FooterComponent, HeaderComponent } from './shared/layout';
     CommonModule,
     FooterComponent,
     HeaderComponent,
+    RouterModule
   ],
   standalone: true,
 })
@@ -32,6 +33,7 @@ export class AppComponent implements OnInit {
   ) {
     const icons: string[] = [
       'facebook',
+      'e-book',
       'instagram',
       'immunology',
       'irido',
