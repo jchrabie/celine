@@ -3,7 +3,7 @@ import {Header, Link} from '../models';
 export const headers: Header[] = [
   {
     type: '/',
-    title: 'Naturopathe spécialiste de la thyroïde',
+    title: 'Naturopathe spécialiste de la thyroïde, hypothyroïdie et Hashimoto sur Blain',
     name: 'Accueil',
     imagePath: 'https://www.bien-avec-sa-thyroide.com/assets/img/logo.png',
     description: `Prenez soin de votre thyroïde avec Céline Chrabie, naturopathe à Blain (44) et en visio. Spécialisée en hypothyroïdie et Hashimoto, pour une santé naturelle et équilibrée.`,
@@ -36,6 +36,16 @@ export const headers: Header[] = [
     imagePath: 'https://www.bien-avec-sa-thyroide.com/assets/img/logo.png',
     description: `Céline, naturopathe à Blain et en visio, je vous accompagne dans la gestion de la thyroïdite de Hashimoto pour améliorer votre bien-être avec des solutions naturelles.`,
     canonical: 'https://www.bien-avec-sa-thyroide.com/hashimoto',
+    enabled: true,
+  },
+  {
+    type: 'https://www.resalib.fr/praticien/80810-celine-chrabie-naturopathe-blain',
+    title: 'Prendre rendez-vous',
+    name: 'Prendre rendez-vous',
+    imagePath: '',
+    description: '',
+    canonical: '',
+    external: true,
     enabled: true,
   },
   {
@@ -109,11 +119,12 @@ export function getHeaderByType(type: string): Header {
 
 export function getLinks(): Link[] {
   return headers
-    .map(({title, type, name, enabled}) => ({
+    .map(({title, type, name, enabled, external}) => ({
       title,
       type,
       name,
       enabled,
+      external
     }))
     .filter(({enabled}) => enabled);
 }

@@ -6,6 +6,6 @@ import { send } from '@emailjs/browser';
 })
 export class ContactService {
   postMessage(input: any) {
-    return send("service_1uuzufj","template_d4zafrx", input, 'ExeN1mubJSivwoz-n')
+    return send("service_azd1xfq","template_d4zafrx", input, 'ExeN1mubJSivwoz-n')
   }
 }
