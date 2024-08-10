@@ -7,8 +7,17 @@
   <ul class="hidden lg:grid list-none nav-list">
     @for (link of links; track link.name) {
       <li>
-        <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="[link.type]"
-          routerLinkActive="active">{{link.name}}</a>
+        @if (link.external) {
+          <a [href]="link.type">{{link.name}}</a>
+        } @else {
+          <a 
+            [routerLinkActiveOptions]="{exact: true}"
+            [routerLink]="[link.type]"
+            routerLinkActive="active"
+          >
+            {{link.name}}
+          </a>
+        }
       </li>
     }
   </ul>
@@ -19,9 +28,13 @@
   </button>
   <mat-menu #menu="matMenu">
      @for (link of links; track link.name) {
+        @if (link.external) {
+          <a mat-menu-item [href]="link.type">{{link.name}}</a>
+        } @else {
       <button mat-menu-item routerLinkActive="active" [routerLink]="[link.type]">
         {{link.name}}
       </button>
+        }
     }
   </mat-menu>
 </nav>

@@ -54,7 +54,12 @@ export class TagService {
       new MetaTag('twitter:card', '', 'summary_large_image'),
       new MetaTag('twitter:title', '', `Céline CHRABIE | ${title}`),
       new MetaTag('twitter:description', '', description),
-      new MetaTag('twitter:image', '', image)
+      new MetaTag('twitter:image', '', image),
+      new MetaTag('', 'og:type', 'website'),
+      new MetaTag('', 'og:site_name', 'Céline Chrabié Naturopathe à Blain et en visio'),
+      new MetaTag('', 'og:locale', 'fr_FR'),
+      new MetaTag('description', '', description),
+
     ];
 
     this.setTags(tags);
@@ -93,25 +98,40 @@ export class TagService {
       const script = this.doc.createElement('script');
       script.type = 'application/ld+json';
       script.text = JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        'name': title,
-        'description': description,
-        'url': url,
-        'image': image,
-        'publisher': {
-          '@type': 'Organization',
-          'name': 'Céline CHRABIE',
-          'logo': {
-            '@type': 'ImageObject',
-            'url': image
-          }
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Céline CHRABIE",
+        "url": url,
+        "image": image,
+        "description": description,
+        "jobTitle": "Naturopathe spécialisée thyroïde, Hashimoto et hypothyroïdie",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Blain",
+          "addressRegion": "Pays de la Loire",
+          "postalCode": "44130",
+          "addressCountry": "FR"
         },
-        'author': {
-          '@type': 'Person',
-          'name': 'Céline CHRABIE'
-        }
+        "areaServed": [
+          "Blain",
+          "Nantes",
+          "Savenay",
+          "Pontchâteau",
+          "Redon",
+          "Nort-sur-Erdre",
+          "Nozay",
+          "Plessé",
+          "Le Gâvre",
+          "Bouvron",
+          "La Chevallerais",
+          "Fay-de-Bretagne"
+        ],
+        "sameAs": [
+          "https://www.bien-avec-sa-thyroide.com/",
+          "https://www.resalib.fr/praticien/80810-celine-chrabie-naturopathe-blain"
+        ]
       });
+      
       this.doc.head.appendChild(script);
     }
   }

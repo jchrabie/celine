@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { JsonPipe, NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -10,7 +10,7 @@ import { Link } from '../../models';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [MatIconModule, MatMenuModule, NgFor, NgIf, RouterLink, RouterLinkActive]
+  imports: [MatIconModule, MatMenuModule, NgFor, NgIf, RouterLink, RouterLinkActive, JsonPipe]
 })
 export class HeaderComponent {
   @Input() links: Link[] = [];

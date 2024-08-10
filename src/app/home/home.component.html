@@ -29,80 +29,128 @@
     </li>
   </ul>
     <div class="flex justify-center items-center mt-20">
-      <a class="button" routerLink="/contact">Je prends un rendez-vous</a>
+      <a class="button" href="https://www.resalib.fr/praticien/80810-celine-chrabie-naturopathe-blain" target="_blank">Je prends un rendez-vous</a>
     </div>
 </section>
 <section class="light-section">
-  <h2 >Témoignages</h2>
+  <article class="!py-0 w-4/5 mx-auto">
+    <h2 >Témoignages</h2>
+
+    <h3 class="relative mb-10 mt-0 pt-10">Des résultats concrets</h3>
+    
+    <p *ngIf="rating !== null && totalReviews !== null"><strong>Note Google :</strong> {{ rating }} / 5 ({{ totalReviews }} avis)</p>
+    
+    <ul class="card-wrapper">
+      <li>
+        <app-mini-card icon="fatigue" title="Diminution de la fatigue">
+          <q>Je n'ai plus ce <strong>sentiment de fatigue</strong> que j'avais les après-midi.</q>
+        </app-mini-card>
+      </li>
+      <li>
+        <app-mini-card icon="poids" title="Perte de poids">
+          <q>Je commence enfin à <strong>perdre mes kilos en trop</strong>.</q>
+        </app-mini-card>
+      </li>
+      <li>
+        <app-mini-card icon="transit" title="Amélioration du transit">
+          <q>Je n'ai plus de <strong>balonnements</strong>, je vais à la selle tous les jours sans difficultés.</q>
+        </app-mini-card>
+      </li>
+      <li>
+        <app-mini-card icon="douleur" title="Diminution des douleurs">
+          <q>C'est vrai que mes <strong>douleurs musculaires</strong> se sont fortement atténuées.</q>
+        </app-mini-card>
+      </li>
+      <li>
+        <app-mini-card icon="energie" title="Plus d'énergie">
+          <q>J'ai l'impression d'avoir<strong> retrouvé mes vingt ans</strong>.</q>
+        </app-mini-card>
+      </li>
+      <li>
+        <app-mini-card icon="stress" title="Diminution du stress">
+          <q>J'arrive à plus relativiser, je me sens <strong>moins anxieuse</strong>.</q>
+        </app-mini-card>
+      </li>
+    </ul>
+  </article>
+
+  <article class="!py-0 w-4/5 mx-auto">
+  <h3 class="relative mb-10 mt-20 pt-10">Les avis de mes consultants</h3>
+
+  </article>
   <ul class="card-wrapper flex-wrap !gap-y-24 list-inside mt-24">
     <li>
-      <app-temoignage [stars]="5" name="Estelle D.">
+      <app-temoignage [stars]="5" name="Stéphanie L.">
         <p class="flex space-x-3 px-8">
-          J'ai consulté Céline dans le cadre de mon Hashimoto. 
-          Rencontre enrichissante, Céline est très pédagogue et donne de précieux conseils pour améliorer le quotidien. Entretien d'environ 2h durant lequel je me suis sentie enfin écoutée ! Maintenant il n'y a plus qu'à mettre en pratique les recommandations 😊😉.
+          Accompagnement professionnel et bienveillant: les conseils d'hygiène de vie sont faciles à mettre en place car basés sur un rééquilibrage alimentaire en fonction des résultats du bilan sanguin.
+        </p>
+        <p class="flex space-x-3 px-8">
+          Dès les 1ères semaines, j'ai pu constater une amélioration au niveau digestif et moins de fatigue.
+        </p>
+        <p class="flex space-x-3 px-8">
+          Celine est vraiment très compétente 👌🏼
+        </p>
+        <p class="flex space-x-3 px-8">
+          Merci pour votre accompagnement !
+        </p>
+        <p class="flex space-x-3 px-8">
+          Je recommande !
         </p>
       </app-temoignage>
     </li>
     <li>
-      <app-temoignage [stars]="5" name="Chloe B.">
+      <app-temoignage [stars]="5" name="Virginie S.">
         <p class="flex space-x-3 px-8">
-          Enfin une naturopathe qui connait vraiment la maladie d'Hashimoto. 
-          Céline donne de nombreuses informations et des conseils précis pour améliorer les symptômes. 
-          Grâce à elle je connais mieux ma pathologie et je sais enfin par où commencer pour aller mieux. Merci à toi
+          Céline m'a accueilli avec un sourire et une douceur qui font du bien. Elle m'a expliqué avec des mots simples et des schémas pourquoi mon mon corps réagissait de cette façon et ce qui devait être mis en place, des habitudes simples mais que je ne connaissait pas.
+        </p>
+        <p class="flex space-x-3 px-8">
+          Une aide précieuse à ce moment de vie.
+        </p>
+        <p class="flex space-x-3 px-8">
+          Merci.
         </p>
       </app-temoignage>
     </li>
     <li>
-      <app-temoignage [stars]="5" name="Kim P.">
+      <app-temoignage [stars]="5" name="Angélique B.">
         <p class="flex space-x-3 px-8">
-          Céline m'a appris plein de choses sur ma maladie. Elle m'a outillée pour optimiser le fonctionnement de mon corps sous Hashimoto.
-          Il reste du travail mais je constate déjà du mieux grâce à ses conseils !
+          Nous avons contacté Céline pour un problème insoluble qui pouvait être lié à la maladie d'Hashimoto. Très à l'écoute, claire dans ses explications et bienveillante elle a trouvé la solution alors que les médecins ne trouvaient pas depuis un an et demi. Merci infiniment !
         </p>
       </app-temoignage>
     </li>
     <li>
-      <app-temoignage [stars]="5" name="Fanny L.">
+      <app-temoignage [stars]="5" name="Sonia B.">
         <p class="flex space-x-3 px-8">
-          J'ai pu bénéficier d'une séance de naturopathie avec Céline concernant des problèmes que je rencontre suite à une opération de la thyroïde. 
-          Elle a été très à l'écoute, m'a donné de nombreux conseils à adopter concernant mon hygiène de vie ou mon alimentation, 
-          que je met en pratique dorénavant. Elle m'a envoyé par la suite un support sur lequel je peux m'appuyer à tout moment sur 
-          les conseils donnés pendant la consultation.
+          Merci pour cet accompagnement très fin qui s'accompagne dès les premières semaines d'une amélioration spectaculaire de mon état de santé.
         </p>
         <p class="flex space-x-3 px-8">
-          J'en suis pour le moment très satisfaite, je recommande d'aller consulter Céline pour tout problème portant sur la thyroïde. 
-          Elle est vraiment très pro et cela se voit qu'elle sait de quoi elle parle !
+          Vous savez à la fois écouter, encourager, mais aussi adapter vos conseils en toute bienveillance. Je ne peux que vous recommander auprès des personnes souffrant entre autres de troubles de la thyroide dont peu de spécialistes atteignent vos résultats.
+        </p>
+        <p class="flex space-x-3 px-8">
+          Merci encore
         </p>
       </app-temoignage>
     </li>
     <li>
-      <app-temoignage [stars]="5" name="Valerie D.">
+      <app-temoignage [stars]="5" name="Maylis B.">
         <p class="flex space-x-3 px-8">
-          J’ai eu mon premier rdv avec Céline y a 10 jours .
-        </p>
-        <p class="flex space-x-3 px-8">
-          Je suis hashimoto et depuis quelques temps beaucoup de symptômes réapparaissent surtout prise de poids 😢
-        </p>
-        <p class="flex space-x-3 px-8">
-          Céline est une excellente naturopathe très à l’écoute, bienveillante et qui sait cerner les problèmes.
-        </p>
-        <p class="flex space-x-3 px-8">
-          J'ai reçu mon bilan personnalisé très bien détaillé et très clair 😊
-        </p>
-        <p class="flex space-x-3 px-8">
-          Je vous la conseille
-        </p>
-        <p class="flex space-x-3 px-8">
-          Ça fait du bien de trouver une personne professionnelle et qui connaît les problèmes de thyroïde
-        </p>
-        <p class="flex space-x-3 px-8">
-          Merci Céline 🙏🏻
+         Je conseille vivement, toujours de très bon conseil très professionnelle, c’est une personne qui est très à l’écoute et disponible. On voit qu’elle aime et qu’elle connaît son métier. C’est une vrai « belle personne ». Encore merci de m’accompagner.
         </p>
       </app-temoignage>
     </li>
     <li>
       <app-temoignage [stars]="5" name="Maryne D.">
         <p class="flex space-x-3 px-8">
-          J'ai consulté Céline Chrabie en visio après s'être rencontrés sur Facebook et j'ai eu une super approche... Les soucis thyroïdien étant tellement complexes.. Suite à cette consultation où j'ai mieux compris certaines choses avec des mots simples, je vais essayer maintenant de mettre en pratique des adaptations à mon alimentation. En tous cas merci beaucoup pour cette première consultation, vous avez l'air se maîtriser votre spécialité dans la naturopathie qui est très vaste ! Je recommande donc sans soucis cette professionnelle ! 🙂
+          J'ai trouvé Céline grâce à son compte Instagram &#64;bien_avec_sa_thyroide_ (une source d'informations) lors de mon parcours de diagnostic d'Hashimoto. C'est la première professionnelle que j'ai rencontré qui m'a expliqué avec pédagogie et bienveillance ce que j'avais. J'ai enfin eu une réelle écoute et des réponses claires à mes interrogations.
+        </p>
+        <p class="flex space-x-3 px-8">
+          Son accompagnement m'a guidé pour déchiffrer les différents signaux d'alerte de mon corps. Sous ses conseils, la mise en place de nouvelles habitudes alimentaires et d'hygiène de vie m'ont permis d'aller vraiment mieux et de faire taire un bon nombre de mes symptômes.
+        </p>
+        <p class="flex space-x-3 px-8">
+          Je suis vraiment satisfaite d'avoir rencontré Céline, naturopathe spécialisée dans les pathologies de la thyroïde.
+        </p>
+        <p class="flex space-x-3 px-8">
+          Plus largement, la naturopathie m'a apporté une nouvelle grille de lecture et des nouveaux outils pour mieux connaître mon corps et mieux me connaître. Merci.
         </p>
       </app-temoignage>
     </li>
@@ -111,8 +159,8 @@
 <section class="w-4/5 mx-auto">
   <h2 >Mes derniers articles</h2>
   <div class="flex flex-col gap-5 lg:flex-row w-4/5 mx-auto mt-12 justify-between">
-    <app-instagram-feed feed="C9W36okI6Ac"></app-instagram-feed>
-    <app-instagram-feed feed="C9E_mL7Iz_-"></app-instagram-feed>
-    <app-instagram-feed feed="C8rli8Poq-t"></app-instagram-feed>
+    <app-instagram-feed feed="DJWyuIQo-S9"></app-instagram-feed>
+    <app-instagram-feed feed="DJMXMv_IFJy"></app-instagram-feed>
+    <app-instagram-feed feed="DJEnMnLomY8"></app-instagram-feed>
   </div>
 </section>

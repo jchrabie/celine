@@ -3,4 +3,5 @@ export interface Link {
   title: string;
   name: string;
   enabled: boolean;
+  external?: boolean;
 }

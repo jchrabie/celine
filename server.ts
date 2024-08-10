@@ -41,48 +41,6 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
-  // CSP configuration
-  server.use((req, res, next) => {
-    // Content Security Policy
-    const csp = `
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://www.google.com;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-      img-src 'self' data:;
-      font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
-      frame-src 'self' https://trusted-iframe-source.com https://www.instagram.com https://www.payfacile.com;
-      connect-src 'self';
-      upgrade-insecure-requests;
-    `;
-
-    // Report-Only Policy
-    const cspReportOnly = `
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://www.google.com;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-      img-src 'self' data:;
-      font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
-      frame-src 'self' https://trusted-iframe-source.com https://www.instagram.com https://www.payfacile.com;
-      connect-src 'self';
-      report-uri /csp-violation-report-endpoint;
-    `;
-
-    // Permissions Policy
-    const permissionsPolicy = `
-      geolocation=(self),
-      microphone=(self),
-      camera=(self),
-      fullscreen=(self),
-      payment=(self)
-    `;
-
-    res.setHeader('Content-Security-Policy', csp.replace(/\n/g, ' '));
-    res.setHeader('Content-Security-Policy-Report-Only', cspReportOnly.replace(/\n/g, ' '));
-    res.setHeader('Permissions-Policy', permissionsPolicy.replace(/\n/g, ' '));
-
-    next();
-  });
-
   server.get('/sitemap.xml', (req, res) => {
     const root = xmlbuilder.create('urlset', { version: '1.0', encoding: 'UTF-8' });
     root.att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
