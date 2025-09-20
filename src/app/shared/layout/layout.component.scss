@@ -29,7 +29,7 @@ article {
 }
 
 .quoted {
-  @apply relative text-lg mt-12;
+  @apply relative text-lg mt-6;
 
     @screen md {
       @apply text-justify;

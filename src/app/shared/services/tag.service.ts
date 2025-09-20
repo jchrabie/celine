@@ -1,138 +1,230 @@
+import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { DOCUMENT } from '@angular/common';
-import { isPlatformServer } from '@angular/common';
-import { PLATFORM_ID } from '@angular/core';
 
-class MetaTag {
+import { Header, StructuredData } from '../models/seo';
+
+type MetaTag = {
   name?: string;
   property?: string;
   content: string;
-
-  constructor(name: string, property: string, content: string) {
-    this.name = name;
-    this.property = property;
-    this.content = content;
-  }
-}
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class TagService {
-  private urlMeta: string = 'url';
-  private titleMeta: string = 'title';
-  private descriptionMeta: string = 'description';
-  private imageMeta: string = 'image';
+
+  private readonly siteName = 'Bien avec sa thyroïde';
+  private readonly author = 'Céline CHRABIE';
+  private readonly baseUrl = 'https://www.bien-avec-sa-thyroide.com';
+  private readonly defaultRobots = 'index,follow,max-image-preview:large';
 
   constructor(
-    private titleService: Title,
-    private metaService: Meta,
-    @Inject(DOCUMENT) private doc: Document,
-    @Inject(PLATFORM_ID) private platformId: Object
+    private readonly titleService: Title,
+    private readonly meta: Meta,
+    @Inject(DOCUMENT) private readonly document: Document
   ) {}
 
-  public setTitle(title: string): void {
-    const fullTitle = `Céline CHRABIE | ${title}`;
-    this.titleService.setTitle(fullTitle);
-    this.metaService.updateTag({ name: 'title', content: fullTitle });
+  setSeo(header: Header): void {
+    const {
+      title,
+      description,
+      imagePath,
+      imageAlt,
+      canonical,
+      seo
+    } = header;
+
+    this.titleService.setTitle(title);
+
+    this.updateTags([
+      {
+        name: 'description',
+        content: description
+      },
+      {
+        name: 'robots',
+        content: seo?.robots ?? this.defaultRobots
+      },
+      {
+        name: 'author',
+        content: this.author
+      },
+      {
+        name: 'application-name',
+        content: this.siteName
+      },
+
+      {
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        property: 'og:locale',
+        content: 'fr_FR'
+      },
+      {
+        property: 'og:site_name',
+        content: this.siteName
+      },
+      {
+        property: 'og:title',
+        content: title
+      },
+      {
+        property: 'og:description',
+        content: description
+      },
+      {
+        property: 'og:url',
+        content: canonical
+      },
+      {
+        property: 'og:image',
+        content: imagePath
+      },
+      {
+        property: 'og:image:alt',
+        content: imageAlt ?? title
+      },
+
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        name: 'twitter:title',
+        content: title
+      },
+      {
+        name: 'twitter:description',
+        content: description
+      },
+      {
+        name: 'twitter:image',
+        content: imagePath
+      },
+      {
+        name: 'twitter:site',
+        content: '@bien_avec_sa_thyroide_'
+      }
+    ]);
+
+    this.setCanonical(canonical);
+
+    if (seo?.structuredData) {
+      this.setStructuredData(
+        seo.structuredData,
+        title,
+        description,
+        canonical,
+        imagePath
+      );
+    } else {
+      this.removeStructuredData();
+    }
   }
 
-  public setSocialMediaTags(
-    url: string,
+  private updateTags(tags: MetaTag[]): void {
+    tags.forEach(tag => this.meta.updateTag(tag));
+  }
+
+  private setCanonical(url: string): void {
+    let link =
+      this.document.querySelector<HTMLLinkElement>(
+        'link[rel="canonical"]'
+      );
+
+    if (!link) {
+      link = this.document.createElement('link');
+      link.rel = 'canonical';
+      this.document.head.appendChild(link);
+    }
+
+    link.href = url;
+  }
+
+  private setStructuredData(
+    structuredData: StructuredData,
     title: string,
     description: string,
-    image: string,
-    canonical: string
+    url: string,
+    image: string
   ): void {
-    const realUrl = url.includes('bien-avec-sa-thyroide.com') ? url : `https://www.bien-avec-sa-thyroide.com${url}`;
-    const tags = [
-      new MetaTag(this.urlMeta, `og:${this.urlMeta}`, canonical),
-      new MetaTag(this.titleMeta, `og:${this.titleMeta}`, `Céline | ${title}`),
-      new MetaTag(this.descriptionMeta, `og:${this.descriptionMeta}`, description),
-      new MetaTag(this.imageMeta, `og:${this.imageMeta}`, image),
-      new MetaTag('twitter:card', '', 'summary_large_image'),
-      new MetaTag('twitter:title', '', `Céline CHRABIE | ${title}`),
-      new MetaTag('twitter:description', '', description),
-      new MetaTag('twitter:image', '', image),
-      new MetaTag('', 'og:type', 'website'),
-      new MetaTag('', 'og:site_name', 'Céline Chrabié Naturopathe à Blain et en visio'),
-      new MetaTag('', 'og:locale', 'fr_FR'),
-      new MetaTag('description', '', description),
+    const id = 'structured-data';
 
-    ];
+    let script =
+      this.document.getElementById(id) as HTMLScriptElement | null;
 
-    this.setTags(tags);
-    this.setTitle(title);
-    this.createLinkForCanonicalURL(canonical);
-    this.setStructuredData(title, description, realUrl, image);
-  }
-
-  private setTags(tags: MetaTag[]): void {
-    tags.forEach((tag) => {
-      if (tag.name) {
-        this.metaService.updateTag({ name: tag.name, content: tag.content });
-      }
-      if (tag.property) {
-        this.metaService.updateTag({ property: tag.property, content: tag.content });
-      }
-    });
-  }
-
-  private createLinkForCanonicalURL(url: string) {
-    if (isPlatformServer(this.platformId)) {
-      let canonical: HTMLLinkElement| null = this.doc.querySelector("link[rel='canonical']");
-      if (canonical) {
-        canonical.href = url;
-      } else {
-        canonical = this.doc.createElement('link');
-        canonical.setAttribute('rel', 'canonical');
-        canonical.setAttribute('href', url);
-        this.doc.head.appendChild(canonical);
-      }
-    }
-  }
-
-  private setStructuredData(title: string, description: string, url: string, image: string) {
-    if (isPlatformServer(this.platformId)) {
-      const script = this.doc.createElement('script');
+    if (!script) {
+      script = this.document.createElement('script');
+      script.id = id;
       script.type = 'application/ld+json';
-      script.text = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Céline CHRABIE",
-        "url": url,
-        "image": image,
-        "description": description,
-        "jobTitle": "Naturopathe spécialisée thyroïde, Hashimoto et hypothyroïdie",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Blain",
-          "addressRegion": "Pays de la Loire",
-          "postalCode": "44130",
-          "addressCountry": "FR"
-        },
-        "areaServed": [
-          "Blain",
-          "Nantes",
-          "Savenay",
-          "Pontchâteau",
-          "Redon",
-          "Nort-sur-Erdre",
-          "Nozay",
-          "Plessé",
-          "Le Gâvre",
-          "Bouvron",
-          "La Chevallerais",
-          "Fay-de-Bretagne"
-        ],
-        "sameAs": [
-          "https://www.bien-avec-sa-thyroide.com/",
-          "https://www.resalib.fr/praticien/80810-celine-chrabie-naturopathe-blain"
-        ]
-      });
-      
-      this.doc.head.appendChild(script);
+      this.document.head.appendChild(script);
     }
+
+    const data = {
+      '@context': 'https://schema.org',
+      '@type': structuredData.type,
+
+      '@id': `${url}#business`,
+
+      name: structuredData.name ?? this.author,
+      description,
+      url,
+      image,
+      logo: `${this.baseUrl}/assets/img/logo.png`,
+
+      ...(structuredData.telephone && {
+        telephone: structuredData.telephone
+      }),
+
+      ...(structuredData.email && {
+        email: structuredData.email
+      }),
+
+      ...(structuredData.priceRange && {
+        priceRange: structuredData.priceRange
+      }),
+
+      ...(structuredData.areaServed?.length && {
+        areaServed: structuredData.areaServed
+      }),
+
+      ...(structuredData.address && {
+        address: {
+          '@type': 'PostalAddress',
+          ...structuredData.address
+        }
+      }),
+
+      ...(structuredData.geo && {
+        geo: {
+          '@type': 'GeoCoordinates',
+          ...structuredData.geo
+        }
+      }),
+
+      ...(structuredData.openingHours?.length && {
+        openingHoursSpecification:
+          structuredData.openingHours.map(hours => ({
+            '@type': 'OpeningHoursSpecification',
+            ...hours
+          }))
+      }),
+
+      ...(structuredData.sameAs?.length && {
+        sameAs: structuredData.sameAs
+      })
+    };
+
+    script.text = JSON.stringify(data);
+  }
+
+  private removeStructuredData(): void {
+    this.document
+      .getElementById('structured-data')
+      ?.remove();
   }
 }

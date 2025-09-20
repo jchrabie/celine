@@ -1,0 +1,19 @@
+input[type="radio"] {
+  @apply sr-only;
+
+  + label {
+    @apply relative cursor-pointer rounded;
+
+    @screen md {
+      @apply mr-0;
+    }
+  }
+
+  &:checked + label {
+    @apply ring-2 ring-primary;
+  }
+
+  &:focus-visible + label {
+    @apply ring-2 ring-primary ring-offset-2;
+  }
+}

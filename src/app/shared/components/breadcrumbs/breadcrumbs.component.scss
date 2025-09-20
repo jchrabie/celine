@@ -1,0 +1,35 @@
+:host {
+  @apply col-span-full;
+  flex: 1 1 100%;
+  
+  ul {
+    @apply flex items-center gap-3;
+
+    a {
+      @apply font-bold;
+      display: flex;
+      align-items: center;
+      text-wrap: nowrap;
+      position: relative;
+
+      &::after {
+        @apply font-normal;
+        content: '/';
+        margin-left: 1rem;
+        display: block
+      }
+
+      &:hover {
+        &::before {
+          @apply bg-primary;
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 1.5rem;
+          height: 2px;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 button, .button {
   @apply rounded-lg bg-primary text-white px-4 py-2 shadow min-h-[2rem] font-bold tracking-wide;
+  transition: all ease-in-out .25s;
 
   &.big {
     @apply text-lg h-12;
@@ -7,9 +8,13 @@ button, .button {
 
   &.secondary {
     @apply bg-secondary;
+
+    &:hover {
+      @apply bg-primary;
+    }
   }
 
   &:hover {
-    @apply bg-primary-dark;
+    @apply bg-secondary;
   }
 }

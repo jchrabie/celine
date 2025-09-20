@@ -1,0 +1,40 @@
+<article class="grid gap-4 md:grid-cols-[auto_1fr] lg:sticky top-10">
+  <div class="overflow-auto order-2 md:order-none md:max-h-[30rem]">
+    <fieldset class="flex md:flex-col p-4 justify-center w-max gap-2">
+      <legend class="sr-only">
+        Choisir une image de présentation
+      </legend>
+
+      @for (image of images(); track image.id) {
+        <div>
+          <input
+            [id]="image.id"
+            type="radio"
+            name="gallery"
+            [checked]="selectedImage().id === image.id"
+            (change)="selectedImage.set(image)">
+
+          <label [for]="image.id">
+            <img
+              [src]="image.thumbnailSrc ?? image.src"
+              [alt]="image.alt"
+              [width]="image.width ?? 80"
+              [height]="image.height ?? 80"
+              class="w-20 h-20 rounded"
+              loading="lazy">
+          </label>
+        </div>
+      }
+    </fieldset>
+
+  </div>
+
+  <img
+    [src]="selectedImage().src"
+    [alt]="selectedImage().alt"
+    [width]="selectedImage().width ?? 480"
+    [height]="selectedImage().height ?? 640"
+    class="w-full h-fit rounded-lg max-w-[30rem] mx-auto"
+    loading="eager"
+    decoding="async">
+</article>

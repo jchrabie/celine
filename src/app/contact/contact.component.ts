@@ -30,7 +30,7 @@ export class ContactComponent extends AbstractLayoutComponent implements AfterCo
 
   ngAfterContentChecked() {
     this.#layoutService.updateConfig({
-      title: 'Contact et Tarifs',
+      title: 'Contact',
       backgroundImage: 'plage.webp',
       body: this.bodyLayout,
       subtitle: this.subtitleLayout,

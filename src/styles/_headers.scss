@@ -1,61 +1,48 @@
 h2:not(.custom-header) {
   @apply
-  font-bold
-  text-2xl
-  leading-10
-  m-10
-  relative
-  inline-block
-  bg-no-repeat
-  py-4
-  px-8
-  bg-cover
-  rounded-xl
-  text-white
-  bg-primary;
-
-  small {
-    @apply
+    font-bold
+    text-xl
+    leading-tight
+    mb-12
     block
-    text-white
-    absolute
-    -bottom-6
-    bg-no-repeat
-    py-1
-    px-2
-    bg-cover
-    -rotate-3
-    text-base
-    rounded-lg
-    left-1/2
-    -translate-x-1/2
-    whitespace-nowrap
-    bg-primary;
+    w-fit
+    max-w-full;
+
+  @screen md {
+    @apply
+      text-2xl;
+  }
+
+  .strong {
+    @apply relative inline-block;
   }
 
   .light-section & {
+    .strong:before {
+      background-image: url(/assets/svg/souligne-primary.svg);      
+    }
   }
 
-  @screen md {
-    @apply text-3xl ml-40;
-  }
-
-  &:before, &:after {
-    @apply h-8 w-8 block absolute text-secondary;
-  }
-
-  &:before {
-    @apply content-before-light -top-6 -left-6;
-  }
-
-  &:after {
-    @apply content-after-light -bottom-6 -right-6;
+  .strong:before {
+    @apply
+      block
+      absolute
+      w-full
+      h-[20px]
+      -bottom-4
+      text-secondary;
+    content: '';
+    background-image: url(/assets/svg/souligne.svg);      
+    background-size: 100% 20px;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
 
+
 h3, .h3 {
-  @apply font-bold text-primary text-xl my-3;
+  @apply font-bold text-lg text-primary my-3;
 
   small {
     @apply font-normal;

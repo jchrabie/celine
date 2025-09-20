@@ -1,5 +1,9 @@
 <app-layout>
-  Votre naturopathe spécialisée dans les troubles de la <strong>thyroïde</strong> sur <strong>Blain</strong> ou en <strong>visio</strong>.
+  Un doute, une question ou simplement envie d'échanger ?
+  Je suis à votre écoute pour vous renseigner sur mes
+  <strong>consultations</strong>, mes
+  <strong>formules d'accompagnement</strong> et les
+  <strong>solutions naturelles</strong> adaptées à votre situation.
 </app-layout>
 <section class="white-section lg:grid grid-cols-2 grid-rows-[auto_1fr]">
   <article>
@@ -7,33 +11,38 @@
     <div class="wrapper">
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">phone_iphone</mat-icon>
-        <a class="text-with-hover font-semibold text-primary hover:underline" href="tel:+33610830253">
+        <a class="text-with-hover font-semibold  hover:underline" href="tel:+33610830253">
           06 10 83 02 53</a>
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary">mail_outline</mat-icon>
-        <a class="text-with-hover font-semibold text-primary hover:underline" href="mailto:chrabieceline@outlook.fr">
+        <a class="text-with-hover font-semibold  hover:underline" href="mailto:chrabieceline@outlook.fr">
           chrabieceline&#64;outlook.fr</a>
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2 text-primary" svgIcon="pin"></mat-icon>
-        <address class="mb-0"> 2 Rue du Berry - 44130 Blain</address>
+        <div>
+          <address class="mb-0"> 2 Rue du Berry - 44130 Blain</address>
+          <address class="mb-0"> 9 Avenue de Salonique - 44300 Nantes</address>
+        </div>
       </div>
       <div class="flex items-center mb-3">
         <mat-icon class="mr-2" svgIcon="instagram"></mat-icon>
-        <a class="text-with-hover font-semibold text-primary hover:underline" href="https://www.instagram.com/bien_avec_sa_thyroide_/"
+        <a class="text-with-hover font-semibold  hover:underline" href="https://www.instagram.com/bien_avec_sa_thyroide_/"
            target="_blank">&#64;bien_avec_sa_thyroide_</a>
       </div>
       <div class="flex items-center">
         <mat-icon class="mr-2" svgIcon="facebook"></mat-icon>
-        <a class="text-with-hover font-semibold text-primary hover:underline"
+        <a class="text-with-hover font-semibold  hover:underline"
            href="https://www.facebook.com/celinenaturopathie.naturopathie"
            target="_blank">&#64;Céline Naturopathie</a>
       </div>
     </div>
   </article>
   <article>
-    <p>Les champs avec un * sont obligatoires</p>
+    <p class="text-sm text-gray-700">
+      Les champs marqués d'un * sont obligatoires.
+    </p>
     <form (ngSubmit)="onSubmit(formData.value)" [formGroup]="formData">
       <div class="form-group">
         <label for="email">Votre adresse e-mail *</label>
@@ -84,62 +93,82 @@
       ></re-captcha>
       <button
         [disabled]="!formData.valid"
-        class="bg-primary cursor-pointer disabled:cursor-not-allowed disabled:bg-primary-light disabled:text-gray-800 mt-4"
+        class="bg-primary cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-800 mt-4"
         type="submit">Envoyer le message
       </button>
     </form>
   </article>
 </section>
+
 <section class="light-section">
-  <h3 class="w-4/5 mx-auto my-0">Mes formules</h3>
-  <p class="w-4/5 mx-auto my-0 pb-10 font-semibold">Tarifs</p>
-  <div class="flex md:justify-center md:flex-row flex-col justify-between gap-12 items-center md:items-stretch flex-wrap">
-    <app-mini-card title="Consultation + CR" [icon]="['naturo', 'cr']" subtitle="1h30 à 2h avec un compte rendu détaillé">
-      <span class="text-4xl font-black flex justify-center items-center h-28 w-full">70€</span>
-      <ul class="min-h-[10rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
-        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
-          <mat-icon class="text-secondary">check</mat-icon>
-          Une consultation d'une durée d'environ 1h30.
-        </li>
-        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
-          <mat-icon class="text-secondary">check</mat-icon>
-          Un compte rendu détaillé de notre séance.
-        </li>
-      </ul>
-    </app-mini-card>
-    <app-mini-card title="Consultation + CR + échange" [icon]="['naturo', 'cr', 'mail-notif']">
-      <span class="text-4xl font-black flex justify-center items-center h-28 w-full">80€</span>
-      <ul class="min-h-[10rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
-        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
-          <mat-icon class="text-secondary">check</mat-icon>
-          Une consultation d'une durée d'environ 1h30.
-        </li>
-        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
-          <mat-icon class="text-secondary">check</mat-icon>
-          Un compte rendu détaillé de notre séance.
-        </li>
-        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
-          <mat-icon class="text-secondary">check</mat-icon>
-          Deux échanges par mail concernant la consultation ou un appel de 20 minutes.
-        </li>
-      </ul>
-    </app-mini-card>
-    <app-mini-card title="Consultation + CR + e-books" [icon]="['naturo', 'cr', 'e-book']" subtitle="1h30 à 2h avec un compte rendu détaillé">
-      <span class="text-4xl font-black flex justify-center items-center h-28 w-full">100€</span>
-      <ul class="min-h-[10rem] list-disc list-inside flex flex-col gap-2 marker:text-primary">
-        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
-          <mat-icon class="text-secondary">check</mat-icon>
-          Une consultation d'une durée d'environ 1h30.
-        </li>
-        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
-          <mat-icon class="text-secondary">check</mat-icon>
-          Un compte rendu détaillé de notre séance.
-        </li>
-        <li class="mx-2 grid grid-cols-[1fr_auto] gap-4">
-          <mat-icon class="text-secondary">check</mat-icon>
-          <p>Mes deux e-book <b>"Hashimoto - Comment dompter la maladie"</b> et <strong>"Hashimoto - 15 jours de menu pour chouchouter ta thyroïde"</strong>.</p>
-        </li>
-      </ul>
-    </app-mini-card>
-  </div>
+  <article class="!py-0 w-4/5 mx-auto">
+
+    <h2 class="w-4/5 mt-6 mx-auto inline-block">
+      <span class="strong">Questions fréquentes</span>
+    </h2>
+
+    <div class="flex flex-col gap-4 lg:w-1/2">
+      <details class="rounded-lg bg-white p-5 shadow">
+        <summary class="cursor-pointer font-semibold ">
+          Comment se déroule une première consultation ?
+        </summary>
+
+        <p class="mt-4">
+          La première consultation dure environ <strong>1h30</strong>. Elle permet de faire un bilan complet de votre situation, de vos habitudes de vie, de votre alimentation et de vos symptômes afin de vous proposer un accompagnement entièrement personnalisé.
+        </p>
+      </details>
+
+      <details class="rounded-lg bg-white p-5 shadow">
+        <summary class="cursor-pointer font-semibold ">
+          Les consultations sont-elles possibles en visioconférence ?
+        </summary>
+
+        <p class="mt-4">
+          Oui. Toutes les consultations peuvent être réalisées en <strong>visioconférence</strong>. Vous bénéficiez du même accompagnement et recevez votre compte rendu personnalisé comme lors d'une consultation en cabinet.
+        </p>
+      </details>
+
+      <details class="rounded-lg bg-white p-5 shadow">
+        <summary class="cursor-pointer font-semibold ">
+          Où consultez-vous ?
+        </summary>
+
+        <p class="mt-4">
+          Je vous accueille en cabinet à <strong>Blain</strong> ainsi qu'à <strong>Nantes</strong>. Les consultations à distance sont également possibles partout en France.
+        </p>
+      </details>
+
+      <details class="rounded-lg bg-white p-5 shadow">
+        <summary class="cursor-pointer font-semibold ">
+          Les consultations remplacent-elles un traitement médical ?
+        </summary>
+
+        <p class="mt-4">
+          Non. Mon accompagnement en naturopathie vient en complément du suivi réalisé par votre médecin ou votre endocrinologue. Je ne modifie jamais un traitement médical.
+        </p>
+      </details>
+
+      <details class="rounded-lg bg-white p-5 shadow">
+        <summary class="cursor-pointer font-semibold ">
+          Puis-je vous contacter avant de prendre rendez-vous ?
+        </summary>
+
+        <p class="mt-4">
+          Bien sûr. Si vous avez un doute sur l'accompagnement le plus adapté à votre situation ou une question concernant mes consultations ou mes e-books, n'hésitez pas à me contacter par téléphone, par e-mail ou via le formulaire de cette page.
+        </p>
+      </details>
+
+      <details class="rounded-lg bg-white p-5 shadow">
+        <summary class="cursor-pointer font-semibold ">
+          Sous quel délai me répondrez-vous ?
+        </summary>
+
+        <p class="mt-4">
+          Je fais mon possible pour répondre à toutes les demandes dans les meilleurs délais, généralement sous 24 à 48 heures ouvrées.
+        </p>
+      </details>
+
+    </div>
+
+  </article>
 </section>

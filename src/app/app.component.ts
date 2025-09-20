@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
-import { filter, map } from 'rxjs';
+import { filter } from 'rxjs';
 import { Header, Link } from './shared/models';
 import { getHeaderByType, getLinks } from './shared/constants/header.constants';
 import { TagService } from './shared/services/tag.service';
@@ -22,8 +22,9 @@ import { FooterComponent, HeaderComponent } from './shared/layout';
   ],
   standalone: true,
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   links: Link[] = getLinks();
+  @ViewChild('main', { static: true })  main!: ElementRef<HTMLElement>;
 
   constructor(
     private matIconRegistry: MatIconRegistry,
@@ -33,6 +34,8 @@ export class AppComponent implements OnInit {
   ) {
     const icons: string[] = [
       'facebook',
+      'google',
+      'resalib',
       'e-book',
       'instagram',
       'immunology',
@@ -54,24 +57,19 @@ export class AppComponent implements OnInit {
         )
       )
     );
-  }
 
-  ngOnInit() {
     this.router.events
-      .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        map(() => this.router)
-      )
+      .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
+        this.main.nativeElement.scrollTo?.({
+          top: 0,
+          behavior: 'smooth'
+        });
+
         const header: Header = getHeaderByType(this.router.url);
 
-        this.tagService.setSocialMediaTags(
-          this.router.url,
-          header.title,
-          header.description,
-          header.imagePath,
-          header.canonical
-        );
+        this.tagService.setSeo(header);
       });
   }
 }
+

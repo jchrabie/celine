@@ -1,6 +1,6 @@
 nav {
   @apply bg-secondary-lighter grid gap-8 m-0 py-4 items-center shadow z-50 w-full px-6;
-  grid-template-columns: minmax(40px, auto) 1fr auto;
+  grid-template-columns: minmax(40px, auto) 1fr;
 
   @screen md {
     @apply gap-10 px-10;
@@ -27,7 +27,7 @@ nav {
 
   #e-books {
     color: #374151;
-    background-color: #f4e6d4;
+    background-color: #f4e8d8;
     font-weight: 500;
     align-items: center;
     gap: 1.5rem;
@@ -36,6 +36,6 @@ nav {
 
   .nav-list {
     @apply justify-self-end items-center gap-4 m-0;
-    grid-template-columns: repeat(7, auto);
+    grid-template-columns: repeat(8, auto);
   }
 }

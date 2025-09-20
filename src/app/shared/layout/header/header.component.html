@@ -7,7 +7,10 @@
     @for (link of links; track link.name) {
       <li>
         @if (link.external) {
-          <a [href]="link.type">{{link.name}}</a>
+          <a
+            [href]="link.type"
+          target="_blank"
+          rel="noopener noreferrer">{{link.name}}</a>
         } @else {
           <a 
             [routerLinkActiveOptions]="{exact: true}"

@@ -1,0 +1,21 @@
+<ul>
+  <li>
+    <a routerLink="/">
+      <mat-icon>home</mat-icon>
+      <span class="sr-only">Revenir à la page d'accueil</span>
+    </a>
+  </li>
+  @for (breadcrumb of breadcrumbs; track breadcrumb.url; let last = $last) {
+    <li>
+      @if (!last) {
+        <a [routerLink]="breadcrumb.url">
+          {{ breadcrumb.label }}
+        </a>
+      } @else {
+        <span aria-current="page">
+          {{ breadcrumb.label }}
+        </span>
+      }
+    </li>
+  }
+</ul>

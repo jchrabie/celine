@@ -1,5 +1,5 @@
 <app-layout>
-  Je vous offre mon expertise sur <strong>Blain</strong> ou en <strong>visio</strong> pour <strong>améliorer pas à pas votre bien-être</strong> 
+  Je vous offre mon expertise sur <strong>Nantes</strong> et <strong>Blain</strong>, ou en <strong>visio</strong> pour <strong>améliorer pas à pas votre bien-être</strong> 
   face aux problèmes <strong>thyroïdiens</strong>, tels que <strong>fatigue</strong>, <strong>stress</strong>, 
   <strong>prise de poids</strong>, <strong>douleurs</strong>, et <strong>troubles du transit</strong>.
 </app-layout>
@@ -8,8 +8,8 @@
     <li>
       <app-mini-card link="/a-propos" title="A propos de moi" icon="person">
         Je suis <strong class="text-primary">Céline naturopathe</strong>. J'exerce sur
-        <strong class="text-primary">Blain</strong> et en <strong class="text-primary">visio</strong>. <br>
-        Je vous accompagne pour retrouver un <strong class="text-primary">confort de vie</strong> en optimisant
+        <strong class="text-primary">Nantes</strong>, <strong class="text-primary">Blain</strong> et en <strong class="text-primary">visio</strong>. <br>
+        Je vous accompagne pour retrouver un <strong class="text-primary">confort de vie</strong> en optimisant votre santée
       </app-mini-card>
     </li>
     <li>
@@ -29,7 +29,7 @@
     </li>
   </ul>
   <div class="flex justify-center items-center mt-20">
-    <a class="button" href="https://www.resalib.fr/praticien/80810-celine-chrabie-naturopathe-blain" target="_blank">Je prends un rendez-vous</a>
+    <a class="button" href="https://calendly.com/chrabieceline" target="_blank">Je prends un rendez-vous</a>
   </div>
   <div class="block-promo mt-10">
     <img class="block-promo--img" src="assets/img/e-book.png" alt="" />
@@ -39,12 +39,10 @@
     </div>
   </div>
 </section>
-<section class="light-section">
+<section class="light-section pt-10">
   <article class="!py-0 w-4/5 mx-auto">
-    <h2 >Témoignages</h2>
-
-    <h3 class="relative mb-10 mt-0 pt-10">Des résultats concrets</h3>
-    
+    <h2 class="mx-auto"><span class="strong">Témoignages</span></h2>
+  
     <p *ngIf="rating !== null && totalReviews !== null"><strong>Note Google :</strong> {{ rating }} / 5 ({{ totalReviews }} avis)</p>
     
     <ul class="card-wrapper">
@@ -80,11 +78,9 @@
       </li>
     </ul>
   </article>
-
-  <article class="!py-0 w-4/5 mx-auto">
-  <h3 class="relative mb-10 mt-20 pt-10">Les avis de mes consultants</h3>
-
-  </article>
+</section>
+<section class="white-section pt-10">
+  <h2 class="mx-auto"><span class="strong">Les avis</span> de mes consultants</h2>
   <ul class="card-wrapper flex-wrap !gap-y-24 list-inside mt-24">
     <li>
       <app-temoignage [stars]="5" name="Stéphanie L.">
@@ -162,13 +158,13 @@
       </app-temoignage>
     </li>
   </ul>
-</section>
-<section class="w-4/5 mx-auto">
-  <h2>Mes derniers articles</h2>
+  </section>
+<section class="light-section pt-10">
+  <h2 class="mx-auto">Mes derniers <span class="strong">articles</span></h2>
   <div class="flex flex-col gap-5 lg:flex-row w-4/5 mx-auto mt-12 justify-between">
-    <app-instagram-feed feed="DO0xuUwCDu7"></app-instagram-feed>
-    <app-instagram-feed feed="DOQ54W5iE0-"></app-instagram-feed>
-    <app-instagram-feed feed="DOJL7OfiPun"></app-instagram-feed>
+    <app-instagram-feed feed="DbYbT8MqJYy"></app-instagram-feed>
+    <app-instagram-feed feed="DbQyeVyiuSq"></app-instagram-feed>
+    <app-instagram-feed feed="DbGjcF_KrCc"></app-instagram-feed>
   </div>
 </section>
 

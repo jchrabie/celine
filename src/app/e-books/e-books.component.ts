@@ -4,13 +4,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { AbstractLayoutComponent, LayoutComponent } from '../shared/layout';
 import { LayoutService } from '../shared/services/layout.service';
+import { BreadcrumbsComponent } from '../shared/components/breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'app-e-books',
   standalone: true,
-  imports: [MiniCardComponent, MatIconModule, RouterLink, LayoutComponent],
+  imports: [
+    MiniCardComponent, 
+    MatIconModule, 
+    RouterLink, 
+    LayoutComponent,
+    BreadcrumbsComponent],
   templateUrl: './e-books.component.html',
-  styleUrl: './e-books.component.scss'
 })
 export class EBooksComponent extends AbstractLayoutComponent implements AfterContentChecked {
   #layoutService = inject(LayoutService);
