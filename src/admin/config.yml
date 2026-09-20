@@ -1,0 +1,40 @@
+backend:
+  name: turbo-github
+  turbo_site_id: 6adad316-06a8-4c97-9a00-9b82e984c56a
+  branch: main
+
+media_folder: "src/assets/img/blog"
+public_folder: "/assets/img/blog"
+
+locale: "fr"
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    label_singular: "Article"
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+
+      - label: "Titre"
+        name: "title"
+        widget: "string"
+
+      - label: "Résumé"
+        name: "description"
+        widget: "text"
+
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "Date de publication"
+        name: "date"
+        widget: "datetime"
+        format: "DD/MM/YYYY"
+
+      - label: "Contenu"
+        name: "body"
+        widget: "markdown"

@@ -3,6 +3,7 @@ import { Link } from '../models';
 
 const BASE_URL = 'https://www.bien-avec-sa-thyroide.com';
 const DEFAULT_IMAGE = `${BASE_URL}/assets/img/logo.png`;
+const CELINE_IMAGE = `${BASE_URL}/assets/img/celine.webp`;
 
 const COMMON_SAME_AS = [
   'https://www.instagram.com/bien_avec_sa_thyroide_/',
@@ -14,8 +15,8 @@ export const headers: Header[] = [
     type: '/',
     title: 'Naturopathe spécialisée thyroïde, Hashimoto et hypothyroïdie | Céline Chrabie',
     name: 'Accueil',
-    imagePath: DEFAULT_IMAGE,
-    imageAlt: 'Bien avec sa thyroïde - Céline Chrabie',
+    imagePath: CELINE_IMAGE,
+    imageAlt: 'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde à Nantes et Blain',
     description:
       'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde, accompagne les personnes concernées par l’hypothyroïdie et la maladie de Hashimoto à Blain, Nantes et en visioconférence.',
     canonical: `${BASE_URL}/`,
@@ -26,8 +27,8 @@ export const headers: Header[] = [
     type: '/cabinets/blain',
     title: 'Naturopathe spécialisée thyroïde à Blain (44) | Céline Chrabie',
     name: 'Naturopathe à Blain',
-    imagePath: `${BASE_URL}/assets/img/cabinet-blain/cabinet-blain-consultation.jpg`,
-    imageAlt: 'Cabinet de naturopathie de Céline Chrabie à Blain',
+    imagePath: CELINE_IMAGE,
+    imageAlt: 'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde à Blain',
     description:
       'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde, vous accueille à Blain (44). Accompagnement personnalisé de l’hypothyroïdie et de la maladie de Hashimoto, au cabinet ou en visioconférence.',
     canonical: `${BASE_URL}/cabinets/blain`,
@@ -73,8 +74,8 @@ export const headers: Header[] = [
     type: '/cabinets/nantes',
     title: 'Naturopathe spécialisée thyroïde à Nantes | Céline Chrabie',
     name: 'Naturopathe à Nantes',
-    imagePath: DEFAULT_IMAGE,
-    imageAlt: 'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde',
+    imagePath: CELINE_IMAGE,
+    imageAlt: 'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde à Nantes',
     description:
       'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde, vous accueille à Nantes. Accompagnement personnalisé de l’hypothyroïdie et de la maladie de Hashimoto, au cabinet ou en visioconférence.',
     canonical: `${BASE_URL}/cabinets/nantes`,
