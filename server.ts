@@ -22,10 +22,14 @@ const routes = headers.filter(
  */
 export function app(): express.Express {
   const server = express();
-
   const distFolder = join(
     process.cwd(),
     'dist/celine-naturo/browser'
+  );
+
+  const adminFolder = join(
+    distFolder,
+    'admin'
   );
 
   const indexHtml = existsSync(
@@ -38,6 +42,29 @@ export function app(): express.Express {
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
+
+  /**
+   * Decap CMS
+   *
+   * /admin and /admin/ must be served directly by Express.
+   * They must not reach Angular SSR.
+   */
+  server.get('/admin', (_req, res) => {
+    res.sendFile(
+      join(adminFolder, 'index.html')
+    );
+  });
+
+  server.get('/admin/', (_req, res) => {
+    res.sendFile(
+      join(adminFolder, 'index.html')
+    );
+  });
+
+  server.use(
+    '/admin',
+    express.static(adminFolder)
+  );
 
   /**
    * Serve static files from /browser.
