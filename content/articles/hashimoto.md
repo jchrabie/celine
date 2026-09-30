@@ -1,5 +1,5 @@
 ---
-title: Maladie de Hashimoto : comprendre sa thyroïde au quotidien
+title: "Maladie de Hashimoto - comprendre sa thyroïde au quotidien"
 description: La maladie de Hashimoto peut soulever de nombreuses questions. Voici quelques repères pour mieux comprendre cette maladie auto-immune et les différents aspects du quotidien qui peuvent être accompagnés.
 image: /assets/img/blog/paysage.jpg
 date: 21/09/2026

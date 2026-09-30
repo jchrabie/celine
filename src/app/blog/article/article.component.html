@@ -1,0 +1,48 @@
+<app-layout>
+      Retrouvez mes conseils et ressources pour mieux comprendre votre
+      thyroïde et prendre soin de votre équilibre au quotidien.
+</app-layout>
+@if (article$ | async; as article) {
+  <section class="light-section pt-6">
+    <article class="w-4/5 mx-auto">
+      <nav app-breadcrumbs ></nav>
+
+      <div class="max-w-3xl mx-auto">
+
+        <div class="mt-4">
+          <markdown [data]="article.content"></markdown>
+        </div>
+
+      </div>
+
+    </article>
+  </section>
+
+  <section class="py-6">
+    <article class="w-4/5 mx-auto text-center">
+
+      <p class="mt-10">
+        Vous souhaitez aller plus loin dans votre accompagnement ?
+      </p>
+
+      <a
+        class="button big inline-block mt-4"
+        href="https://calendly.com/chrabieceline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Prendre rendez-vous
+      </a>
+
+      <div class="mt-6">
+        <a
+          routerLink="/blog"
+          class="secondary"
+        >
+          ← Retour aux articles
+        </a>
+      </div>
+
+    </article>
+  </section>
+}

@@ -1,0 +1,70 @@
+<app-layout>
+      Retrouvez mes conseils et ressources pour mieux comprendre votre
+      thyroïde et prendre soin de votre équilibre au quotidien.
+</app-layout>
+<section class="light-section pt-6">
+  <article class="w-4/5 mx-auto">
+  <nav app-breadcrumbs ></nav>
+    <h2 class="light-h2 mt-4">
+      <span class="strong">Articles</span>
+    </h2>
+
+
+    @if (articles$ | async; as articles) {
+      @if (articles.length) {
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-10">
+
+          @for (article of articles; track article.slug) {
+            <article
+              class="bg-white rounded-xl shadow overflow-hidden flex flex-col"
+            >
+              @if (article.image) {
+                <a
+                  [routerLink]="['/blog/article', article.slug]"
+                  class="block overflow-hidden"
+                >
+                  <img
+                    [src]="article.image"
+                    [alt]="article.title"
+                    class="w-full aspect-[16/9] object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </a>
+              }
+
+              <div class="p-6 flex flex-col flex-1">
+
+                <p class="text-sm opacity-70">
+                  {{ article.date }}
+                </p>
+
+                <h3 class="mt-2">
+                  {{ article.title }}
+                </h3>
+
+                @if (article.description) {
+                  <p class="mt-3 flex-1">
+                    {{ article.description }}
+                  </p>
+                }
+
+                <a
+                  [routerLink]="['/blog/article', article.slug]"
+                  class="button inline-block mt-6 self-start"
+                >
+                  Lire l'article
+                </a>
+
+              </div>
+            </article>
+          }
+
+        </div>
+      } @else {
+        <p class="text-center mt-10">
+          Aucun article disponible pour le moment.
+        </p>
+      }
+    }
+
+  </article>
+</section>

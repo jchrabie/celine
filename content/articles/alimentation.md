@@ -1,5 +1,5 @@
 ---
-title: Thyroïde et alimentation : faut-il tout changer ?
+title: "Thyroïde et alimentation - faut-il tout changer ?"
 description: Lorsque l'on rencontre un problème de thyroïde, l'alimentation devient souvent une source de nombreuses interrogations. Faut-il supprimer certains aliments ? Existe-t-il une alimentation idéale ?
 image: /assets/img/blog/fuji.jpg
 date: 23/09/2026

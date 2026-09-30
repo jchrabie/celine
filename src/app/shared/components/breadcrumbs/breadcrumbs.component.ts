@@ -61,8 +61,14 @@ export class BreadcrumbsComponent {
         : url;
 
       const label = child.snapshot.data['breadcrumb'];
+      const article = child.snapshot.data['article']?.title
 
-      if (label) {
+      if (article) {
+          breadcrumbs.push({
+            label: article,
+            url: nextUrl
+          });
+      } else if (label) {
         const alreadyExists = breadcrumbs.some(
           breadcrumb =>
             breadcrumb.label === label &&

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { articleResolver } from './articles.resolver';
 
 export const routes: Routes = [
   {
@@ -45,6 +46,32 @@ export const routes: Routes = [
     },
     loadComponent: () =>
       import('./tarifs/tarifs.component').then(m => m.TarifsComponent),
+  },
+  {
+    path: 'blog',
+    data: {
+      breadcrumb: 'Blog',
+    },
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./blog/blog.component').then(m => m.BlogComponent),
+      },
+      {
+        path: 'article/:slug',
+        resolve: {
+          article: articleResolver
+        },
+        data: {
+          breadcrumb: 'article'
+        },
+        loadComponent: () =>
+          import('./blog/article/article.component').then(
+            m => m.ArticleComponent
+          )
+      }
+    ],
   },
   {
     path: 'e-books',

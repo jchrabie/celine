@@ -1,5 +1,5 @@
 ---
-title: Hypothyroïdie : quels signes peuvent vous alerter ?
+title: "Hypothyroïdie - quels signes peuvent vous alerter ?"
 description: Fatigue, frilosité, baisse d'énergie… Certains signes peuvent être associés à une hypothyroïdie. Découvrez quelques repères pour mieux comprendre le rôle de la thyroïde.
 image: /assets/img/blog/13394-1-.jpg
 date: 22/09/2026
