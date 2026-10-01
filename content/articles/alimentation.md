@@ -1,9 +1,12 @@
 ---
-title: "Thyroïde et alimentation - faut-il tout changer ?"
-description: Lorsque l'on rencontre un problème de thyroïde, l'alimentation devient souvent une source de nombreuses interrogations. Faut-il supprimer certains aliments ? Existe-t-il une alimentation idéale ?
+title: Thyroïde et alimentation - faut-il tout changer ?
+description: Lorsque l'on rencontre un problème de thyroïde, l'alimentation
+  devient souvent une source de nombreuses interrogations. Faut-il supprimer
+  certains aliments ? Existe-t-il une alimentation idéale ?
 image: /assets/img/blog/fuji.jpg
 date: 23/09/2026
 ---
+![image](/assets/img/blog/13394-1-.jpg "image canon")
 
 ## Quand on parle de thyroïde, l'alimentation revient souvent
 
@@ -35,12 +38,12 @@ Avant de supprimer un aliment ou une famille d'aliments, il est intéressant de 
 
 Avant de chercher des solutions complexes, certaines bases peuvent être intéressantes :
 
-- privilégier une alimentation variée ;
-- conserver une place importante aux aliments peu transformés ;
-- varier les sources de protéines ;
-- consommer régulièrement des fruits et légumes ;
-- veiller à une hydratation suffisante ;
-- prendre le temps de manger.
+* privilégier une alimentation variée ;
+* conserver une place importante aux aliments peu transformés ;
+* varier les sources de protéines ;
+* consommer régulièrement des fruits et légumes ;
+* veiller à une hydratation suffisante ;
+* prendre le temps de manger.
 
 Ces recommandations restent générales et ne remplacent pas une évaluation personnalisée.
 
