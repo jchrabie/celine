@@ -1,8 +1,7 @@
-<app-layout>
-      Retrouvez mes conseils et ressources pour mieux comprendre votre
-      thyroïde et prendre soin de votre équilibre au quotidien.
-</app-layout>
 @if (article$ | async; as article) {
+  <app-layout>
+    {{article.description}}
+  </app-layout>
   <section class="light-section pt-6">
     <article class="w-4/5 mx-auto">
       <nav app-breadcrumbs ></nav>
@@ -37,9 +36,9 @@
       <div class="mt-6">
         <a
           routerLink="/blog"
-          class="secondary"
+          class="hover:underline hover:text-primary text-secondary-dark flex justify-center"
         >
-          ← Retour aux articles
+          <mat-icon>chevron_left</mat-icon> Retour aux articles
         </a>
       </div>
 

@@ -6,8 +6,6 @@ description: Lorsque l'on rencontre un problème de thyroïde, l'alimentation
 image: /assets/img/blog/fuji.jpg
 date: 23/09/2026
 ---
-![image](/assets/img/blog/13394-1-.jpg "image canon")
-
 ## Quand on parle de thyroïde, l'alimentation revient souvent
 
 Lorsqu'une personne apprend qu'elle souffre d'hypothyroïdie ou de la maladie de Hashimoto, elle peut rapidement se retrouver face à de nombreuses recommandations alimentaires.

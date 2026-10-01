@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map, shareReplay, switchMap, tap } from 'rxjs';
 import { BlogService } from '../../shared/services/blog.service';
 import { AsyncPipe } from '@angular/common';
@@ -7,12 +7,13 @@ import { BreadcrumbsComponent } from '../../shared/components/breadcrumbs/breadc
 import { MarkdownModule } from 'ngx-markdown';
 import { AbstractLayoutComponent, LayoutComponent } from 'src/app/shared/layout';
 import { LayoutService } from 'src/app/shared/services/layout.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   standalone: true,
-  imports: [AsyncPipe, BreadcrumbsComponent, MarkdownModule, LayoutComponent],
+  imports: [AsyncPipe, BreadcrumbsComponent, MarkdownModule, LayoutComponent, RouterLink, MatIconModule],
 })
 export class ArticleComponent extends AbstractLayoutComponent {
   private readonly route = inject(ActivatedRoute);
