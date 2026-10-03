@@ -26,7 +26,7 @@ export class TagService {
     @Inject(DOCUMENT) private readonly document: Document
   ) {}
 
-  setSeo(header: Header): void {
+  setSeo(header: Header, type: 'website' | 'article' = "website"): void {
     const {
       title,
       description,
@@ -58,7 +58,7 @@ export class TagService {
 
       {
         property: 'og:type',
-        content: 'website'
+        content: type
       },
       {
         property: 'og:locale',

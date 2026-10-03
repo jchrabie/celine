@@ -76,10 +76,60 @@ export function app(): express.Express {
     })
   );
 
+  
   /**
    * Sitemap.
+   * Pages SEO + articles Markdown hébergés sur GitHub.
    */
-  server.get('/sitemap.xml', (_req, res) => {
+  server.get('/sitemap.xml', async (_req, res) => {
+    const sitemapUrls = new Set(
+      routes.map(({ canonical }) => canonical)
+    );
+
+    // Page d'index du blog
+    sitemapUrls.add(`${BASE_URL}/blog`);
+
+    try {
+      const response = await fetch(
+        'https://api.github.com/repos/jchrabie/celine/contents/content/articles',
+        {
+          headers: {
+            Accept: 'application/vnd.github+json'
+          }
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(
+          `GitHub API error: ${response.status}`
+        );
+      }
+
+      const files = await response.json() as {
+        name: string;
+        type: string;
+      }[];
+
+      files
+        .filter(file =>
+          file.type === 'file' &&
+          file.name.endsWith('.md')
+        )
+        .forEach(file => {
+          const slug = file.name.replace(/\.md$/, '');
+
+          sitemapUrls.add(
+            `${BASE_URL}/blog/article/${encodeURIComponent(slug)}`
+          );
+        });
+    } catch (error) {
+      // Le sitemap reste disponible même si GitHub est inaccessible.
+      console.error(
+        'Impossible de récupérer les articles pour le sitemap :',
+        error
+      );
+    }
+
     const root = xmlbuilder.create('urlset', {
       version: '1.0',
       encoding: 'UTF-8'
@@ -90,13 +140,12 @@ export function app(): express.Express {
       'http://www.sitemaps.org/schemas/sitemap/0.9'
     );
 
-    routes.forEach(({ canonical }) => {
-      const url = root.ele('url');
-
-      url.ele('loc', canonical);
+    sitemapUrls.forEach(url => {
+      root.ele('url').ele('loc', url);
     });
 
     res
+      .status(200)
       .type('application/xml')
       .send(root.end({ pretty: true }));
   });

@@ -25,12 +25,12 @@ export const headers: Header[] = [
   },
   {
     type: '/cabinets/blain',
-    title: 'Naturopathe spécialisée thyroïde à Blain (44) | Céline Chrabie',
+    title: 'Naturopathe spécialisée dans la thyroïde à Blain (44) | Céline Chrabie',
     name: 'Naturopathe à Blain',
     imagePath: CELINE_IMAGE,
     imageAlt: 'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde à Blain',
     description:
-      'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde, vous accueille à Blain (44). Accompagnement personnalisé de l’hypothyroïdie et de la maladie de Hashimoto, au cabinet ou en visioconférence.',
+      'Naturopathe à Blain, Céline Chrabie propose un accompagnement personnalisé autour de l’hypothyroïdie et de Hashimoto, au cabinet ou en visioconférence.',   
     canonical: `${BASE_URL}/cabinets/blain`,
     enabled: false,
     clazz: 'blain',
@@ -72,13 +72,12 @@ export const headers: Header[] = [
   },
   {
     type: '/cabinets/nantes',
-    title: 'Naturopathe spécialisée thyroïde à Nantes | Céline Chrabie',
+    title: 'Naturopathe spécialisée dans la thyroïde à Nantes | Céline Chrabie',
     name: 'Naturopathe à Nantes',
     imagePath: CELINE_IMAGE,
     imageAlt: 'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde à Nantes',
     description:
-      'Céline Chrabie, naturopathe spécialisée dans les troubles de la thyroïde, vous accueille à Nantes. Accompagnement personnalisé de l’hypothyroïdie et de la maladie de Hashimoto, au cabinet ou en visioconférence.',
-    canonical: `${BASE_URL}/cabinets/nantes`,
+      'Naturopathe à Nantes, Céline Chrabie propose un accompagnement personnalisé autour de l’hypothyroïdie et de Hashimoto, au cabinet ou en visioconférence.',    canonical: `${BASE_URL}/cabinets/nantes`,
     enabled: false,
     clazz: 'nantes',
     seo: {
@@ -115,14 +114,14 @@ export const headers: Header[] = [
     }
   },
   {
-    type: '/cabinet/visio',
+    type: '/cabinets/visio',
     title: 'Consultation de naturopathie en visioconférence | Céline Chrabie',
     name: 'Consultation en visio',
     imagePath: DEFAULT_IMAGE,
     imageAlt: 'Consultation de naturopathie en visioconférence avec Céline Chrabie',
     description:
       'Consultez Céline Chrabie en visioconférence pour un accompagnement en naturopathie autour de la thyroïde, de l’hypothyroïdie et de la maladie de Hashimoto, où que vous soyez en France.',
-    canonical: `${BASE_URL}/cabinet/visio`,
+    canonical: `${BASE_URL}/cabinets/visio`,
     enabled: false,
     clazz: 'visio'
   },
